@@ -1,0 +1,54 @@
+# # spring:
+# #   datasource:
+# #     url: jdbc:h2:mem:testdb
+# #     driver-class-name: org.h2.Driver
+# #     username: sa
+# #     password: ""
+
+# #   jpa:
+# #     database-platform: org.hibernate.dialect.H2Dialect
+# #     hibernate:
+# #       ddl-auto: create-drop
+
+# #   h2:
+# #     console:
+# #       enabled: true
+
+# #   datasource.hikari:
+# #     maximum-pool-size: 5
+
+# spring:
+#   datasource:
+#     url: jdbc:h2:mem:testdb
+#     driver-class-name: org.h2.Driver
+#     username: sa
+#     password: ""
+
+#   jpa:
+#     database-platform: org.hibernate.dialect.H2Dialect
+#     hibernate:
+#       ddl-auto: create-drop
+
+#   datasource.hikari:
+#     maximum-pool-size: 2
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/lotodb_test
+    username: postgrestest
+    password: postgrestest
+    hikari:
+      maximum-pool-size: 5   # 🔥 évite saturation
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop  # reset DB à chaque test
+    show-sql: false
+
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/lotodb_test
+
+logging:
+  level:
+    root: WARN
