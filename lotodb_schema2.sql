@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
--- \restrict CCBYhvHPkfCHaMEGPdrjMeHFmNdQcdvsgKNu3OlunMMFXZLZJvLzkV4ZrlVVgdp
+\restrict CCBYhvHPkfCHaMEGPdrjMeHFmNdQcdvsgKNu3OlunMMFXZLZJvLzkV4ZrlVVgdp
 
 -- Dumped from database version 14.20 (Ubuntu 14.20-0ubuntu0.22.04.1)
 -- Dumped by pg_dump version 14.20 (Ubuntu 14.20-0ubuntu0.22.04.1)
@@ -165,5 +165,5 @@ ALTER TABLE ONLY public.tickets
 -- PostgreSQL database dump complete
 --
 
--- \unrestrict CCBYhvHPkfCHaMEGPdrjMeHFmNdQcdvsgKNu3OlunMMFXZLZJvLzkV4ZrlVVgdp
+\unrestrict CCBYhvHPkfCHaMEGPdrjMeHFmNdQcdvsgKNu3OlunMMFXZLZJvLzkV4ZrlVVgdp
 
