@@ -2,17 +2,21 @@
 -- PostgreSQL database dump
 --
 
-\restrict CCBYhvHPkfCHaMEGPdrjMeHFmNdQcdvsgKNu3OlunMMFXZLZJvLzkV4ZrlVVgdp
+-- \restrict CCBYhvHPkfCHaMEGPdrjMeHFmNdQcdvsgKNu3OlunMMFXZLZJvLzkV4ZrlVVgdp
 
 -- Dumped from database version 14.20 (Ubuntu 14.20-0ubuntu0.22.04.1)
 -- Dumped by pg_dump version 14.20 (Ubuntu 14.20-0ubuntu0.22.04.1)
+DROP TABLE IF EXISTS ticket_gains CASCADE;
+DROP TABLE IF EXISTS tickets CASCADE;
+DROP TABLE IF EXISTS users CASCADE;
+DROP TABLE IF EXISTS refresh_tokens CASCADE;
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
 SET idle_in_transaction_session_timeout = 0;
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
-SELECT pg_catalog.set_config('search_path', '', false);
+-- SELECT pg_catalog.set_config('search_path', '', false);
 SET check_function_bodies = false;
 SET xmloption = content;
 SET client_min_messages = warning;
@@ -36,7 +40,7 @@ CREATE TABLE public.refresh_tokens (
 );
 
 
-ALTER TABLE public.refresh_tokens OWNER TO postgres;
+-- ALTER TABLE public.refresh_tokens OWNER TO postgres;
 
 --
 -- Name: ticket_gains; Type: TABLE; Schema: public; Owner: postgres
@@ -51,7 +55,7 @@ CREATE TABLE public.ticket_gains (
 );
 
 
-ALTER TABLE public.ticket_gains OWNER TO postgres;
+-- ALTER TABLE public.ticket_gains OWNER TO postgres;
 
 --
 -- Name: tickets; Type: TABLE; Schema: public; Owner: postgres
@@ -69,7 +73,7 @@ CREATE TABLE public.tickets (
 );
 
 
-ALTER TABLE public.tickets OWNER TO postgres;
+-- ALTER TABLE public.tickets OWNER TO postgres;
 
 --
 -- Name: users; Type: TABLE; Schema: public; Owner: postgres
@@ -87,7 +91,7 @@ CREATE TABLE public.users (
 );
 
 
-ALTER TABLE public.users OWNER TO postgres;
+-- ALTER TABLE public.users OWNER TO postgres;
 
 --
 -- Name: refresh_tokens refresh_tokens_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
@@ -165,5 +169,5 @@ ALTER TABLE ONLY public.tickets
 -- PostgreSQL database dump complete
 --
 
-\unrestrict CCBYhvHPkfCHaMEGPdrjMeHFmNdQcdvsgKNu3OlunMMFXZLZJvLzkV4ZrlVVgdp
+-- \unrestrict CCBYhvHPkfCHaMEGPdrjMeHFmNdQcdvsgKNu3OlunMMFXZLZJvLzkV4ZrlVVgdp
 
