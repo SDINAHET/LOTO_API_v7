@@ -1904,13 +1904,31 @@ public class LotoScraperService {
 	@Autowired
 	private GainCalculationService gainCalculationService;
 
-	@EventListener(ApplicationReadyEvent.class)
-    public void scheduleInitialScrape() {
-        System.out.println("🕒 Scraping planifié pour démarrer dans 1 minute...");
+	// @EventListener(ApplicationReadyEvent.class)
+    // public void scheduleInitialScrape() {
+    //     System.out.println("🕒 Scraping planifié pour démarrer dans 1 minute...");
 
-        ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
-        scheduler.schedule(this::scrapeData, 10, TimeUnit.SECONDS);
-    }
+    //     ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
+    //     scheduler.schedule(this::scrapeData, 10, TimeUnit.SECONDS);
+    // }
+	// @EventListener(ApplicationReadyEvent.class)
+	// public void scheduleInitialScrape() {
+	// 	System.out.println("🚀 Lancement initial du scraping dans 10 secondes...");
+
+	// 	try {
+	// 		Thread.sleep(10000); // ⏱️ 10 secondes de délai
+	// 	} catch (InterruptedException e) {
+	// 		Thread.currentThread().interrupt();
+	// 		System.err.println("❌ Interruption du délai initial : " + e.getMessage());
+	// 	}
+
+	// 	scrapeData();
+	// }
+	@Scheduled(initialDelay = 10000, fixedDelay = Long.MAX_VALUE)
+	public void initialScrape() {
+		System.out.println("🚀 Lancement initial du scraping...");
+		scrapeData();
+	}
 
     // @Scheduled(fixedRate = 3600000)  // Exécution toutes les heures
 	// @Scheduled(fixedDelay = 300000)  // Attendre 5 minutes après la fin de l'exécution précédente

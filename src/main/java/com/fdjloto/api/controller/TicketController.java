@@ -83,9 +83,11 @@ public class TicketController {
                 .orElseThrow(() -> new RuntimeException(USER_NOT_FOUND));
 
         // 🔥 Admin gets all tickets, User gets only their own
-        List<TicketDTO> tickets = user.isAdmin()
-            ? ticketService.getAllTickets()
-            : ticketService.getTicketsByUserId(user.getId());
+        // List<TicketDTO> tickets = user.isAdmin()
+        //     ? ticketService.getAllTickets()
+        //     : ticketService.getTicketsByUserId(user.getId());
+        // ✅ Toujours retourner uniquement les tickets du user connecté
+        List<TicketDTO> tickets = ticketService.getTicketsByUserId(user.getId());
 
         return ResponseEntity.ok(tickets);
     }

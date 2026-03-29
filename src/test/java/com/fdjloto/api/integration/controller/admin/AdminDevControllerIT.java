@@ -1344,9 +1344,13 @@ import java.nio.file.*;
 
 import static org.hamcrest.Matchers.containsString;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.user;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+
+import org.springframework.http.ResponseEntity;
+import java.util.Map;
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -1688,5 +1692,23 @@ class AdminDevControllerIT {
                 .andExpect(status().isOk())
                 .andExpect(content().string(containsString("#header")))
                 .andExpect(content().string(containsString("#0f172a")));
+    }
+
+
+    @Test
+    void getCoverage_fileNotFound_returns404() throws Exception {
+        AdminDevController controller = new AdminDevController();
+
+        ResponseEntity<String> response = controller.getCoverage();
+
+        assertEquals(404, response.getStatusCode().value());
+    }
+    @Test
+    void getPerformance_returnsResponseTime() {
+        AdminDevController controller = new AdminDevController();
+
+        Map<String, Object> result = controller.getPerformance();
+
+        assertTrue(result.containsKey("responseTime"));
     }
 }

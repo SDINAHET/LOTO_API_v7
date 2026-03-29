@@ -282,9 +282,22 @@ class PredictionTirageServiceTest {
     }
 
     // 🔥 BONUS : couvre scheduler init
+    // @Test
+    // void scheduleInitialPrediction_doesNotCrash() {
+    //     service.scheduleInitialPrediction();
+    // }
+    // @Test
+    // void generateFirstPredictionOnce_doesNotCrash() {
+    //     service.generateFirstPredictionOnce();
+    // }
     @Test
-    void scheduleInitialPrediction_doesNotCrash() {
-        service.scheduleInitialPrediction();
+    void generateFirstPredictionOnce_doesNotCrash() {
+
+        when(tirageRepository.findAll()).thenReturn(List.of());
+
+        service.generateFirstPredictionOnce();
+
+        verify(predictionRepository, never()).save(any());
     }
 
 	@Test

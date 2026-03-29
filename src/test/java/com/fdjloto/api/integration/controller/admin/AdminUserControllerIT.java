@@ -542,4 +542,56 @@ class AdminUserControllerIT {
                 .andExpect(jsonPath("$.temporaryPassword").exists())
                 .andExpect(jsonPath("$.message").exists());
     }
+
+
+    @Test
+        @DisplayName("DELETE /users → 404")
+        void shouldReturn404WhenDeletingMissingUser() throws Exception {
+
+        when(userRepository.findById("bad"))
+                .thenReturn(Optional.empty());
+
+        mockMvc.perform(delete("/api/admin/users/bad"))
+                .andExpect(status().isNotFound());
+        }
+
+
+
+
+        @Test
+        @DisplayName("POST /users/reset-password → 404")
+        void shouldReturn404WhenResettingMissingUser() throws Exception {
+
+        when(userRepository.findById("bad"))
+                .thenReturn(Optional.empty());
+
+        mockMvc.perform(post("/api/admin/users/bad/reset-password"))
+                .andExpect(status().isNotFound());
+        }
+
+        @Test
+        @DisplayName("PUT /users → update password")
+        void shouldUpdatePassword() throws Exception {
+
+        User u = createUser("u1");
+
+        when(userRepository.findById("u1"))
+                .thenReturn(Optional.of(u));
+
+        when(passwordEncoder.encode(any()))
+                .thenReturn("encoded");
+
+        when(userRepository.save(any()))
+                .thenAnswer(inv -> inv.getArgument(0));
+
+        Map<String,Object> patch = Map.of(
+                "password","123"
+        );
+
+        mockMvc.perform(put("/api/admin/users/u1")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(patch)))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.password").value("encoded"));
+        }
 }

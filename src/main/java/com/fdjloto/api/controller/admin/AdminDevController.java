@@ -1496,9 +1496,15 @@ public class AdminDevController {
 
         long start = System.currentTimeMillis();
 
+        // try {
+        //     Thread.sleep(10);
+        // } catch (InterruptedException ignored) {}
+        
         try {
             Thread.sleep(10);
-        } catch (InterruptedException ignored) {}
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
 
         long duration = System.currentTimeMillis() - start;
 

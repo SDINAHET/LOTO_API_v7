@@ -11,10 +11,20 @@ import java.util.Date;
 import java.util.Optional;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 @Service
+// public class Historique20DetailService {
+
+//     private final Historique20DetailRepository repository;
+
 public class Historique20DetailService {
 
+    private static final Logger logger = LoggerFactory.getLogger(Historique20DetailService.class);
+
     private final Historique20DetailRepository repository;
+
     private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
     public Historique20DetailService(Historique20DetailRepository repository) {
@@ -30,7 +40,8 @@ public class Historique20DetailService {
             Date parsedDate = Date.from(localDate.atStartOfDay(paris).toInstant());
             return repository.findByDateDeTirage(parsedDate);
         } catch (Exception e) {
-            e.printStackTrace();
+            // e.printStackTrace();
+            logger.error("Erreur lors du parsing de la date : {}", date, e);
             return Optional.empty();
         }
     }
@@ -52,13 +63,16 @@ public class Historique20DetailService {
             Date end = Date.from(endLocalDate.plusDays(1).atStartOfDay(ZoneId.systemDefault()).toInstant());
 
             // 🔍 Log pour vérification
-            System.out.println("🔍 Start Date J-1: " + start);
-            System.out.println("🔍 End Date: " + end);
+            // System.out.println("🔍 Start Date J-1: " + start);
+            // System.out.println("🔍 End Date: " + end);
+            logger.debug("Start Date J-1: {}", start);
+            logger.debug("End Date: {}", end);
 
             // 🔥 Effectue la recherche avec J-1 inclus
             return repository.findByDateDeTirageBetween(start, end);
         } catch (Exception e) {
-            e.printStackTrace();
+            // e.printStackTrace();
+            logger.error("Erreur lors de la recherche par plage de dates", e);
             return List.of(); // Retourne une liste vide en cas d'erreur
         }
     }

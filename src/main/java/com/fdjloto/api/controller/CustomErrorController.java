@@ -8,10 +8,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.http.HttpServletRequest;
 
+import org.springframework.web.bind.annotation.GetMapping;
+
 @Controller
 public class CustomErrorController implements ErrorController {
 
-    @RequestMapping("/error")
+    // @RequestMapping("/error")
+    // @RequestMapping(value = "/error", method = RequestMethod.GET)
+    @GetMapping("/error")
     public String handleError(HttpServletRequest request) {
 
         Object status = request.getAttribute(RequestDispatcher.ERROR_STATUS_CODE);
