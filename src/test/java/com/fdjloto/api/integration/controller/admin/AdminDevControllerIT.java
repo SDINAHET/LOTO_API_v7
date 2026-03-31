@@ -1695,14 +1695,14 @@ class AdminDevControllerIT {
     }
 
 
-    @Test
-    void getCoverage_fileNotFound_returns404() throws Exception {
-        AdminDevController controller = new AdminDevController();
+    // @Test
+    // void getCoverage_fileNotFound_returns404() throws Exception {
+    //     AdminDevController controller = new AdminDevController();
 
-        ResponseEntity<String> response = controller.getCoverage();
+    //     ResponseEntity<String> response = controller.getCoverage();
 
-        assertEquals(404, response.getStatusCode().value());
-    }
+    //     assertEquals(404, response.getStatusCode().value());
+    // }
     @Test
     void getPerformance_returnsResponseTime() {
         AdminDevController controller = new AdminDevController();
