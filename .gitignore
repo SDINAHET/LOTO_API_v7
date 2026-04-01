@@ -60,3 +60,5 @@ lotodb_data.sql
 /reports/*
 /local_speed_audit
 
+npm_readme.md
+sonar.sh

@@ -1495,11 +1495,6 @@ public class AdminDevController {
     public Map<String, Object> getPerformance() {
 
         long start = System.currentTimeMillis();
-
-        // try {
-        //     Thread.sleep(10);
-        // } catch (InterruptedException ignored) {}
-        
         try {
             Thread.sleep(10);
         } catch (InterruptedException e) {

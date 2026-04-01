@@ -15,9 +15,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @Service
-// public class Historique20DetailService {
-
-//     private final Historique20DetailRepository repository;
 
 public class Historique20DetailService {
 
@@ -63,15 +60,12 @@ public class Historique20DetailService {
             Date end = Date.from(endLocalDate.plusDays(1).atStartOfDay(ZoneId.systemDefault()).toInstant());
 
             // 🔍 Log pour vérification
-            // System.out.println("🔍 Start Date J-1: " + start);
-            // System.out.println("🔍 End Date: " + end);
             logger.debug("Start Date J-1: {}", start);
             logger.debug("End Date: {}", end);
 
             // 🔥 Effectue la recherche avec J-1 inclus
             return repository.findByDateDeTirageBetween(start, end);
         } catch (Exception e) {
-            // e.printStackTrace();
             logger.error("Erreur lors de la recherche par plage de dates", e);
             return List.of(); // Retourne une liste vide en cas d'erreur
         }
