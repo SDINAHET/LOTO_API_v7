@@ -257,44 +257,108 @@
     /* =========================
       Countdown next draw
     ========================== */
-    function startCountdown(){
-      const tirageDays = [1,3,6]; // Lundi, Mercredi, Samedi
-      const joursFr = ["Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"];
-      const countdownEl = document.getElementById("countdown");
-      const infoEl = document.getElementById("nextDrawInfo");
+    // function startCountdown(){
+    //   const tirageDays = [1,3,6]; // Lundi, Mercredi, Samedi
+    //   const joursFr = ["Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"];
+    //   const countdownEl = document.getElementById("countdown");
+    //   const infoEl = document.getElementById("nextDrawInfo");
 
-      function getNextDrawDate(base = moment().tz("Europe/Paris")){
-        let next = base.clone().set({ hour:20, minute:0, second:0, millisecond:0 });
-        while(!tirageDays.includes(next.day()) || next.isBefore(base)){
-          next.add(1,"day");
-        }
-        return next;
+
+    //   function getNextDrawDate(base = moment().tz("Europe/Paris")){
+    //     let next = base.clone().set({ hour:20, minute:0, second:0, millisecond:0 });
+    //     while(!tirageDays.includes(next.day()) || next.isBefore(base)){
+    //       next.add(1,"day");
+    //     }
+    //     return next;
+    //   }
+
+    //   setInterval(() => {
+    //     const now = moment().tz("Europe/Paris");
+    //     const next = getNextDrawDate(now);
+    //     const diff = moment.duration(next.diff(now));
+
+    //     infoEl.textContent = `Prochain tirage : ${joursFr[next.day()]} à 20h`;
+
+    //     const txt = `${diff.days()}j ${diff.hours()}h ${diff.minutes()}m ${diff.seconds()}s`;
+    //     countdownEl.textContent = txt;
+
+    //     const h = diff.asHours();
+    //     if(h <= 3){
+    //       countdownEl.style.background = "rgba(239,68,68,.25)";
+    //       countdownEl.style.borderColor = "rgba(239,68,68,.35)";
+    //     }else if(h <= 7){
+    //       countdownEl.style.background = "rgba(245,158,11,.20)";
+    //       countdownEl.style.borderColor = "rgba(245,158,11,.35)";
+    //     }else{
+    //       countdownEl.style.background = "linear-gradient(135deg, rgba(59,130,246,.25), rgba(96,165,250,.18))";
+    //       countdownEl.style.borderColor = "rgba(59,130,246,.25)";
+    //     }
+    //   }, 1000);
+    // }
+    // startCountdown();
+
+/* =========================
+  Countdown next draw (NO MOMENT)
+========================== */
+function startCountdown() {
+  const tirageDays = [1, 3, 6]; // Lundi, Mercredi, Samedi
+  const joursFr = ["Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"];
+
+  const countdownEl = document.getElementById("countdown");
+  const infoEl = document.getElementById("nextDrawInfo");
+
+  function getParisNow() {
+    // ✅ Date actuelle en heure de Paris
+    const now = new Date();
+    return new Date(now.toLocaleString("en-US", { timeZone: "Europe/Paris" }));
+  }
+
+  function getNextDrawDate() {
+    const now = getParisNow();
+
+    for (let i = 0; i < 7; i++) {
+      const d = new Date(now);
+      d.setDate(now.getDate() + i);
+      d.setHours(20, 0, 0, 0);
+
+      if (tirageDays.includes(d.getDay()) && d > now) {
+        return d;
       }
-
-      setInterval(() => {
-        const now = moment().tz("Europe/Paris");
-        const next = getNextDrawDate(now);
-        const diff = moment.duration(next.diff(now));
-
-        infoEl.textContent = `Prochain tirage : ${joursFr[next.day()]} à 20h`;
-
-        const txt = `${diff.days()}j ${diff.hours()}h ${diff.minutes()}m ${diff.seconds()}s`;
-        countdownEl.textContent = txt;
-
-        const h = diff.asHours();
-        if(h <= 3){
-          countdownEl.style.background = "rgba(239,68,68,.25)";
-          countdownEl.style.borderColor = "rgba(239,68,68,.35)";
-        }else if(h <= 7){
-          countdownEl.style.background = "rgba(245,158,11,.20)";
-          countdownEl.style.borderColor = "rgba(245,158,11,.35)";
-        }else{
-          countdownEl.style.background = "linear-gradient(135deg, rgba(59,130,246,.25), rgba(96,165,250,.18))";
-          countdownEl.style.borderColor = "rgba(59,130,246,.25)";
-        }
-      }, 1000);
     }
-    startCountdown();
+  }
+
+  setInterval(() => {
+    const now = getParisNow();
+    const next = getNextDrawDate();
+
+    const diffMs = next - now;
+
+    const days = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diffMs / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diffMs / (1000 * 60)) % 60);
+    const seconds = Math.floor((diffMs / 1000) % 60);
+
+    infoEl.textContent = `Prochain tirage : ${joursFr[next.getDay()]} à 20h`;
+
+    countdownEl.textContent = `${days}j ${hours}h ${minutes}m ${seconds}s`;
+
+    const totalHours = diffMs / (1000 * 60 * 60);
+
+    if (totalHours <= 3) {
+      countdownEl.style.background = "rgba(239,68,68,.25)";
+      countdownEl.style.borderColor = "rgba(239,68,68,.35)";
+    } else if (totalHours <= 7) {
+      countdownEl.style.background = "rgba(245,158,11,.20)";
+      countdownEl.style.borderColor = "rgba(245,158,11,.35)";
+    } else {
+      countdownEl.style.background = "linear-gradient(135deg, rgba(59,130,246,.25), rgba(96,165,250,.18))";
+      countdownEl.style.borderColor = "rgba(59,130,246,.25)";
+    }
+
+  }, 1000);
+}
+
+startCountdown();
 
     /* =========================
       Helpers
@@ -314,11 +378,22 @@
     //  return jours[m.day()];
     //}
 
+    // function getDayName(dateString){
+    //   const m = moment(dateString, "DD/MM/YYYY", true);
+    //   if (!m.isValid()) return "";
+    //   const jours = ["Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"];
+    //   return jours[m.day()];
+    // }
     function getDayName(dateString){
-      const m = moment(dateString, "DD/MM/YYYY", true);
-      if (!m.isValid()) return "";
+      if (!dateString) return "";
+
+      const [day, month, year] = dateString.split("/").map(Number);
+      const d = new Date(year, month - 1, day);
+
+      if (isNaN(d)) return "";
+
       const jours = ["Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"];
-      return jours[m.day()];
+      return jours[d.getDay()];
     }
 
 
@@ -340,19 +415,33 @@
     //  return safeStr(v);
     //}
 
+    // function formatDateForDisplay(v){
+    //   if(!v) return "-";
+
+    //   // ✅ si c'est "DD/MM/YYYY" (avec slash), on parse explicitement en strict
+    //   if (typeof v === "string" && v.includes("/")) {
+    //     const m = moment(v, "DD/MM/YYYY", true);
+    //     if (m.isValid()) return m.format("DD/MM/YYYY");
+    //     return v;
+    //   }
+
+    //   // ✅ ISO / Mongo / timestamp
+    //   const mIso = moment(v);
+    //   if (mIso.isValid()) return mIso.tz("Europe/Paris").format("DD/MM/YYYY");
+
+    //   return safeStr(v);
+    // }
     function formatDateForDisplay(v){
       if(!v) return "-";
 
-      // ✅ si c'est "DD/MM/YYYY" (avec slash), on parse explicitement en strict
-      if (typeof v === "string" && v.includes("/")) {
-        const m = moment(v, "DD/MM/YYYY", true);
-        if (m.isValid()) return m.format("DD/MM/YYYY");
-        return v;
-      }
+      // déjà format FR
+      if (typeof v === "string" && v.includes("/")) return v;
 
-      // ✅ ISO / Mongo / timestamp
-      const mIso = moment(v);
-      if (mIso.isValid()) return mIso.tz("Europe/Paris").format("DD/MM/YYYY");
+      // ISO -> FR
+      const d = new Date(v);
+      if (!isNaN(d)) {
+        return d.toLocaleDateString("fr-FR");
+      }
 
       return safeStr(v);
     }
@@ -698,9 +787,19 @@
     }
 
     // draw.dateDeTirage = "DD/MM/YYYY" => convert ISO
-    const iso = moment(draw.dateDeTirage, "DD/MM/YYYY", true).isValid()
-      ? moment(draw.dateDeTirage, "DD/MM/YYYY").format("YYYY-MM-DD")
-      : undefined;
+    // const iso = moment(draw.dateDeTirage, "DD/MM/YYYY", true).isValid()
+    //   ? moment(draw.dateDeTirage, "DD/MM/YYYY").format("YYYY-MM-DD")
+    //   : undefined;
+    function toISODate(dateString) {
+      if (!dateString) return null;
+
+      const [day, month, year] = dateString.split("/").map(Number);
+      if (!day || !month || !year) return null;
+
+      return `${year}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+    }
+    const iso = toISODate(draw.dateDeTirage);
+
 
     const payload = {
       "@context": "https://schema.org",
@@ -782,17 +881,38 @@
     let currentPage = 1;
     const pageSize = 10;
 
+    // function clampToOneMonth(startISO, endISO){
+    //   if(!startISO) return {startISO, endISO, wasClamped:false};
+    //   const s = moment(startISO);
+    //   if(!endISO) return {startISO, endISO, wasClamped:false};
+
+    //   const e = moment(endISO);
+    //   const maxEnd = s.clone().add(31, "days");
+    //   if(e.isAfter(maxEnd)){
+    //     return { startISO, endISO: maxEnd.format("YYYY-MM-DD"), wasClamped:true };
+    //   }
+    //   return { startISO, endISO, wasClamped:false };
+    // }
     function clampToOneMonth(startISO, endISO){
       if(!startISO) return {startISO, endISO, wasClamped:false};
-      const s = moment(startISO);
       if(!endISO) return {startISO, endISO, wasClamped:false};
 
-      const e = moment(endISO);
-      const maxEnd = s.clone().add(31, "days");
-      if(e.isAfter(maxEnd)){
-        return { startISO, endISO: maxEnd.format("YYYY-MM-DD"), wasClamped:true };
+      const s = new Date(startISO);
+      const e = new Date(endISO);
+
+      // Clone + ajoute 31 jours
+      const maxEnd = new Date(s);
+      maxEnd.setDate(s.getDate() + 31);
+
+      if(e > maxEnd){
+        return {
+          startISO,
+          endISO: maxEnd.toISOString().split("T")[0],
+          wasClamped: true
+        };
       }
-      return { startISO, endISO, wasClamped:false };
+
+      return {startISO, endISO, wasClamped:false};
     }
 
     function renderSearchPage(){

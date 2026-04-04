@@ -6,6 +6,9 @@ import lombok.Data;
 import java.util.List;
 import io.swagger.v3.oas.annotations.media.Schema;
 
+import java.util.Date;
+import org.springframework.data.mongodb.core.mapping.Field;
+
 /**
  * Represents a lottery draw (Tirage) stored in MongoDB.
  * This model contains information about a specific draw, including the drawn numbers and date.
@@ -24,6 +27,10 @@ public class Tirage {
 
     @Schema(description = "The actual draw date in string format (YYYY-MM-DD)", example = "2025-03-15")
     private String dateDeTirage; // The actual draw date in string format (YYYY-MM-DD)
+
+    // @Schema(description = "The actual draw date (ISO Date)", example = "2025-03-15T20:00:00Z")
+    // @Field("dateDeTirage")
+    // private Date dateDeTirage;
 
     @Schema(description = "The first drawn number", example = "12")
     private int boule1; // First drawn number

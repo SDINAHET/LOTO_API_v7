@@ -20,6 +20,7 @@ import java.util.List;
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import com.fdjloto.api.integration.AbstractIntegrationTest;
 
 /**
  * Tests d'intégration pour le contrôleur AdminDashboardController.
@@ -34,7 +35,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc
 @ActiveProfiles("test")
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-class AdminDashboardControllerIT {
+class AdminDashboardControllerIT extends AbstractIntegrationTest {
 
     @Autowired
     private MockMvc mockMvc;

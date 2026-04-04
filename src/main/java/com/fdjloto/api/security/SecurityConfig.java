@@ -296,6 +296,8 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.GET,  "/prochain-tirage", "/prochain-tirage/**").permitAll()
                         .requestMatchers(HttpMethod.HEAD, "/prochain-tirage", "/prochain-tirage/**").permitAll()
 
+                        .requestMatchers(HttpMethod.GET, "/og/**").permitAll()
+                        .requestMatchers(HttpMethod.HEAD, "/og/**").permitAll()
                         // =====================
                         // 🔓 RESSOURCES STATIQUES (GET + HEAD)
                         // =====================

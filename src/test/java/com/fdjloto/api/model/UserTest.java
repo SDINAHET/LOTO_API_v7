@@ -72,198 +72,198 @@ class UserTest {
             assertNotNull(obj);
         }
 
-@Test void smoke_07() {
-            User obj = new User();
-            assertNotNull(obj);
-        }
+// @Test void smoke_07() {
+//             User obj = new User();
+//             assertNotNull(obj);
+//         }
 
-@Test void smoke_08() {
-            User obj = new User();
-            assertNotNull(obj);
-        }
+// @Test void smoke_08() {
+//             User obj = new User();
+//             assertNotNull(obj);
+//         }
 
-@Test void smoke_09() {
-            User obj = new User();
-            assertNotNull(obj);
-        }
+// @Test void smoke_09() {
+//             User obj = new User();
+//             assertNotNull(obj);
+//         }
 
-@Test void smoke_10() {
-            User obj = new User();
-            assertNotNull(obj);
-        }
+// @Test void smoke_10() {
+//             User obj = new User();
+//             assertNotNull(obj);
+//         }
 
-@Test void smoke_11() {
-            User obj = new User();
-            assertNotNull(obj);
-        }
+// @Test void smoke_11() {
+//             User obj = new User();
+//             assertNotNull(obj);
+//         }
 
-@Test void smoke_12() {
-            User obj = new User();
-            assertNotNull(obj);
-        }
+// @Test void smoke_12() {
+//             User obj = new User();
+//             assertNotNull(obj);
+//         }
 
-@Test void smoke_13() {
-            User obj = new User();
-            assertNotNull(obj);
-        }
+// @Test void smoke_13() {
+//             User obj = new User();
+//             assertNotNull(obj);
+//         }
 
-@Test void smoke_14() {
-            User obj = new User();
-            assertNotNull(obj);
-        }
+// @Test void smoke_14() {
+//             User obj = new User();
+//             assertNotNull(obj);
+//         }
 
-@Test void smoke_15() {
-            User obj = new User();
-            assertNotNull(obj);
-        }
+// @Test void smoke_15() {
+//             User obj = new User();
+//             assertNotNull(obj);
+//         }
 
-@Test void smoke_16() {
-            User obj = new User();
-            assertNotNull(obj);
-        }
+// @Test void smoke_16() {
+//             User obj = new User();
+//             assertNotNull(obj);
+//         }
 
-@Test void smoke_17() {
-            User obj = new User();
-            assertNotNull(obj);
-        }
+// @Test void smoke_17() {
+//             User obj = new User();
+//             assertNotNull(obj);
+//         }
 
-@Test void smoke_18() {
-            User obj = new User();
-            assertNotNull(obj);
-        }
+// @Test void smoke_18() {
+//             User obj = new User();
+//             assertNotNull(obj);
+//         }
 
-@Test void smoke_19() {
-            User obj = new User();
-            assertNotNull(obj);
-        }
+// @Test void smoke_19() {
+//             User obj = new User();
+//             assertNotNull(obj);
+//         }
 
-@Test void smoke_20() {
-            User obj = new User();
-            assertNotNull(obj);
-        }
+// @Test void smoke_20() {
+//             User obj = new User();
+//             assertNotNull(obj);
+//         }
 
-@Test void smoke_21() {
-            User obj = new User();
-            assertNotNull(obj);
-        }
+// @Test void smoke_21() {
+//             User obj = new User();
+//             assertNotNull(obj);
+//         }
 
-@Test void smoke_22() {
-            User obj = new User();
-            assertNotNull(obj);
-        }
+// @Test void smoke_22() {
+//             User obj = new User();
+//             assertNotNull(obj);
+//         }
 
-@Test void smoke_23() {
-            User obj = new User();
-            assertNotNull(obj);
-        }
+// @Test void smoke_23() {
+//             User obj = new User();
+//             assertNotNull(obj);
+//         }
 
-@Test void smoke_24() {
-            User obj = new User();
-            assertNotNull(obj);
-        }
+// @Test void smoke_24() {
+//             User obj = new User();
+//             assertNotNull(obj);
+//         }
 
-@Test void smoke_25() {
-            User obj = new User();
-            assertNotNull(obj);
-        }
+// @Test void smoke_25() {
+//             User obj = new User();
+//             assertNotNull(obj);
+//         }
 
-@Test void smoke_26() {
-            User obj = new User();
-            assertNotNull(obj);
-        }
+// @Test void smoke_26() {
+//             User obj = new User();
+//             assertNotNull(obj);
+//         }
 
-@Test void smoke_27() {
-            User obj = new User();
-            assertNotNull(obj);
-        }
+// @Test void smoke_27() {
+//             User obj = new User();
+//             assertNotNull(obj);
+//         }
 
-@Test void smoke_28() {
-            User obj = new User();
-            assertNotNull(obj);
-        }
+// @Test void smoke_28() {
+//             User obj = new User();
+//             assertNotNull(obj);
+//         }
 
-@Test void smoke_29() {
-            User obj = new User();
-            assertNotNull(obj);
-        }
+// @Test void smoke_29() {
+//             User obj = new User();
+//             assertNotNull(obj);
+//         }
 
-@Test void smoke_30() {
-            User obj = new User();
-            assertNotNull(obj);
-        }
+// @Test void smoke_30() {
+//             User obj = new User();
+//             assertNotNull(obj);
+//         }
 
-@Test void smoke_31() {
-            User obj = new User();
-            assertNotNull(obj);
-        }
+// @Test void smoke_31() {
+//             User obj = new User();
+//             assertNotNull(obj);
+//         }
 
-@Test void smoke_32() {
-            User obj = new User();
-            assertNotNull(obj);
-        }
+// @Test void smoke_32() {
+//             User obj = new User();
+//             assertNotNull(obj);
+//         }
 
-@Test void smoke_33() {
-            User obj = new User();
-            assertNotNull(obj);
-        }
+// @Test void smoke_33() {
+//             User obj = new User();
+//             assertNotNull(obj);
+//         }
 
-@Test void smoke_34() {
-            User obj = new User();
-            assertNotNull(obj);
-        }
+// @Test void smoke_34() {
+//             User obj = new User();
+//             assertNotNull(obj);
+//         }
 
-@Test void smoke_35() {
-            User obj = new User();
-            assertNotNull(obj);
-        }
+// @Test void smoke_35() {
+//             User obj = new User();
+//             assertNotNull(obj);
+//         }
 
-@Test void smoke_36() {
-            User obj = new User();
-            assertNotNull(obj);
-        }
+// @Test void smoke_36() {
+//             User obj = new User();
+//             assertNotNull(obj);
+//         }
 
-@Test void smoke_37() {
-            User obj = new User();
-            assertNotNull(obj);
-        }
+// @Test void smoke_37() {
+//             User obj = new User();
+//             assertNotNull(obj);
+//         }
 
-@Test void smoke_38() {
-            User obj = new User();
-            assertNotNull(obj);
-        }
+// @Test void smoke_38() {
+//             User obj = new User();
+//             assertNotNull(obj);
+//         }
 
-@Test void smoke_39() {
-            User obj = new User();
-            assertNotNull(obj);
-        }
+// @Test void smoke_39() {
+//             User obj = new User();
+//             assertNotNull(obj);
+//         }
 
-@Test void smoke_40() {
-            User obj = new User();
-            assertNotNull(obj);
-        }
+// @Test void smoke_40() {
+//             User obj = new User();
+//             assertNotNull(obj);
+//         }
 
-@Test void smoke_41() {
-            User obj = new User();
-            assertNotNull(obj);
-        }
+// @Test void smoke_41() {
+//             User obj = new User();
+//             assertNotNull(obj);
+//         }
 
-@Test void smoke_42() {
-            User obj = new User();
-            assertNotNull(obj);
-        }
+// @Test void smoke_42() {
+//             User obj = new User();
+//             assertNotNull(obj);
+//         }
 
-@Test void smoke_43() {
-            User obj = new User();
-            assertNotNull(obj);
-        }
+// @Test void smoke_43() {
+//             User obj = new User();
+//             assertNotNull(obj);
+//         }
 
-@Test void smoke_44() {
-            User obj = new User();
-            assertNotNull(obj);
-        }
+// @Test void smoke_44() {
+//             User obj = new User();
+//             assertNotNull(obj);
+//         }
 
-@Test void smoke_45() {
-            User obj = new User();
-            assertNotNull(obj);
-        }
+// @Test void smoke_45() {
+//             User obj = new User();
+//             assertNotNull(obj);
+//         }
     }

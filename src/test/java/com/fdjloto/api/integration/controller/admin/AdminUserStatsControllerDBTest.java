@@ -624,6 +624,7 @@ import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 
 import com.fdjloto.api.repository.LotoRepository;
+import com.fdjloto.api.repository.TirageRepository;
 
 import static org.hamcrest.Matchers.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -668,11 +669,18 @@ class AdminUserStatsControllerDBTest {
         registry.add("spring.jpa.hibernate.ddl-auto", () -> "none");
     }
 
+
     @Autowired
     private MockMvc mockMvc;
 
     @Autowired
     private JdbcTemplate jdbc;
+
+
+    @MockBean
+    private TirageRepository tirageRepository;
+    @MockBean
+    private com.fdjloto.api.service.OgService ogService;
 
     // 🔥 FIX Mongo manquant (OBLIGATOIRE)
     @MockBean

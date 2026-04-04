@@ -22,14 +22,26 @@
   <meta property="og:title" th:content="${seoTitle}">
   <meta property="og:description" th:content="${seoDescription}">
   <meta property="og:url" th:content="${pageUrl}">
-  <meta property="og:type" content="article">
+  <meta property="og:type" content="website">
   <meta property="og:site_name" content="Loto Tracker">
   <meta property="og:locale" content="fr_FR">
+  <meta property="og:image"
+      th:content="${!isPending ? 'https://loto-tracker.fr/og/tirage-' + dateIso + '.png' : 'https://loto-tracker.fr/assets/img/og-loto-tracker.png'}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!--<meta property="og:image:alt"
+      th:content="'Résultat Loto du ' + dateFrSeo"> -->
+  <meta property="og:image:alt"
+    th:content="${'Résultat Loto du ' + dateFrSeo}">
+  <meta property="og:image:type" content="image/png">
 
   <!-- ✅ Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" th:content="${seoTitle}">
   <meta name="twitter:description" th:content="${seoDescription}">
+  <meta name="twitter:image"
+        th:content="${!isPending ? 'https://loto-tracker.fr/og/tirage-' + dateIso + '.png' : 'https://loto-tracker.fr/assets/img/og-loto-tracker.png'}">
 
   <!-- ✅ JSON-LD -->
   <!-- <script type="application/ld+json" th:inline="javascript"> -->
@@ -63,7 +75,7 @@
         "category": "free"
       },
 
-      "image": "https://loto-tracker.fr/assets/img/loto_tracker.png",
+      "image": [[${!isPending ? 'https://loto-tracker.fr/og/tirage-' + dateIso + '.png' : 'https://loto-tracker.fr/assets/img/og-loto-tracker.png'}]],
       "description": [[${seoDescription}]]
     },
     {
@@ -75,7 +87,7 @@
       "datePublished": [[${startDateIso}]],
       "dateModified": [[${startDateIso}]],
       "mainEntityOfPage": {"@type":"WebPage","@id":[[${pageUrl}]]},
-      "image": ["https://loto-tracker.fr/assets/img/loto_tracker.png"],
+      "image": [[${!isPending ? 'https://loto-tracker.fr/og/tirage-' + dateIso + '.png' : 'https://loto-tracker.fr/assets/img/og-loto-tracker.png'}]],
       "author": {"@type":"Organization","name":"Loto Tracker"},
       "publisher": {
         "@type":"Organization",

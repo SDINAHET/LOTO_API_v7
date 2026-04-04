@@ -665,7 +665,14 @@
         </button>
 
         <a class="brand" href="index.html" aria-label="Retour à l'accueil">
-          <img src="assets/img/loto_tracker.png" alt="Loto Tracker" class="brand-logo">
+          <!-- <img src="assets/img/loto_tracker.png" alt="Loto Tracker" class="brand-logo"> -->
+          <img
+            src="assets/img/loto_tracker.webp"
+            width="90"
+            height="90"
+            alt="Loto Tracker"
+            class="brand-logo"
+            loading="lazy">
           <div>
             <div class="brand-title" id="brandTitle">Tracker du Loto Français</div>
             <div class="brand-sub" id="currentTime">Heure de Paris : --:--:--</div>
