@@ -145,6 +145,7 @@ services:
         condition: service_healthy
     volumes:
       - ./:/workspace
+      - /var/run/docker.sock:/var/run/docker.sock   # 🔥 CRUCIAL
     environment:
       SPRING_PROFILES_ACTIVE: test
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres_test:5432/lotodb_test
@@ -153,4 +154,9 @@ services:
       SPRING_JPA_HIBERNATE_DDL_AUTO: create-drop
       SPRING_DATA_MONGODB_URI: mongodb://mongo_test:27017/lotodb_test
       SPRING_TASK_SCHEDULING_ENABLED: "false"
-    command: mvn -q verify -Djacoco.skip=true
+    # command: mvn -q verify -Djacoco.skip=true
+    command: >
+      mvn clean verify
+      -Dsurefire.printSummary=true
+      -DtrimStackTrace=false
+      -Djacoco.skip=true

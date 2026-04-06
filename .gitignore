@@ -62,4 +62,6 @@ lotodb_data.sql
 
 npm_readme.md
 sonar.sh
+test_sonar.md
+test_front.sh
 *.zip

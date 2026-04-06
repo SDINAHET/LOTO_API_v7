@@ -807,3 +807,10 @@ admin-32.png   loto_tracker.png   loto_tracker2.png  old_favicon-admin.ico
 admin.png      loto_tracker.webp  loto_tracker3.png  swagger.png
 root@UID7E:/mnt/d/
 
+
+npx playwright test
+npx playwright test --headed
+npx playwright show-report
+
+
+![alt text](image-1.png)

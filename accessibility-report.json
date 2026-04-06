@@ -13,7 +13,7 @@
     "orientationAngle": 0,
     "orientationType": "landscape-primary"
   },
-  "timestamp": "2026-04-01T17:39:51.863Z",
+  "timestamp": "2026-04-04T20:45:10.144Z",
   "url": "http://localhost:5500/",
   "toolOptions": {
     "reporter": "v1"
@@ -1291,7 +1291,7 @@
             }
           ],
           "impact": null,
-          "html": "<span aria-live=\"polite\" aria-label=\"Nombre total de visites du site\">\n              <span id=\"visitCount\">543</span> visites\n        </span>",
+          "html": "<span aria-live=\"polite\" aria-label=\"Nombre total de visites du site\">\n              <span id=\"visitCount\">595</span> visites\n        </span>",
           "target": [
             "span[aria-live=\"polite\"]:nth-child(9)"
           ]
@@ -1928,7 +1928,7 @@
           ],
           "none": [],
           "impact": null,
-          "html": "<span aria-live=\"polite\" aria-label=\"Nombre total de visites du site\">\n              <span id=\"visitCount\">543</span> visites\n        </span>",
+          "html": "<span aria-live=\"polite\" aria-label=\"Nombre total de visites du site\">\n              <span id=\"visitCount\">595</span> visites\n        </span>",
           "target": [
             "span[aria-live=\"polite\"]:nth-child(9)"
           ]
@@ -4181,7 +4181,7 @@
           ],
           "none": [],
           "impact": null,
-          "html": "<span aria-live=\"polite\" aria-label=\"Nombre total de visites du site\">\n              <span id=\"visitCount\">543</span> visites\n        </span>",
+          "html": "<span aria-live=\"polite\" aria-label=\"Nombre total de visites du site\">\n              <span id=\"visitCount\">595</span> visites\n        </span>",
           "target": [
             "span[aria-live=\"polite\"]:nth-child(9)"
           ]
@@ -4697,7 +4697,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<span aria-live=\"polite\" aria-label=\"Nombre total de visites du site\">\n              <span id=\"visitCount\">543</span> visites\n        </span>",
+          "html": "<span aria-live=\"polite\" aria-label=\"Nombre total de visites du site\">\n              <span id=\"visitCount\">595</span> visites\n        </span>",
           "target": [
             "span[aria-live=\"polite\"]:nth-child(9)"
           ]
@@ -5110,7 +5110,7 @@
           ],
           "none": [],
           "impact": null,
-          "html": "<img alt=\"\" src=\"https://c.tile.openstreetmap.org/11/1014/710.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(49px, -8px, 0px); opacity: 1;\">",
+          "html": "<img alt=\"\" src=\"https://c.tile.openstreetmap.org/11/1014/710.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(49px, -18px, 0px); opacity: 1;\">",
           "target": [
             ".leaflet-tile.leaflet-tile-loaded[alt=\"\"]:nth-child(1)"
           ]
@@ -5142,7 +5142,7 @@
           ],
           "none": [],
           "impact": null,
-          "html": "<img alt=\"\" src=\"https://a.tile.openstreetmap.org/11/1014/711.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(49px, 248px, 0px); opacity: 1;\">",
+          "html": "<img alt=\"\" src=\"https://a.tile.openstreetmap.org/11/1014/711.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(49px, 238px, 0px); opacity: 1;\">",
           "target": [
             ".leaflet-tile.leaflet-tile-loaded[alt=\"\"]:nth-child(2)"
           ]
@@ -5174,7 +5174,7 @@
           ],
           "none": [],
           "impact": null,
-          "html": "<img alt=\"\" src=\"https://b.tile.openstreetmap.org/11/1013/710.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(-207px, -8px, 0px); opacity: 1;\">",
+          "html": "<img alt=\"\" src=\"https://b.tile.openstreetmap.org/11/1013/710.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(-207px, -18px, 0px); opacity: 1;\">",
           "target": [
             ".leaflet-tile.leaflet-tile-loaded[alt=\"\"]:nth-child(3)"
           ]
@@ -5206,7 +5206,7 @@
           ],
           "none": [],
           "impact": null,
-          "html": "<img alt=\"\" src=\"https://a.tile.openstreetmap.org/11/1015/710.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(305px, -8px, 0px); opacity: 1;\">",
+          "html": "<img alt=\"\" src=\"https://a.tile.openstreetmap.org/11/1015/710.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(305px, -18px, 0px); opacity: 1;\">",
           "target": [
             ".leaflet-tile.leaflet-tile-loaded[alt=\"\"]:nth-child(4)"
           ]
@@ -5238,7 +5238,7 @@
           ],
           "none": [],
           "impact": null,
-          "html": "<img alt=\"\" src=\"https://c.tile.openstreetmap.org/11/1013/711.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(-207px, 248px, 0px); opacity: 1;\">",
+          "html": "<img alt=\"\" src=\"https://c.tile.openstreetmap.org/11/1013/711.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(-207px, 238px, 0px); opacity: 1;\">",
           "target": [
             ".leaflet-tile.leaflet-tile-loaded[alt=\"\"]:nth-child(5)"
           ]
@@ -5270,7 +5270,7 @@
           ],
           "none": [],
           "impact": null,
-          "html": "<img alt=\"\" src=\"https://b.tile.openstreetmap.org/11/1015/711.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(305px, 248px, 0px); opacity: 1;\">",
+          "html": "<img alt=\"\" src=\"https://b.tile.openstreetmap.org/11/1015/711.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(305px, 238px, 0px); opacity: 1;\">",
           "target": [
             ".leaflet-tile.leaflet-tile-loaded[alt=\"\"]:nth-child(6)"
           ]
@@ -5302,7 +5302,7 @@
           ],
           "none": [],
           "impact": null,
-          "html": "<img src=\"https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png\" class=\"leaflet-marker-shadow leaflet-zoom-animated\" alt=\"\" style=\"margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(166px, 226px, 0px);\">",
+          "html": "<img src=\"https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png\" class=\"leaflet-marker-shadow leaflet-zoom-animated\" alt=\"\" style=\"margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(166px, 216px, 0px);\">",
           "target": [
             ".leaflet-marker-shadow"
           ]
@@ -5411,6 +5411,42 @@
           "all": [],
           "none": [],
           "impact": null,
+          "html": "<button class=\"btn-mini\" onclick=\"viewDetails('04/04/2026')\">\n              <i class=\"fa-solid fa-circle-info\"></i> Détail du tirage\n            </button>",
+          "target": [
+            "button[onclick=\"viewDetails('04/04/2026')\"]"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "button-has-visible-text",
+              "data": null,
+              "relatedNodes": [],
+              "impact": "critical",
+              "message": "Element has inner text that is visible to screen readers"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<button class=\"btn-mini\" onclick=\"viewDetails('01/04/2026')\">\n              <i class=\"fa-solid fa-circle-info\"></i> Détail du tirage\n            </button>",
+          "target": [
+            "button[onclick=\"viewDetails('01/04/2026')\"]"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "button-has-visible-text",
+              "data": null,
+              "relatedNodes": [],
+              "impact": "critical",
+              "message": "Element has inner text that is visible to screen readers"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
           "html": "<button class=\"btn-mini\" onclick=\"viewDetails('30/03/2026')\">\n              <i class=\"fa-solid fa-circle-info\"></i> Détail du tirage\n            </button>",
           "target": [
             "button[onclick=\"viewDetails('30/03/2026')\"]"
@@ -5468,42 +5504,6 @@
           "html": "<button class=\"btn-mini\" onclick=\"viewDetails('23/03/2026')\">\n              <i class=\"fa-solid fa-circle-info\"></i> Détail du tirage\n            </button>",
           "target": [
             "button[onclick=\"viewDetails('23/03/2026')\"]"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "button-has-visible-text",
-              "data": null,
-              "relatedNodes": [],
-              "impact": "critical",
-              "message": "Element has inner text that is visible to screen readers"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<button class=\"btn-mini\" onclick=\"viewDetails('21/03/2026')\">\n              <i class=\"fa-solid fa-circle-info\"></i> Détail du tirage\n            </button>",
-          "target": [
-            "button[onclick=\"viewDetails('21/03/2026')\"]"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "button-has-visible-text",
-              "data": null,
-              "relatedNodes": [],
-              "impact": "critical",
-              "message": "Element has inner text that is visible to screen readers"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<button class=\"btn-mini\" onclick=\"viewDetails('18/03/2026')\">\n              <i class=\"fa-solid fa-circle-info\"></i> Détail du tirage\n            </button>",
-          "target": [
-            "button[onclick=\"viewDetails('18/03/2026')\"]"
           ]
         },
         {
@@ -5773,37 +5773,37 @@
                   ]
                 },
                 {
-                  "html": "<h3>Lundi 30/03/2026</h3>",
+                  "html": "<h3>Samedi 04/04/2026</h3>",
                   "target": [
                     "article:nth-child(1) > h3"
                   ]
                 },
                 {
-                  "html": "<h3>Samedi 28/03/2026</h3>",
+                  "html": "<h3>Mercredi 01/04/2026</h3>",
                   "target": [
                     "article:nth-child(2) > h3"
                   ]
                 },
                 {
-                  "html": "<h3>Mercredi 25/03/2026</h3>",
+                  "html": "<h3>Lundi 30/03/2026</h3>",
                   "target": [
                     "article:nth-child(3) > h3"
                   ]
                 },
                 {
-                  "html": "<h3>Lundi 23/03/2026</h3>",
+                  "html": "<h3>Samedi 28/03/2026</h3>",
                   "target": [
                     "article:nth-child(4) > h3"
                   ]
                 },
                 {
-                  "html": "<h3>Samedi 21/03/2026</h3>",
+                  "html": "<h3>Mercredi 25/03/2026</h3>",
                   "target": [
                     "article:nth-child(5) > h3"
                   ]
                 },
                 {
-                  "html": "<h3>Mercredi 18/03/2026</h3>",
+                  "html": "<h3>Lundi 23/03/2026</h3>",
                   "target": [
                     "article:nth-child(6) > h3"
                   ]
@@ -5815,7 +5815,7 @@
                   ]
                 },
                 {
-                  "html": "<h2><i class=\"fa-solid fa-map-location-dot\"></i> Points de ventes proches (30 km)</h2>",
+                  "html": "<h2><i class=\"fa-solid fa-map-location-dot\"></i> Points de vente à proximité (30 km)</h2>",
                   "target": [
                     ".map-head > div:nth-child(1) > h2"
                   ]
@@ -5919,7 +5919,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<div class=\"brand-sub\" id=\"currentTime\">Heure de Paris : 19:39:51</div>",
+          "html": "<div class=\"brand-sub\" id=\"currentTime\">Heure de Paris : 22:45:09</div>",
           "target": [
             "#currentTime"
           ]
@@ -6169,7 +6169,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<h3>Lundi 30/03/2026</h3>",
+          "html": "<h3>Samedi 04/04/2026</h3>",
           "target": [
             "article:nth-child(1) > h3"
           ]
@@ -6194,7 +6194,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<span class=\"ball\">10</span>",
+          "html": "<span class=\"ball\">5</span>",
           "target": [
             "article:nth-child(1) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(1)"
           ]
@@ -6219,7 +6219,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<span class=\"ball\">47</span>",
+          "html": "<span class=\"ball\">6</span>",
           "target": [
             "article:nth-child(1) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(2)"
           ]
@@ -6244,7 +6244,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<span class=\"ball\">8</span>",
+          "html": "<span class=\"ball\">36</span>",
           "target": [
             "article:nth-child(1) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(3)"
           ]
@@ -6269,7 +6269,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<span class=\"ball\">28</span>",
+          "html": "<span class=\"ball\">7</span>",
           "target": [
             "article:nth-child(1) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(4)"
           ]
@@ -6294,7 +6294,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<span class=\"ball\">29</span>",
+          "html": "<span class=\"ball\">21</span>",
           "target": [
             "article:nth-child(1) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(5)"
           ]
@@ -6319,7 +6319,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<span class=\"ball chance\">5</span>",
+          "html": "<span class=\"ball chance\">6</span>",
           "target": [
             "article:nth-child(1) > .balls[aria-label=\"Résultat\"] > .chance.ball"
           ]
@@ -6344,9 +6344,9 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<button class=\"btn-mini\" onclick=\"viewDetails('30/03/2026')\">\n              <i class=\"fa-solid fa-circle-info\"></i> Détail du tirage\n            </button>",
+          "html": "<button class=\"btn-mini\" onclick=\"viewDetails('04/04/2026')\">\n              <i class=\"fa-solid fa-circle-info\"></i> Détail du tirage\n            </button>",
           "target": [
-            "button[onclick=\"viewDetails('30/03/2026')\"]"
+            "button[onclick=\"viewDetails('04/04/2026')\"]"
           ]
         },
         {
@@ -6369,7 +6369,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<h3>Samedi 28/03/2026</h3>",
+          "html": "<h3>Mercredi 01/04/2026</h3>",
           "target": [
             "article:nth-child(2) > h3"
           ]
@@ -6394,7 +6394,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<span class=\"ball\">38</span>",
+          "html": "<span class=\"ball\">43</span>",
           "target": [
             "article:nth-child(2) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(1)"
           ]
@@ -6419,7 +6419,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<span class=\"ball\">30</span>",
+          "html": "<span class=\"ball\">34</span>",
           "target": [
             "article:nth-child(2) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(2)"
           ]
@@ -6444,7 +6444,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<span class=\"ball\">28</span>",
+          "html": "<span class=\"ball\">47</span>",
           "target": [
             "article:nth-child(2) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(3)"
           ]
@@ -6469,7 +6469,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<span class=\"ball\">17</span>",
+          "html": "<span class=\"ball\">23</span>",
           "target": [
             "article:nth-child(2) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(4)"
           ]
@@ -6494,7 +6494,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<span class=\"ball\">45</span>",
+          "html": "<span class=\"ball\">3</span>",
           "target": [
             "article:nth-child(2) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(5)"
           ]
@@ -6519,9 +6519,9 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<button class=\"btn-mini\" onclick=\"viewDetails('28/03/2026')\">\n              <i class=\"fa-solid fa-circle-info\"></i> Détail du tirage\n            </button>",
+          "html": "<button class=\"btn-mini\" onclick=\"viewDetails('01/04/2026')\">\n              <i class=\"fa-solid fa-circle-info\"></i> Détail du tirage\n            </button>",
           "target": [
-            "button[onclick=\"viewDetails('28/03/2026')\"]"
+            "button[onclick=\"viewDetails('01/04/2026')\"]"
           ]
         },
         {
@@ -6544,7 +6544,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<h3>Mercredi 25/03/2026</h3>",
+          "html": "<h3>Lundi 30/03/2026</h3>",
           "target": [
             "article:nth-child(3) > h3"
           ]
@@ -6569,7 +6569,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<span class=\"ball\">48</span>",
+          "html": "<span class=\"ball\">10</span>",
           "target": [
             "article:nth-child(3) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(1)"
           ]
@@ -6594,7 +6594,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<span class=\"ball\">30</span>",
+          "html": "<span class=\"ball\">47</span>",
           "target": [
             "article:nth-child(3) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(2)"
           ]
@@ -6619,7 +6619,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<span class=\"ball\">19</span>",
+          "html": "<span class=\"ball\">8</span>",
           "target": [
             "article:nth-child(3) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(3)"
           ]
@@ -6669,7 +6669,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<span class=\"ball\">35</span>",
+          "html": "<span class=\"ball\">29</span>",
           "target": [
             "article:nth-child(3) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(5)"
           ]
@@ -6719,6 +6719,406 @@
           "all": [],
           "none": [],
           "impact": null,
+          "html": "<button class=\"btn-mini\" onclick=\"viewDetails('30/03/2026')\">\n              <i class=\"fa-solid fa-circle-info\"></i> Détail du tirage\n            </button>",
+          "target": [
+            "button[onclick=\"viewDetails('30/03/2026')\"]"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "fgColor": "#edeeef",
+                "bgColor": "#242a34",
+                "contrastRatio": 12.41,
+                "fontSize": "11.8pt (15.68px)",
+                "fontWeight": "bold",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element has sufficient color contrast of 12.41"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<h3>Samedi 28/03/2026</h3>",
+          "target": [
+            "article:nth-child(4) > h3"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "fgColor": "#ffffff",
+                "bgColor": "#2a4065",
+                "contrastRatio": 10.39,
+                "fontSize": "9.0pt (12px)",
+                "fontWeight": "bold",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element has sufficient color contrast of 10.39"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<span class=\"ball\">38</span>",
+          "target": [
+            "article:nth-child(4) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(1)"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "fgColor": "#ffffff",
+                "bgColor": "#2a4065",
+                "contrastRatio": 10.39,
+                "fontSize": "9.0pt (12px)",
+                "fontWeight": "bold",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element has sufficient color contrast of 10.39"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<span class=\"ball\">30</span>",
+          "target": [
+            "article:nth-child(4) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(2)"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "fgColor": "#ffffff",
+                "bgColor": "#2a4065",
+                "contrastRatio": 10.39,
+                "fontSize": "9.0pt (12px)",
+                "fontWeight": "bold",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element has sufficient color contrast of 10.39"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<span class=\"ball\">28</span>",
+          "target": [
+            "article:nth-child(4) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(3)"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "fgColor": "#ffffff",
+                "bgColor": "#2a4065",
+                "contrastRatio": 10.39,
+                "fontSize": "9.0pt (12px)",
+                "fontWeight": "bold",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element has sufficient color contrast of 10.39"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<span class=\"ball\">17</span>",
+          "target": [
+            "article:nth-child(4) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(4)"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "fgColor": "#ffffff",
+                "bgColor": "#2a4065",
+                "contrastRatio": 10.39,
+                "fontSize": "9.0pt (12px)",
+                "fontWeight": "bold",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element has sufficient color contrast of 10.39"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<span class=\"ball\">45</span>",
+          "target": [
+            "article:nth-child(4) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(5)"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "fgColor": "#ffffff",
+                "bgColor": "#513038",
+                "contrastRatio": 11.47,
+                "fontSize": "9.0pt (12px)",
+                "fontWeight": "bold",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element has sufficient color contrast of 11.47"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<span class=\"ball chance\">6</span>",
+          "target": [
+            "article:nth-child(4) > .balls[aria-label=\"Résultat\"] > .chance.ball"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "fgColor": "#e9eefc",
+                "bgColor": "#313740",
+                "contrastRatio": 10.33,
+                "fontSize": "12.0pt (16px)",
+                "fontWeight": "bold",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element has sufficient color contrast of 10.33"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<button class=\"btn-mini\" onclick=\"viewDetails('28/03/2026')\">\n              <i class=\"fa-solid fa-circle-info\"></i> Détail du tirage\n            </button>",
+          "target": [
+            "button[onclick=\"viewDetails('28/03/2026')\"]"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "fgColor": "#edeeef",
+                "bgColor": "#242a34",
+                "contrastRatio": 12.41,
+                "fontSize": "11.8pt (15.68px)",
+                "fontWeight": "bold",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element has sufficient color contrast of 12.41"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<h3>Mercredi 25/03/2026</h3>",
+          "target": [
+            "article:nth-child(5) > h3"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "fgColor": "#ffffff",
+                "bgColor": "#2a4065",
+                "contrastRatio": 10.39,
+                "fontSize": "9.0pt (12px)",
+                "fontWeight": "bold",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element has sufficient color contrast of 10.39"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<span class=\"ball\">48</span>",
+          "target": [
+            "article:nth-child(5) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(1)"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "fgColor": "#ffffff",
+                "bgColor": "#2a4065",
+                "contrastRatio": 10.39,
+                "fontSize": "9.0pt (12px)",
+                "fontWeight": "bold",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element has sufficient color contrast of 10.39"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<span class=\"ball\">30</span>",
+          "target": [
+            "article:nth-child(5) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(2)"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "fgColor": "#ffffff",
+                "bgColor": "#2a4065",
+                "contrastRatio": 10.39,
+                "fontSize": "9.0pt (12px)",
+                "fontWeight": "bold",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element has sufficient color contrast of 10.39"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<span class=\"ball\">19</span>",
+          "target": [
+            "article:nth-child(5) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(3)"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "fgColor": "#ffffff",
+                "bgColor": "#2a4065",
+                "contrastRatio": 10.39,
+                "fontSize": "9.0pt (12px)",
+                "fontWeight": "bold",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element has sufficient color contrast of 10.39"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<span class=\"ball\">28</span>",
+          "target": [
+            "article:nth-child(5) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(4)"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "fgColor": "#ffffff",
+                "bgColor": "#2a4065",
+                "contrastRatio": 10.39,
+                "fontSize": "9.0pt (12px)",
+                "fontWeight": "bold",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element has sufficient color contrast of 10.39"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<span class=\"ball\">35</span>",
+          "target": [
+            "article:nth-child(5) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(5)"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "fgColor": "#ffffff",
+                "bgColor": "#513038",
+                "contrastRatio": 11.47,
+                "fontSize": "9.0pt (12px)",
+                "fontWeight": "bold",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element has sufficient color contrast of 11.47"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<span class=\"ball chance\">5</span>",
+          "target": [
+            "article:nth-child(5) > .balls[aria-label=\"Résultat\"] > .chance.ball"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "color-contrast",
+              "data": {
+                "fgColor": "#e9eefc",
+                "bgColor": "#313740",
+                "contrastRatio": 10.33,
+                "fontSize": "12.0pt (16px)",
+                "fontWeight": "bold",
+                "expectedContrastRatio": "4.5:1"
+              },
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element has sufficient color contrast of 10.33"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
           "html": "<button class=\"btn-mini\" onclick=\"viewDetails('25/03/2026')\">\n              <i class=\"fa-solid fa-circle-info\"></i> Détail du tirage\n            </button>",
           "target": [
             "button[onclick=\"viewDetails('25/03/2026')\"]"
@@ -6746,7 +7146,7 @@
           "impact": null,
           "html": "<h3>Lundi 23/03/2026</h3>",
           "target": [
-            "article:nth-child(4) > h3"
+            "article:nth-child(6) > h3"
           ]
         },
         {
@@ -6771,7 +7171,7 @@
           "impact": null,
           "html": "<span class=\"ball\">30</span>",
           "target": [
-            "article:nth-child(4) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(1)"
+            "article:nth-child(6) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(1)"
           ]
         },
         {
@@ -6796,7 +7196,7 @@
           "impact": null,
           "html": "<span class=\"ball\">9</span>",
           "target": [
-            "article:nth-child(4) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(2)"
+            "article:nth-child(6) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(2)"
           ]
         },
         {
@@ -6821,7 +7221,7 @@
           "impact": null,
           "html": "<span class=\"ball\">42</span>",
           "target": [
-            "article:nth-child(4) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(3)"
+            "article:nth-child(6) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(3)"
           ]
         },
         {
@@ -6846,7 +7246,7 @@
           "impact": null,
           "html": "<span class=\"ball\">38</span>",
           "target": [
-            "article:nth-child(4) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(4)"
+            "article:nth-child(6) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(4)"
           ]
         },
         {
@@ -6871,7 +7271,7 @@
           "impact": null,
           "html": "<span class=\"ball\">3</span>",
           "target": [
-            "article:nth-child(4) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(5)"
+            "article:nth-child(6) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(5)"
           ]
         },
         {
@@ -6896,7 +7296,7 @@
           "impact": null,
           "html": "<span class=\"ball chance\">4</span>",
           "target": [
-            "article:nth-child(4) > .balls[aria-label=\"Résultat\"] > .chance.ball"
+            "article:nth-child(6) > .balls[aria-label=\"Résultat\"] > .chance.ball"
           ]
         },
         {
@@ -6922,406 +7322,6 @@
           "html": "<button class=\"btn-mini\" onclick=\"viewDetails('23/03/2026')\">\n              <i class=\"fa-solid fa-circle-info\"></i> Détail du tirage\n            </button>",
           "target": [
             "button[onclick=\"viewDetails('23/03/2026')\"]"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#edeeef",
-                "bgColor": "#242a34",
-                "contrastRatio": 12.41,
-                "fontSize": "11.8pt (15.68px)",
-                "fontWeight": "bold",
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [],
-              "impact": "serious",
-              "message": "Element has sufficient color contrast of 12.41"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<h3>Samedi 21/03/2026</h3>",
-          "target": [
-            "article:nth-child(5) > h3"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#ffffff",
-                "bgColor": "#2a4065",
-                "contrastRatio": 10.39,
-                "fontSize": "9.0pt (12px)",
-                "fontWeight": "bold",
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [],
-              "impact": "serious",
-              "message": "Element has sufficient color contrast of 10.39"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<span class=\"ball\">3</span>",
-          "target": [
-            "article:nth-child(5) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(1)"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#ffffff",
-                "bgColor": "#2a4065",
-                "contrastRatio": 10.39,
-                "fontSize": "9.0pt (12px)",
-                "fontWeight": "bold",
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [],
-              "impact": "serious",
-              "message": "Element has sufficient color contrast of 10.39"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<span class=\"ball\">45</span>",
-          "target": [
-            "article:nth-child(5) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(2)"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#ffffff",
-                "bgColor": "#2a4065",
-                "contrastRatio": 10.39,
-                "fontSize": "9.0pt (12px)",
-                "fontWeight": "bold",
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [],
-              "impact": "serious",
-              "message": "Element has sufficient color contrast of 10.39"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<span class=\"ball\">33</span>",
-          "target": [
-            "article:nth-child(5) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(3)"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#ffffff",
-                "bgColor": "#2a4065",
-                "contrastRatio": 10.39,
-                "fontSize": "9.0pt (12px)",
-                "fontWeight": "bold",
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [],
-              "impact": "serious",
-              "message": "Element has sufficient color contrast of 10.39"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<span class=\"ball\">19</span>",
-          "target": [
-            "article:nth-child(5) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(4)"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#ffffff",
-                "bgColor": "#2a4065",
-                "contrastRatio": 10.39,
-                "fontSize": "9.0pt (12px)",
-                "fontWeight": "bold",
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [],
-              "impact": "serious",
-              "message": "Element has sufficient color contrast of 10.39"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<span class=\"ball\">24</span>",
-          "target": [
-            "article:nth-child(5) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(5)"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#ffffff",
-                "bgColor": "#513038",
-                "contrastRatio": 11.47,
-                "fontSize": "9.0pt (12px)",
-                "fontWeight": "bold",
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [],
-              "impact": "serious",
-              "message": "Element has sufficient color contrast of 11.47"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<span class=\"ball chance\">10</span>",
-          "target": [
-            "article:nth-child(5) > .balls[aria-label=\"Résultat\"] > .chance.ball"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#e9eefc",
-                "bgColor": "#313740",
-                "contrastRatio": 10.33,
-                "fontSize": "12.0pt (16px)",
-                "fontWeight": "bold",
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [],
-              "impact": "serious",
-              "message": "Element has sufficient color contrast of 10.33"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<button class=\"btn-mini\" onclick=\"viewDetails('21/03/2026')\">\n              <i class=\"fa-solid fa-circle-info\"></i> Détail du tirage\n            </button>",
-          "target": [
-            "button[onclick=\"viewDetails('21/03/2026')\"]"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#edeeef",
-                "bgColor": "#242a34",
-                "contrastRatio": 12.41,
-                "fontSize": "11.8pt (15.68px)",
-                "fontWeight": "bold",
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [],
-              "impact": "serious",
-              "message": "Element has sufficient color contrast of 12.41"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<h3>Mercredi 18/03/2026</h3>",
-          "target": [
-            "article:nth-child(6) > h3"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#ffffff",
-                "bgColor": "#2a4065",
-                "contrastRatio": 10.39,
-                "fontSize": "9.0pt (12px)",
-                "fontWeight": "bold",
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [],
-              "impact": "serious",
-              "message": "Element has sufficient color contrast of 10.39"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<span class=\"ball\">13</span>",
-          "target": [
-            "article:nth-child(6) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(1)"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#ffffff",
-                "bgColor": "#2a4065",
-                "contrastRatio": 10.39,
-                "fontSize": "9.0pt (12px)",
-                "fontWeight": "bold",
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [],
-              "impact": "serious",
-              "message": "Element has sufficient color contrast of 10.39"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<span class=\"ball\">18</span>",
-          "target": [
-            "article:nth-child(6) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(2)"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#ffffff",
-                "bgColor": "#2a4065",
-                "contrastRatio": 10.39,
-                "fontSize": "9.0pt (12px)",
-                "fontWeight": "bold",
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [],
-              "impact": "serious",
-              "message": "Element has sufficient color contrast of 10.39"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<span class=\"ball\">8</span>",
-          "target": [
-            "article:nth-child(6) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(3)"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#ffffff",
-                "bgColor": "#2a4065",
-                "contrastRatio": 10.39,
-                "fontSize": "9.0pt (12px)",
-                "fontWeight": "bold",
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [],
-              "impact": "serious",
-              "message": "Element has sufficient color contrast of 10.39"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<span class=\"ball\">48</span>",
-          "target": [
-            "article:nth-child(6) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(4)"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#ffffff",
-                "bgColor": "#2a4065",
-                "contrastRatio": 10.39,
-                "fontSize": "9.0pt (12px)",
-                "fontWeight": "bold",
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [],
-              "impact": "serious",
-              "message": "Element has sufficient color contrast of 10.39"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<span class=\"ball\">45</span>",
-          "target": [
-            "article:nth-child(6) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(5)"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#ffffff",
-                "bgColor": "#513038",
-                "contrastRatio": 11.47,
-                "fontSize": "9.0pt (12px)",
-                "fontWeight": "bold",
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [],
-              "impact": "serious",
-              "message": "Element has sufficient color contrast of 11.47"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<span class=\"ball chance\">7</span>",
-          "target": [
-            "article:nth-child(6) > .balls[aria-label=\"Résultat\"] > .chance.ball"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "color-contrast",
-              "data": {
-                "fgColor": "#e9eefc",
-                "bgColor": "#313740",
-                "contrastRatio": 10.33,
-                "fontSize": "12.0pt (16px)",
-                "fontWeight": "bold",
-                "expectedContrastRatio": "4.5:1"
-              },
-              "relatedNodes": [],
-              "impact": "serious",
-              "message": "Element has sufficient color contrast of 10.33"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<button class=\"btn-mini\" onclick=\"viewDetails('18/03/2026')\">\n              <i class=\"fa-solid fa-circle-info\"></i> Détail du tirage\n            </button>",
-          "target": [
-            "button[onclick=\"viewDetails('18/03/2026')\"]"
           ]
         },
         {
@@ -7494,7 +7494,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<h2><i class=\"fa-solid fa-map-location-dot\"></i> Points de ventes proches (30 km)</h2>",
+          "html": "<h2><i class=\"fa-solid fa-map-location-dot\"></i> Points de vente à proximité (30 km)</h2>",
           "target": [
             ".map-head > div:nth-child(1) > h2"
           ]
@@ -7740,7 +7740,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<h3>Lundi 30/03/2026</h3>",
+          "html": "<h3>Samedi 04/04/2026</h3>",
           "target": [
             "article:nth-child(1) > h3"
           ]
@@ -7758,7 +7758,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<h3>Samedi 28/03/2026</h3>",
+          "html": "<h3>Mercredi 01/04/2026</h3>",
           "target": [
             "article:nth-child(2) > h3"
           ]
@@ -7776,7 +7776,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<h3>Mercredi 25/03/2026</h3>",
+          "html": "<h3>Lundi 30/03/2026</h3>",
           "target": [
             "article:nth-child(3) > h3"
           ]
@@ -7794,7 +7794,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<h3>Lundi 23/03/2026</h3>",
+          "html": "<h3>Samedi 28/03/2026</h3>",
           "target": [
             "article:nth-child(4) > h3"
           ]
@@ -7812,7 +7812,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<h3>Samedi 21/03/2026</h3>",
+          "html": "<h3>Mercredi 25/03/2026</h3>",
           "target": [
             "article:nth-child(5) > h3"
           ]
@@ -7830,7 +7830,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<h3>Mercredi 18/03/2026</h3>",
+          "html": "<h3>Lundi 23/03/2026</h3>",
           "target": [
             "article:nth-child(6) > h3"
           ]
@@ -7866,7 +7866,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<h2><i class=\"fa-solid fa-map-location-dot\"></i> Points de ventes proches (30 km)</h2>",
+          "html": "<h2><i class=\"fa-solid fa-map-location-dot\"></i> Points de vente à proximité (30 km)</h2>",
           "target": [
             ".map-head > div:nth-child(1) > h2"
           ]
@@ -8090,7 +8090,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<h3>Lundi 30/03/2026</h3>",
+          "html": "<h3>Samedi 04/04/2026</h3>",
           "target": [
             "article:nth-child(1) > h3"
           ]
@@ -8108,7 +8108,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<h3>Samedi 28/03/2026</h3>",
+          "html": "<h3>Mercredi 01/04/2026</h3>",
           "target": [
             "article:nth-child(2) > h3"
           ]
@@ -8126,7 +8126,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<h3>Mercredi 25/03/2026</h3>",
+          "html": "<h3>Lundi 30/03/2026</h3>",
           "target": [
             "article:nth-child(3) > h3"
           ]
@@ -8144,7 +8144,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<h3>Lundi 23/03/2026</h3>",
+          "html": "<h3>Samedi 28/03/2026</h3>",
           "target": [
             "article:nth-child(4) > h3"
           ]
@@ -8162,7 +8162,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<h3>Samedi 21/03/2026</h3>",
+          "html": "<h3>Mercredi 25/03/2026</h3>",
           "target": [
             "article:nth-child(5) > h3"
           ]
@@ -8180,7 +8180,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<h3>Mercredi 18/03/2026</h3>",
+          "html": "<h3>Lundi 23/03/2026</h3>",
           "target": [
             "article:nth-child(6) > h3"
           ]
@@ -8216,7 +8216,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<h2><i class=\"fa-solid fa-map-location-dot\"></i> Points de ventes proches (30 km)</h2>",
+          "html": "<h2><i class=\"fa-solid fa-map-location-dot\"></i> Points de vente à proximité (30 km)</h2>",
           "target": [
             ".map-head > div:nth-child(1) > h2"
           ]
@@ -8362,7 +8362,7 @@
             }
           ],
           "impact": null,
-          "html": "<img src=\"assets/img/loto_tracker.png\" alt=\"Loto Tracker\" class=\"brand-logo\">",
+          "html": "<img src=\"assets/img/loto_tracker.webp\" width=\"90\" height=\"90\" alt=\"Loto Tracker\" class=\"brand-logo\" loading=\"lazy\">",
           "target": [
             ".brand-logo"
           ]
@@ -8397,7 +8397,7 @@
             }
           ],
           "impact": null,
-          "html": "<img alt=\"\" src=\"https://c.tile.openstreetmap.org/11/1014/710.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(49px, -8px, 0px); opacity: 1;\">",
+          "html": "<img alt=\"\" src=\"https://c.tile.openstreetmap.org/11/1014/710.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(49px, -18px, 0px); opacity: 1;\">",
           "target": [
             ".leaflet-tile.leaflet-tile-loaded[alt=\"\"]:nth-child(1)"
           ]
@@ -8432,7 +8432,7 @@
             }
           ],
           "impact": null,
-          "html": "<img alt=\"\" src=\"https://a.tile.openstreetmap.org/11/1014/711.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(49px, 248px, 0px); opacity: 1;\">",
+          "html": "<img alt=\"\" src=\"https://a.tile.openstreetmap.org/11/1014/711.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(49px, 238px, 0px); opacity: 1;\">",
           "target": [
             ".leaflet-tile.leaflet-tile-loaded[alt=\"\"]:nth-child(2)"
           ]
@@ -8467,7 +8467,7 @@
             }
           ],
           "impact": null,
-          "html": "<img alt=\"\" src=\"https://b.tile.openstreetmap.org/11/1013/710.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(-207px, -8px, 0px); opacity: 1;\">",
+          "html": "<img alt=\"\" src=\"https://b.tile.openstreetmap.org/11/1013/710.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(-207px, -18px, 0px); opacity: 1;\">",
           "target": [
             ".leaflet-tile.leaflet-tile-loaded[alt=\"\"]:nth-child(3)"
           ]
@@ -8502,7 +8502,7 @@
             }
           ],
           "impact": null,
-          "html": "<img alt=\"\" src=\"https://a.tile.openstreetmap.org/11/1015/710.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(305px, -8px, 0px); opacity: 1;\">",
+          "html": "<img alt=\"\" src=\"https://a.tile.openstreetmap.org/11/1015/710.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(305px, -18px, 0px); opacity: 1;\">",
           "target": [
             ".leaflet-tile.leaflet-tile-loaded[alt=\"\"]:nth-child(4)"
           ]
@@ -8537,7 +8537,7 @@
             }
           ],
           "impact": null,
-          "html": "<img alt=\"\" src=\"https://c.tile.openstreetmap.org/11/1013/711.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(-207px, 248px, 0px); opacity: 1;\">",
+          "html": "<img alt=\"\" src=\"https://c.tile.openstreetmap.org/11/1013/711.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(-207px, 238px, 0px); opacity: 1;\">",
           "target": [
             ".leaflet-tile.leaflet-tile-loaded[alt=\"\"]:nth-child(5)"
           ]
@@ -8572,7 +8572,7 @@
             }
           ],
           "impact": null,
-          "html": "<img alt=\"\" src=\"https://b.tile.openstreetmap.org/11/1015/711.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(305px, 248px, 0px); opacity: 1;\">",
+          "html": "<img alt=\"\" src=\"https://b.tile.openstreetmap.org/11/1015/711.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(305px, 238px, 0px); opacity: 1;\">",
           "target": [
             ".leaflet-tile.leaflet-tile-loaded[alt=\"\"]:nth-child(6)"
           ]
@@ -8607,7 +8607,7 @@
             }
           ],
           "impact": null,
-          "html": "<img src=\"https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png\" class=\"leaflet-marker-shadow leaflet-zoom-animated\" alt=\"\" style=\"margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(166px, 226px, 0px);\">",
+          "html": "<img src=\"https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png\" class=\"leaflet-marker-shadow leaflet-zoom-animated\" alt=\"\" style=\"margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(166px, 216px, 0px);\">",
           "target": [
             ".leaflet-marker-shadow"
           ]
@@ -8664,7 +8664,7 @@
             }
           ],
           "impact": null,
-          "html": "<img src=\"assets/img/loto_tracker.png\" alt=\"Loto Tracker\" class=\"brand-logo\">",
+          "html": "<img src=\"assets/img/loto_tracker.webp\" width=\"90\" height=\"90\" alt=\"Loto Tracker\" class=\"brand-logo\" loading=\"lazy\">",
           "target": [
             ".brand-logo"
           ]
@@ -8682,7 +8682,7 @@
             }
           ],
           "impact": null,
-          "html": "<img alt=\"\" src=\"https://c.tile.openstreetmap.org/11/1014/710.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(49px, -8px, 0px); opacity: 1;\">",
+          "html": "<img alt=\"\" src=\"https://c.tile.openstreetmap.org/11/1014/710.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(49px, -18px, 0px); opacity: 1;\">",
           "target": [
             ".leaflet-tile.leaflet-tile-loaded[alt=\"\"]:nth-child(1)"
           ]
@@ -8700,7 +8700,7 @@
             }
           ],
           "impact": null,
-          "html": "<img alt=\"\" src=\"https://a.tile.openstreetmap.org/11/1014/711.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(49px, 248px, 0px); opacity: 1;\">",
+          "html": "<img alt=\"\" src=\"https://a.tile.openstreetmap.org/11/1014/711.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(49px, 238px, 0px); opacity: 1;\">",
           "target": [
             ".leaflet-tile.leaflet-tile-loaded[alt=\"\"]:nth-child(2)"
           ]
@@ -8718,7 +8718,7 @@
             }
           ],
           "impact": null,
-          "html": "<img alt=\"\" src=\"https://b.tile.openstreetmap.org/11/1013/710.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(-207px, -8px, 0px); opacity: 1;\">",
+          "html": "<img alt=\"\" src=\"https://b.tile.openstreetmap.org/11/1013/710.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(-207px, -18px, 0px); opacity: 1;\">",
           "target": [
             ".leaflet-tile.leaflet-tile-loaded[alt=\"\"]:nth-child(3)"
           ]
@@ -8736,7 +8736,7 @@
             }
           ],
           "impact": null,
-          "html": "<img alt=\"\" src=\"https://a.tile.openstreetmap.org/11/1015/710.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(305px, -8px, 0px); opacity: 1;\">",
+          "html": "<img alt=\"\" src=\"https://a.tile.openstreetmap.org/11/1015/710.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(305px, -18px, 0px); opacity: 1;\">",
           "target": [
             ".leaflet-tile.leaflet-tile-loaded[alt=\"\"]:nth-child(4)"
           ]
@@ -8754,7 +8754,7 @@
             }
           ],
           "impact": null,
-          "html": "<img alt=\"\" src=\"https://c.tile.openstreetmap.org/11/1013/711.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(-207px, 248px, 0px); opacity: 1;\">",
+          "html": "<img alt=\"\" src=\"https://c.tile.openstreetmap.org/11/1013/711.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(-207px, 238px, 0px); opacity: 1;\">",
           "target": [
             ".leaflet-tile.leaflet-tile-loaded[alt=\"\"]:nth-child(5)"
           ]
@@ -8772,7 +8772,7 @@
             }
           ],
           "impact": null,
-          "html": "<img alt=\"\" src=\"https://b.tile.openstreetmap.org/11/1015/711.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(305px, 248px, 0px); opacity: 1;\">",
+          "html": "<img alt=\"\" src=\"https://b.tile.openstreetmap.org/11/1015/711.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(305px, 238px, 0px); opacity: 1;\">",
           "target": [
             ".leaflet-tile.leaflet-tile-loaded[alt=\"\"]:nth-child(6)"
           ]
@@ -8790,7 +8790,7 @@
             }
           ],
           "impact": null,
-          "html": "<img src=\"https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png\" class=\"leaflet-marker-shadow leaflet-zoom-animated\" alt=\"\" style=\"margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(166px, 226px, 0px);\">",
+          "html": "<img src=\"https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png\" class=\"leaflet-marker-shadow leaflet-zoom-animated\" alt=\"\" style=\"margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(166px, 216px, 0px);\">",
           "target": [
             ".leaflet-marker-shadow"
           ]
@@ -9825,7 +9825,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<img src=\"assets/img/loto_tracker.png\" alt=\"Loto Tracker\" class=\"brand-logo\">",
+          "html": "<img src=\"assets/img/loto_tracker.webp\" width=\"90\" height=\"90\" alt=\"Loto Tracker\" class=\"brand-logo\" loading=\"lazy\">",
           "target": [
             ".brand-logo"
           ]
@@ -9864,6 +9864,42 @@
           "html": "<button class=\"btn-primary-app\" onclick=\"showPrediction()\">\n            Stats du prochain tirage\n          </button>",
           "target": [
             "button[onclick=\"showPrediction()\"]"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "no-focusable-content",
+              "data": null,
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element does not have focusable descendants"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<button class=\"btn-mini\" onclick=\"viewDetails('04/04/2026')\">\n              <i class=\"fa-solid fa-circle-info\"></i> Détail du tirage\n            </button>",
+          "target": [
+            "button[onclick=\"viewDetails('04/04/2026')\"]"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "no-focusable-content",
+              "data": null,
+              "relatedNodes": [],
+              "impact": "serious",
+              "message": "Element does not have focusable descendants"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<button class=\"btn-mini\" onclick=\"viewDetails('01/04/2026')\">\n              <i class=\"fa-solid fa-circle-info\"></i> Détail du tirage\n            </button>",
+          "target": [
+            "button[onclick=\"viewDetails('01/04/2026')\"]"
           ]
         },
         {
@@ -9936,42 +9972,6 @@
           "html": "<button class=\"btn-mini\" onclick=\"viewDetails('23/03/2026')\">\n              <i class=\"fa-solid fa-circle-info\"></i> Détail du tirage\n            </button>",
           "target": [
             "button[onclick=\"viewDetails('23/03/2026')\"]"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "no-focusable-content",
-              "data": null,
-              "relatedNodes": [],
-              "impact": "serious",
-              "message": "Element does not have focusable descendants"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<button class=\"btn-mini\" onclick=\"viewDetails('21/03/2026')\">\n              <i class=\"fa-solid fa-circle-info\"></i> Détail du tirage\n            </button>",
-          "target": [
-            "button[onclick=\"viewDetails('21/03/2026')\"]"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "no-focusable-content",
-              "data": null,
-              "relatedNodes": [],
-              "impact": "serious",
-              "message": "Element does not have focusable descendants"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<button class=\"btn-mini\" onclick=\"viewDetails('18/03/2026')\">\n              <i class=\"fa-solid fa-circle-info\"></i> Détail du tirage\n            </button>",
-          "target": [
-            "button[onclick=\"viewDetails('18/03/2026')\"]"
           ]
         },
         {
@@ -10316,7 +10316,7 @@
             }
           ],
           "impact": null,
-          "html": "<img alt=\"\" src=\"https://c.tile.openstreetmap.org/11/1014/710.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(49px, -8px, 0px); opacity: 1;\">",
+          "html": "<img alt=\"\" src=\"https://c.tile.openstreetmap.org/11/1014/710.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(49px, -18px, 0px); opacity: 1;\">",
           "target": [
             ".leaflet-tile.leaflet-tile-loaded[alt=\"\"]:nth-child(1)"
           ]
@@ -10341,7 +10341,7 @@
             }
           ],
           "impact": null,
-          "html": "<img alt=\"\" src=\"https://a.tile.openstreetmap.org/11/1014/711.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(49px, 248px, 0px); opacity: 1;\">",
+          "html": "<img alt=\"\" src=\"https://a.tile.openstreetmap.org/11/1014/711.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(49px, 238px, 0px); opacity: 1;\">",
           "target": [
             ".leaflet-tile.leaflet-tile-loaded[alt=\"\"]:nth-child(2)"
           ]
@@ -10366,7 +10366,7 @@
             }
           ],
           "impact": null,
-          "html": "<img alt=\"\" src=\"https://b.tile.openstreetmap.org/11/1013/710.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(-207px, -8px, 0px); opacity: 1;\">",
+          "html": "<img alt=\"\" src=\"https://b.tile.openstreetmap.org/11/1013/710.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(-207px, -18px, 0px); opacity: 1;\">",
           "target": [
             ".leaflet-tile.leaflet-tile-loaded[alt=\"\"]:nth-child(3)"
           ]
@@ -10391,7 +10391,7 @@
             }
           ],
           "impact": null,
-          "html": "<img alt=\"\" src=\"https://a.tile.openstreetmap.org/11/1015/710.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(305px, -8px, 0px); opacity: 1;\">",
+          "html": "<img alt=\"\" src=\"https://a.tile.openstreetmap.org/11/1015/710.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(305px, -18px, 0px); opacity: 1;\">",
           "target": [
             ".leaflet-tile.leaflet-tile-loaded[alt=\"\"]:nth-child(4)"
           ]
@@ -10416,7 +10416,7 @@
             }
           ],
           "impact": null,
-          "html": "<img alt=\"\" src=\"https://c.tile.openstreetmap.org/11/1013/711.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(-207px, 248px, 0px); opacity: 1;\">",
+          "html": "<img alt=\"\" src=\"https://c.tile.openstreetmap.org/11/1013/711.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(-207px, 238px, 0px); opacity: 1;\">",
           "target": [
             ".leaflet-tile.leaflet-tile-loaded[alt=\"\"]:nth-child(5)"
           ]
@@ -10441,7 +10441,7 @@
             }
           ],
           "impact": null,
-          "html": "<img alt=\"\" src=\"https://b.tile.openstreetmap.org/11/1015/711.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(305px, 248px, 0px); opacity: 1;\">",
+          "html": "<img alt=\"\" src=\"https://b.tile.openstreetmap.org/11/1015/711.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(305px, 238px, 0px); opacity: 1;\">",
           "target": [
             ".leaflet-tile.leaflet-tile-loaded[alt=\"\"]:nth-child(6)"
           ]
@@ -10466,7 +10466,7 @@
             }
           ],
           "impact": null,
-          "html": "<img src=\"https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png\" class=\"leaflet-marker-shadow leaflet-zoom-animated\" alt=\"\" style=\"margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(166px, 226px, 0px);\">",
+          "html": "<img src=\"https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png\" class=\"leaflet-marker-shadow leaflet-zoom-animated\" alt=\"\" style=\"margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(166px, 216px, 0px);\">",
           "target": [
             ".leaflet-marker-shadow"
           ]
@@ -10561,7 +10561,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<img src=\"assets/img/loto_tracker.png\" alt=\"Loto Tracker\" class=\"brand-logo\">",
+          "html": "<img src=\"assets/img/loto_tracker.webp\" width=\"90\" height=\"90\" alt=\"Loto Tracker\" class=\"brand-logo\" loading=\"lazy\">",
           "target": [
             ".brand-logo"
           ]
@@ -10581,7 +10581,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<div>\n            <div class=\"brand-title\" id=\"brandTitle\">Tracker du Loto Français</div>\n            <div class=\"brand-sub\" id=\"currentTime\">Heure de Paris : 19:39:51</div>\n          </div>",
+          "html": "<div>\n            <div class=\"brand-title\" id=\"brandTitle\">Tracker du Loto Français</div>\n            <div class=\"brand-sub\" id=\"currentTime\">Heure de Paris : 22:45:09</div>\n          </div>",
           "target": [
             ".brand > div"
           ]
@@ -10621,7 +10621,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<div class=\"brand-sub\" id=\"currentTime\">Heure de Paris : 19:39:51</div>",
+          "html": "<div class=\"brand-sub\" id=\"currentTime\">Heure de Paris : 22:45:09</div>",
           "target": [
             "#currentTime"
           ]
@@ -11281,7 +11281,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<h3>Lundi 30/03/2026</h3>",
+          "html": "<h3>Samedi 04/04/2026</h3>",
           "target": [
             "article:nth-child(1) > h3"
           ]
@@ -11321,7 +11321,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<span class=\"ball\">10</span>",
+          "html": "<span class=\"ball\">5</span>",
           "target": [
             "article:nth-child(1) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(1)"
           ]
@@ -11341,7 +11341,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<span class=\"ball\">47</span>",
+          "html": "<span class=\"ball\">6</span>",
           "target": [
             "article:nth-child(1) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(2)"
           ]
@@ -11361,7 +11361,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<span class=\"ball\">8</span>",
+          "html": "<span class=\"ball\">36</span>",
           "target": [
             "article:nth-child(1) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(3)"
           ]
@@ -11381,7 +11381,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<span class=\"ball\">28</span>",
+          "html": "<span class=\"ball\">7</span>",
           "target": [
             "article:nth-child(1) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(4)"
           ]
@@ -11401,7 +11401,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<span class=\"ball\">29</span>",
+          "html": "<span class=\"ball\">21</span>",
           "target": [
             "article:nth-child(1) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(5)"
           ]
@@ -11421,9 +11421,449 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<span class=\"ball chance\">5</span>",
+          "html": "<span class=\"ball chance\">6</span>",
           "target": [
             "article:nth-child(1) > .balls[aria-label=\"Résultat\"] > .chance.ball"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "region",
+              "data": {
+                "isIframe": false
+              },
+              "relatedNodes": [],
+              "impact": "moderate",
+              "message": "All page content is contained by landmarks"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<button class=\"btn-mini\" onclick=\"viewDetails('04/04/2026')\">\n              <i class=\"fa-solid fa-circle-info\"></i> Détail du tirage\n            </button>",
+          "target": [
+            "button[onclick=\"viewDetails('04/04/2026')\"]"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "region",
+              "data": {
+                "isIframe": false
+              },
+              "relatedNodes": [],
+              "impact": "moderate",
+              "message": "All page content is contained by landmarks"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<i class=\"fa-solid fa-circle-info\"></i>",
+          "target": [
+            "button[onclick=\"viewDetails('04/04/2026')\"] > .fa-circle-info.fa-solid"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "region",
+              "data": {
+                "isIframe": false
+              },
+              "relatedNodes": [],
+              "impact": "moderate",
+              "message": "All page content is contained by landmarks"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<article class=\"result-card\">",
+          "target": [
+            "article:nth-child(2)"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "region",
+              "data": {
+                "isIframe": false
+              },
+              "relatedNodes": [],
+              "impact": "moderate",
+              "message": "All page content is contained by landmarks"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<h3>Mercredi 01/04/2026</h3>",
+          "target": [
+            "article:nth-child(2) > h3"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "region",
+              "data": {
+                "isIframe": false
+              },
+              "relatedNodes": [],
+              "impact": "moderate",
+              "message": "All page content is contained by landmarks"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<div class=\"balls\" aria-label=\"Résultat\">",
+          "target": [
+            "article:nth-child(2) > .balls[aria-label=\"Résultat\"]"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "region",
+              "data": {
+                "isIframe": false
+              },
+              "relatedNodes": [],
+              "impact": "moderate",
+              "message": "All page content is contained by landmarks"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<span class=\"ball\">43</span>",
+          "target": [
+            "article:nth-child(2) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(1)"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "region",
+              "data": {
+                "isIframe": false
+              },
+              "relatedNodes": [],
+              "impact": "moderate",
+              "message": "All page content is contained by landmarks"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<span class=\"ball\">34</span>",
+          "target": [
+            "article:nth-child(2) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(2)"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "region",
+              "data": {
+                "isIframe": false
+              },
+              "relatedNodes": [],
+              "impact": "moderate",
+              "message": "All page content is contained by landmarks"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<span class=\"ball\">47</span>",
+          "target": [
+            "article:nth-child(2) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(3)"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "region",
+              "data": {
+                "isIframe": false
+              },
+              "relatedNodes": [],
+              "impact": "moderate",
+              "message": "All page content is contained by landmarks"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<span class=\"ball\">23</span>",
+          "target": [
+            "article:nth-child(2) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(4)"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "region",
+              "data": {
+                "isIframe": false
+              },
+              "relatedNodes": [],
+              "impact": "moderate",
+              "message": "All page content is contained by landmarks"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<span class=\"ball\">3</span>",
+          "target": [
+            "article:nth-child(2) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(5)"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "region",
+              "data": {
+                "isIframe": false
+              },
+              "relatedNodes": [],
+              "impact": "moderate",
+              "message": "All page content is contained by landmarks"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<span class=\"ball chance\">5</span>",
+          "target": [
+            "article:nth-child(2) > .balls[aria-label=\"Résultat\"] > .chance.ball"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "region",
+              "data": {
+                "isIframe": false
+              },
+              "relatedNodes": [],
+              "impact": "moderate",
+              "message": "All page content is contained by landmarks"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<button class=\"btn-mini\" onclick=\"viewDetails('01/04/2026')\">\n              <i class=\"fa-solid fa-circle-info\"></i> Détail du tirage\n            </button>",
+          "target": [
+            "button[onclick=\"viewDetails('01/04/2026')\"]"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "region",
+              "data": {
+                "isIframe": false
+              },
+              "relatedNodes": [],
+              "impact": "moderate",
+              "message": "All page content is contained by landmarks"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<i class=\"fa-solid fa-circle-info\"></i>",
+          "target": [
+            "button[onclick=\"viewDetails('01/04/2026')\"] > .fa-circle-info.fa-solid"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "region",
+              "data": {
+                "isIframe": false
+              },
+              "relatedNodes": [],
+              "impact": "moderate",
+              "message": "All page content is contained by landmarks"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<article class=\"result-card\">",
+          "target": [
+            "article:nth-child(3)"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "region",
+              "data": {
+                "isIframe": false
+              },
+              "relatedNodes": [],
+              "impact": "moderate",
+              "message": "All page content is contained by landmarks"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<h3>Lundi 30/03/2026</h3>",
+          "target": [
+            "article:nth-child(3) > h3"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "region",
+              "data": {
+                "isIframe": false
+              },
+              "relatedNodes": [],
+              "impact": "moderate",
+              "message": "All page content is contained by landmarks"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<div class=\"balls\" aria-label=\"Résultat\">",
+          "target": [
+            "article:nth-child(3) > .balls[aria-label=\"Résultat\"]"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "region",
+              "data": {
+                "isIframe": false
+              },
+              "relatedNodes": [],
+              "impact": "moderate",
+              "message": "All page content is contained by landmarks"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<span class=\"ball\">10</span>",
+          "target": [
+            "article:nth-child(3) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(1)"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "region",
+              "data": {
+                "isIframe": false
+              },
+              "relatedNodes": [],
+              "impact": "moderate",
+              "message": "All page content is contained by landmarks"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<span class=\"ball\">47</span>",
+          "target": [
+            "article:nth-child(3) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(2)"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "region",
+              "data": {
+                "isIframe": false
+              },
+              "relatedNodes": [],
+              "impact": "moderate",
+              "message": "All page content is contained by landmarks"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<span class=\"ball\">8</span>",
+          "target": [
+            "article:nth-child(3) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(3)"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "region",
+              "data": {
+                "isIframe": false
+              },
+              "relatedNodes": [],
+              "impact": "moderate",
+              "message": "All page content is contained by landmarks"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<span class=\"ball\">28</span>",
+          "target": [
+            "article:nth-child(3) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(4)"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "region",
+              "data": {
+                "isIframe": false
+              },
+              "relatedNodes": [],
+              "impact": "moderate",
+              "message": "All page content is contained by landmarks"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<span class=\"ball\">29</span>",
+          "target": [
+            "article:nth-child(3) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(5)"
+          ]
+        },
+        {
+          "any": [
+            {
+              "id": "region",
+              "data": {
+                "isIframe": false
+              },
+              "relatedNodes": [],
+              "impact": "moderate",
+              "message": "All page content is contained by landmarks"
+            }
+          ],
+          "all": [],
+          "none": [],
+          "impact": null,
+          "html": "<span class=\"ball chance\">5</span>",
+          "target": [
+            "article:nth-child(3) > .balls[aria-label=\"Résultat\"] > .chance.ball"
           ]
         },
         {
@@ -11483,7 +11923,7 @@
           "impact": null,
           "html": "<article class=\"result-card\">",
           "target": [
-            "article:nth-child(2)"
+            "article:nth-child(4)"
           ]
         },
         {
@@ -11503,7 +11943,7 @@
           "impact": null,
           "html": "<h3>Samedi 28/03/2026</h3>",
           "target": [
-            "article:nth-child(2) > h3"
+            "article:nth-child(4) > h3"
           ]
         },
         {
@@ -11523,7 +11963,7 @@
           "impact": null,
           "html": "<div class=\"balls\" aria-label=\"Résultat\">",
           "target": [
-            "article:nth-child(2) > .balls[aria-label=\"Résultat\"]"
+            "article:nth-child(4) > .balls[aria-label=\"Résultat\"]"
           ]
         },
         {
@@ -11543,7 +11983,7 @@
           "impact": null,
           "html": "<span class=\"ball\">38</span>",
           "target": [
-            "article:nth-child(2) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(1)"
+            "article:nth-child(4) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(1)"
           ]
         },
         {
@@ -11563,7 +12003,7 @@
           "impact": null,
           "html": "<span class=\"ball\">30</span>",
           "target": [
-            "article:nth-child(2) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(2)"
+            "article:nth-child(4) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(2)"
           ]
         },
         {
@@ -11583,7 +12023,7 @@
           "impact": null,
           "html": "<span class=\"ball\">28</span>",
           "target": [
-            "article:nth-child(2) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(3)"
+            "article:nth-child(4) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(3)"
           ]
         },
         {
@@ -11603,7 +12043,7 @@
           "impact": null,
           "html": "<span class=\"ball\">17</span>",
           "target": [
-            "article:nth-child(2) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(4)"
+            "article:nth-child(4) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(4)"
           ]
         },
         {
@@ -11623,7 +12063,7 @@
           "impact": null,
           "html": "<span class=\"ball\">45</span>",
           "target": [
-            "article:nth-child(2) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(5)"
+            "article:nth-child(4) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(5)"
           ]
         },
         {
@@ -11643,7 +12083,7 @@
           "impact": null,
           "html": "<span class=\"ball chance\">6</span>",
           "target": [
-            "article:nth-child(2) > .balls[aria-label=\"Résultat\"] > .chance.ball"
+            "article:nth-child(4) > .balls[aria-label=\"Résultat\"] > .chance.ball"
           ]
         },
         {
@@ -11703,7 +12143,7 @@
           "impact": null,
           "html": "<article class=\"result-card\">",
           "target": [
-            "article:nth-child(3)"
+            "article:nth-child(5)"
           ]
         },
         {
@@ -11723,7 +12163,7 @@
           "impact": null,
           "html": "<h3>Mercredi 25/03/2026</h3>",
           "target": [
-            "article:nth-child(3) > h3"
+            "article:nth-child(5) > h3"
           ]
         },
         {
@@ -11743,7 +12183,7 @@
           "impact": null,
           "html": "<div class=\"balls\" aria-label=\"Résultat\">",
           "target": [
-            "article:nth-child(3) > .balls[aria-label=\"Résultat\"]"
+            "article:nth-child(5) > .balls[aria-label=\"Résultat\"]"
           ]
         },
         {
@@ -11763,7 +12203,7 @@
           "impact": null,
           "html": "<span class=\"ball\">48</span>",
           "target": [
-            "article:nth-child(3) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(1)"
+            "article:nth-child(5) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(1)"
           ]
         },
         {
@@ -11783,7 +12223,7 @@
           "impact": null,
           "html": "<span class=\"ball\">30</span>",
           "target": [
-            "article:nth-child(3) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(2)"
+            "article:nth-child(5) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(2)"
           ]
         },
         {
@@ -11803,7 +12243,7 @@
           "impact": null,
           "html": "<span class=\"ball\">19</span>",
           "target": [
-            "article:nth-child(3) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(3)"
+            "article:nth-child(5) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(3)"
           ]
         },
         {
@@ -11823,7 +12263,7 @@
           "impact": null,
           "html": "<span class=\"ball\">28</span>",
           "target": [
-            "article:nth-child(3) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(4)"
+            "article:nth-child(5) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(4)"
           ]
         },
         {
@@ -11843,7 +12283,7 @@
           "impact": null,
           "html": "<span class=\"ball\">35</span>",
           "target": [
-            "article:nth-child(3) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(5)"
+            "article:nth-child(5) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(5)"
           ]
         },
         {
@@ -11863,7 +12303,7 @@
           "impact": null,
           "html": "<span class=\"ball chance\">5</span>",
           "target": [
-            "article:nth-child(3) > .balls[aria-label=\"Résultat\"] > .chance.ball"
+            "article:nth-child(5) > .balls[aria-label=\"Résultat\"] > .chance.ball"
           ]
         },
         {
@@ -11923,7 +12363,7 @@
           "impact": null,
           "html": "<article class=\"result-card\">",
           "target": [
-            "article:nth-child(4)"
+            "article:nth-child(6)"
           ]
         },
         {
@@ -11943,7 +12383,7 @@
           "impact": null,
           "html": "<h3>Lundi 23/03/2026</h3>",
           "target": [
-            "article:nth-child(4) > h3"
+            "article:nth-child(6) > h3"
           ]
         },
         {
@@ -11963,7 +12403,7 @@
           "impact": null,
           "html": "<div class=\"balls\" aria-label=\"Résultat\">",
           "target": [
-            "article:nth-child(4) > .balls[aria-label=\"Résultat\"]"
+            "article:nth-child(6) > .balls[aria-label=\"Résultat\"]"
           ]
         },
         {
@@ -11983,7 +12423,7 @@
           "impact": null,
           "html": "<span class=\"ball\">30</span>",
           "target": [
-            "article:nth-child(4) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(1)"
+            "article:nth-child(6) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(1)"
           ]
         },
         {
@@ -12003,7 +12443,7 @@
           "impact": null,
           "html": "<span class=\"ball\">9</span>",
           "target": [
-            "article:nth-child(4) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(2)"
+            "article:nth-child(6) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(2)"
           ]
         },
         {
@@ -12023,7 +12463,7 @@
           "impact": null,
           "html": "<span class=\"ball\">42</span>",
           "target": [
-            "article:nth-child(4) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(3)"
+            "article:nth-child(6) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(3)"
           ]
         },
         {
@@ -12043,7 +12483,7 @@
           "impact": null,
           "html": "<span class=\"ball\">38</span>",
           "target": [
-            "article:nth-child(4) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(4)"
+            "article:nth-child(6) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(4)"
           ]
         },
         {
@@ -12063,7 +12503,7 @@
           "impact": null,
           "html": "<span class=\"ball\">3</span>",
           "target": [
-            "article:nth-child(4) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(5)"
+            "article:nth-child(6) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(5)"
           ]
         },
         {
@@ -12083,7 +12523,7 @@
           "impact": null,
           "html": "<span class=\"ball chance\">4</span>",
           "target": [
-            "article:nth-child(4) > .balls[aria-label=\"Résultat\"] > .chance.ball"
+            "article:nth-child(6) > .balls[aria-label=\"Résultat\"] > .chance.ball"
           ]
         },
         {
@@ -12124,446 +12564,6 @@
           "html": "<i class=\"fa-solid fa-circle-info\"></i>",
           "target": [
             "button[onclick=\"viewDetails('23/03/2026')\"] > .fa-circle-info.fa-solid"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "region",
-              "data": {
-                "isIframe": false
-              },
-              "relatedNodes": [],
-              "impact": "moderate",
-              "message": "All page content is contained by landmarks"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<article class=\"result-card\">",
-          "target": [
-            "article:nth-child(5)"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "region",
-              "data": {
-                "isIframe": false
-              },
-              "relatedNodes": [],
-              "impact": "moderate",
-              "message": "All page content is contained by landmarks"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<h3>Samedi 21/03/2026</h3>",
-          "target": [
-            "article:nth-child(5) > h3"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "region",
-              "data": {
-                "isIframe": false
-              },
-              "relatedNodes": [],
-              "impact": "moderate",
-              "message": "All page content is contained by landmarks"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<div class=\"balls\" aria-label=\"Résultat\">",
-          "target": [
-            "article:nth-child(5) > .balls[aria-label=\"Résultat\"]"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "region",
-              "data": {
-                "isIframe": false
-              },
-              "relatedNodes": [],
-              "impact": "moderate",
-              "message": "All page content is contained by landmarks"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<span class=\"ball\">3</span>",
-          "target": [
-            "article:nth-child(5) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(1)"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "region",
-              "data": {
-                "isIframe": false
-              },
-              "relatedNodes": [],
-              "impact": "moderate",
-              "message": "All page content is contained by landmarks"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<span class=\"ball\">45</span>",
-          "target": [
-            "article:nth-child(5) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(2)"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "region",
-              "data": {
-                "isIframe": false
-              },
-              "relatedNodes": [],
-              "impact": "moderate",
-              "message": "All page content is contained by landmarks"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<span class=\"ball\">33</span>",
-          "target": [
-            "article:nth-child(5) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(3)"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "region",
-              "data": {
-                "isIframe": false
-              },
-              "relatedNodes": [],
-              "impact": "moderate",
-              "message": "All page content is contained by landmarks"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<span class=\"ball\">19</span>",
-          "target": [
-            "article:nth-child(5) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(4)"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "region",
-              "data": {
-                "isIframe": false
-              },
-              "relatedNodes": [],
-              "impact": "moderate",
-              "message": "All page content is contained by landmarks"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<span class=\"ball\">24</span>",
-          "target": [
-            "article:nth-child(5) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(5)"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "region",
-              "data": {
-                "isIframe": false
-              },
-              "relatedNodes": [],
-              "impact": "moderate",
-              "message": "All page content is contained by landmarks"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<span class=\"ball chance\">10</span>",
-          "target": [
-            "article:nth-child(5) > .balls[aria-label=\"Résultat\"] > .chance.ball"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "region",
-              "data": {
-                "isIframe": false
-              },
-              "relatedNodes": [],
-              "impact": "moderate",
-              "message": "All page content is contained by landmarks"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<button class=\"btn-mini\" onclick=\"viewDetails('21/03/2026')\">\n              <i class=\"fa-solid fa-circle-info\"></i> Détail du tirage\n            </button>",
-          "target": [
-            "button[onclick=\"viewDetails('21/03/2026')\"]"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "region",
-              "data": {
-                "isIframe": false
-              },
-              "relatedNodes": [],
-              "impact": "moderate",
-              "message": "All page content is contained by landmarks"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<i class=\"fa-solid fa-circle-info\"></i>",
-          "target": [
-            "button[onclick=\"viewDetails('21/03/2026')\"] > .fa-circle-info.fa-solid"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "region",
-              "data": {
-                "isIframe": false
-              },
-              "relatedNodes": [],
-              "impact": "moderate",
-              "message": "All page content is contained by landmarks"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<article class=\"result-card\">",
-          "target": [
-            "article:nth-child(6)"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "region",
-              "data": {
-                "isIframe": false
-              },
-              "relatedNodes": [],
-              "impact": "moderate",
-              "message": "All page content is contained by landmarks"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<h3>Mercredi 18/03/2026</h3>",
-          "target": [
-            "article:nth-child(6) > h3"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "region",
-              "data": {
-                "isIframe": false
-              },
-              "relatedNodes": [],
-              "impact": "moderate",
-              "message": "All page content is contained by landmarks"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<div class=\"balls\" aria-label=\"Résultat\">",
-          "target": [
-            "article:nth-child(6) > .balls[aria-label=\"Résultat\"]"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "region",
-              "data": {
-                "isIframe": false
-              },
-              "relatedNodes": [],
-              "impact": "moderate",
-              "message": "All page content is contained by landmarks"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<span class=\"ball\">13</span>",
-          "target": [
-            "article:nth-child(6) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(1)"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "region",
-              "data": {
-                "isIframe": false
-              },
-              "relatedNodes": [],
-              "impact": "moderate",
-              "message": "All page content is contained by landmarks"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<span class=\"ball\">18</span>",
-          "target": [
-            "article:nth-child(6) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(2)"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "region",
-              "data": {
-                "isIframe": false
-              },
-              "relatedNodes": [],
-              "impact": "moderate",
-              "message": "All page content is contained by landmarks"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<span class=\"ball\">8</span>",
-          "target": [
-            "article:nth-child(6) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(3)"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "region",
-              "data": {
-                "isIframe": false
-              },
-              "relatedNodes": [],
-              "impact": "moderate",
-              "message": "All page content is contained by landmarks"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<span class=\"ball\">48</span>",
-          "target": [
-            "article:nth-child(6) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(4)"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "region",
-              "data": {
-                "isIframe": false
-              },
-              "relatedNodes": [],
-              "impact": "moderate",
-              "message": "All page content is contained by landmarks"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<span class=\"ball\">45</span>",
-          "target": [
-            "article:nth-child(6) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(5)"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "region",
-              "data": {
-                "isIframe": false
-              },
-              "relatedNodes": [],
-              "impact": "moderate",
-              "message": "All page content is contained by landmarks"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<span class=\"ball chance\">7</span>",
-          "target": [
-            "article:nth-child(6) > .balls[aria-label=\"Résultat\"] > .chance.ball"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "region",
-              "data": {
-                "isIframe": false
-              },
-              "relatedNodes": [],
-              "impact": "moderate",
-              "message": "All page content is contained by landmarks"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<button class=\"btn-mini\" onclick=\"viewDetails('18/03/2026')\">\n              <i class=\"fa-solid fa-circle-info\"></i> Détail du tirage\n            </button>",
-          "target": [
-            "button[onclick=\"viewDetails('18/03/2026')\"]"
-          ]
-        },
-        {
-          "any": [
-            {
-              "id": "region",
-              "data": {
-                "isIframe": false
-              },
-              "relatedNodes": [],
-              "impact": "moderate",
-              "message": "All page content is contained by landmarks"
-            }
-          ],
-          "all": [],
-          "none": [],
-          "impact": null,
-          "html": "<i class=\"fa-solid fa-circle-info\"></i>",
-          "target": [
-            "button[onclick=\"viewDetails('18/03/2026')\"] > .fa-circle-info.fa-solid"
           ]
         },
         {
@@ -13181,7 +13181,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<span aria-live=\"polite\" aria-label=\"Nombre total de visites du site\">\n              <span id=\"visitCount\">543</span> visites\n        </span>",
+          "html": "<span aria-live=\"polite\" aria-label=\"Nombre total de visites du site\">\n              <span id=\"visitCount\">595</span> visites\n        </span>",
           "target": [
             "span[aria-live=\"polite\"]:nth-child(9)"
           ]
@@ -13201,7 +13201,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<span id=\"visitCount\">543</span>",
+          "html": "<span id=\"visitCount\">595</span>",
           "target": [
             "#visitCount"
           ]
@@ -13261,7 +13261,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<div>\n          <h2><i class=\"fa-solid fa-map-location-dot\"></i> Points de ventes proches (30 km)</h2>\n          <div class=\"small\" id=\"mapStatus\">Localisation : 48.1173, -1.6778 — recherche 30 km…</div>\n        </div>",
+          "html": "<div>\n          <h2><i class=\"fa-solid fa-map-location-dot\"></i> Points de vente à proximité (30 km)</h2>\n          <div class=\"small\" id=\"mapStatus\">Localisation : 48.1173, -1.6778 — recherche 30 km…</div>\n        </div>",
           "target": [
             ".map-head > div:nth-child(1)"
           ]
@@ -13281,7 +13281,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<h2><i class=\"fa-solid fa-map-location-dot\"></i> Points de ventes proches (30 km)</h2>",
+          "html": "<h2><i class=\"fa-solid fa-map-location-dot\"></i> Points de vente à proximité (30 km)</h2>",
           "target": [
             ".map-head > div:nth-child(1) > h2"
           ]
@@ -13541,7 +13541,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<img alt=\"\" src=\"https://c.tile.openstreetmap.org/11/1014/710.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(49px, -8px, 0px); opacity: 1;\">",
+          "html": "<img alt=\"\" src=\"https://c.tile.openstreetmap.org/11/1014/710.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(49px, -18px, 0px); opacity: 1;\">",
           "target": [
             ".leaflet-tile.leaflet-tile-loaded[alt=\"\"]:nth-child(1)"
           ]
@@ -13561,7 +13561,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<img alt=\"\" src=\"https://a.tile.openstreetmap.org/11/1014/711.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(49px, 248px, 0px); opacity: 1;\">",
+          "html": "<img alt=\"\" src=\"https://a.tile.openstreetmap.org/11/1014/711.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(49px, 238px, 0px); opacity: 1;\">",
           "target": [
             ".leaflet-tile.leaflet-tile-loaded[alt=\"\"]:nth-child(2)"
           ]
@@ -13581,7 +13581,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<img alt=\"\" src=\"https://b.tile.openstreetmap.org/11/1013/710.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(-207px, -8px, 0px); opacity: 1;\">",
+          "html": "<img alt=\"\" src=\"https://b.tile.openstreetmap.org/11/1013/710.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(-207px, -18px, 0px); opacity: 1;\">",
           "target": [
             ".leaflet-tile.leaflet-tile-loaded[alt=\"\"]:nth-child(3)"
           ]
@@ -13601,7 +13601,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<img alt=\"\" src=\"https://a.tile.openstreetmap.org/11/1015/710.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(305px, -8px, 0px); opacity: 1;\">",
+          "html": "<img alt=\"\" src=\"https://a.tile.openstreetmap.org/11/1015/710.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(305px, -18px, 0px); opacity: 1;\">",
           "target": [
             ".leaflet-tile.leaflet-tile-loaded[alt=\"\"]:nth-child(4)"
           ]
@@ -13621,7 +13621,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<img alt=\"\" src=\"https://c.tile.openstreetmap.org/11/1013/711.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(-207px, 248px, 0px); opacity: 1;\">",
+          "html": "<img alt=\"\" src=\"https://c.tile.openstreetmap.org/11/1013/711.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(-207px, 238px, 0px); opacity: 1;\">",
           "target": [
             ".leaflet-tile.leaflet-tile-loaded[alt=\"\"]:nth-child(5)"
           ]
@@ -13641,7 +13641,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<img alt=\"\" src=\"https://b.tile.openstreetmap.org/11/1015/711.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(305px, 248px, 0px); opacity: 1;\">",
+          "html": "<img alt=\"\" src=\"https://b.tile.openstreetmap.org/11/1015/711.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(305px, 238px, 0px); opacity: 1;\">",
           "target": [
             ".leaflet-tile.leaflet-tile-loaded[alt=\"\"]:nth-child(6)"
           ]
@@ -13701,7 +13701,7 @@
           "all": [],
           "none": [],
           "impact": null,
-          "html": "<img src=\"https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png\" class=\"leaflet-marker-shadow leaflet-zoom-animated\" alt=\"\" style=\"margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(166px, 226px, 0px);\">",
+          "html": "<img src=\"https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png\" class=\"leaflet-marker-shadow leaflet-zoom-animated\" alt=\"\" style=\"margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(166px, 216px, 0px);\">",
           "target": [
             ".leaflet-marker-shadow"
           ]
@@ -14997,7 +14997,7 @@
             }
           ],
           "impact": "serious",
-          "html": "<span aria-live=\"polite\" aria-label=\"Nombre total de visites du site\">\n              <span id=\"visitCount\">543</span> visites\n        </span>",
+          "html": "<span aria-live=\"polite\" aria-label=\"Nombre total de visites du site\">\n              <span id=\"visitCount\">595</span> visites\n        </span>",
           "target": [
             "span[aria-live=\"polite\"]:nth-child(9)"
           ],
@@ -15107,7 +15107,7 @@
           "all": [],
           "none": [],
           "impact": "serious",
-          "html": "<span class=\"ball chance\">6</span>",
+          "html": "<span class=\"ball chance\">5</span>",
           "target": [
             "article:nth-child(2) > .balls[aria-label=\"Résultat\"] > .chance.ball"
           ],
@@ -15164,7 +15164,7 @@
                   ]
                 },
                 {
-                  "html": "<span class=\"ball\">30</span>",
+                  "html": "<span class=\"ball\">47</span>",
                   "target": [
                     "article:nth-child(3) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(2)"
                   ]
@@ -15202,7 +15202,7 @@
                   ]
                 },
                 {
-                  "html": "<span class=\"ball\">35</span>",
+                  "html": "<span class=\"ball\">29</span>",
                   "target": [
                     "article:nth-child(3) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(5)"
                   ]
@@ -15240,7 +15240,7 @@
                   ]
                 },
                 {
-                  "html": "<span class=\"ball\">30</span>",
+                  "html": "<span class=\"ball\">38</span>",
                   "target": [
                     "article:nth-child(4) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(1)"
                   ]
@@ -15278,7 +15278,7 @@
                   ]
                 },
                 {
-                  "html": "<span class=\"ball\">42</span>",
+                  "html": "<span class=\"ball\">28</span>",
                   "target": [
                     "article:nth-child(4) > .balls[aria-label=\"Résultat\"] > .ball:nth-child(3)"
                   ]
@@ -15391,7 +15391,7 @@
           "all": [],
           "none": [],
           "impact": "serious",
-          "html": "<span aria-live=\"polite\" aria-label=\"Nombre total de visites du site\">\n              <span id=\"visitCount\">543</span> visites\n        </span>",
+          "html": "<span aria-live=\"polite\" aria-label=\"Nombre total de visites du site\">\n              <span id=\"visitCount\">595</span> visites\n        </span>",
           "target": [
             "span[aria-live=\"polite\"]:nth-child(9)"
           ],
@@ -15416,7 +15416,7 @@
           "all": [],
           "none": [],
           "impact": "serious",
-          "html": "<span id=\"visitCount\">543</span>",
+          "html": "<span id=\"visitCount\">595</span>",
           "target": [
             "#visitCount"
           ],
@@ -15487,7 +15487,7 @@
                   ]
                 },
                 {
-                  "html": "<img alt=\"\" src=\"https://a.tile.openstreetmap.org/11/1014/711.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(49px, 248px, 0px); opacity: 1;\">",
+                  "html": "<img alt=\"\" src=\"https://a.tile.openstreetmap.org/11/1014/711.png\" class=\"leaflet-tile leaflet-tile-loaded\" style=\"width: 256px; height: 256px; transform: translate3d(49px, 238px, 0px); opacity: 1;\">",
                   "target": [
                     ".leaflet-tile.leaflet-tile-loaded[alt=\"\"]:nth-child(2)"
                   ]

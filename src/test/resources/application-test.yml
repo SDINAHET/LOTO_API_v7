@@ -32,6 +32,11 @@
 #   datasource.hikari:
 #     maximum-pool-size: 2
 
+
+
+
+
+
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/lotodb_test
