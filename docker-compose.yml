@@ -247,7 +247,7 @@ services:
     profiles: ["ai"]   # ✅ ne démarre pas par défaut
     restart: unless-stopped
     ports:
-      - "11435:11434"
+      - "11436:11434"
     volumes:
       - ollama_data:/root/.ollama
     # ✅ Limites mémoire: "deploy:" n'est pas appliqué par docker compose classique.
