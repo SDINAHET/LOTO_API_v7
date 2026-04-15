@@ -9,6 +9,27 @@ jobs:
     name: 🏗 Maven Build + Unit Tests
     runs-on: ubuntu-latest
 
+    services:
+      postgres:
+        image: postgres:14
+        env:
+          POSTGRES_DB: lotodb_test
+          POSTGRES_USER: postgrestest
+          POSTGRES_PASSWORD: postgrestest
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd="pg_isready -U postgrestest -d lotodb_test"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=20
+
+      mongodb:
+        image: mongo:latest
+        ports:
+          - 27017:27017
+
+
     steps:
       - name: 🛠 Checkout
         uses: actions/checkout@v4
