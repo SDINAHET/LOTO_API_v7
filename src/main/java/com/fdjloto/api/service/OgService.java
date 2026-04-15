@@ -25,34 +25,6 @@ public class OgService {
         this.tirageRepository = tirageRepository;
     }
 
-    // public Optional<Tirage> getTirage(LocalDate date) {
-
-    //     if (date == null) return Optional.empty();
-
-    //     String formattedDate = date.toString();
-
-    //     return tirageRepository.findByDateDeTirageStartingWith(formattedDate);
-    // }
-    // public Optional<Tirage> getTirage(LocalDate date) {
-
-    //     if (date == null) return Optional.empty();
-
-    //     String d0 = date.toString();
-    //     String d1 = date.minusDays(1).toString(); // 🔥 clé du fix
-
-    //     return tirageRepository.findByDateDeTirageStartingWith(d0)
-    //             .or(() -> tirageRepository.findByDateDeTirageStartingWith(d1));
-    // }
-    // public Optional<Tirage> getTirage(LocalDate date) {
-
-    //     if (date == null) return Optional.empty();
-
-    //     String d0 = "^" + date.toString();
-    //     String d1 = "^" + date.minusDays(1).toString(); // 🔥 clé
-
-    //     return tirageRepository.findByDatePrefix(d0)
-    //             .or(() -> tirageRepository.findByDatePrefix(d1));
-    // }
 
     public Optional<Tirage> getTirage(LocalDate date) {
 
@@ -69,23 +41,6 @@ public class OgService {
         );
     }
 
-    // public Tirage getTirageOrThrow(LocalDate date) {
-
-    //     if (date == null) {
-    //         throw new IllegalArgumentException("La date ne peut pas être null");
-    //     }
-
-    //     String d0 = "^" + date.toString();
-    //     String d1 = "^" + date.minusDays(1).toString();
-
-    //     return tirageRepository.findByDatePrefix(d0)
-    //             .or(() -> tirageRepository.findByDatePrefix(d1))
-    //             .orElseThrow(() ->
-    //                     new TirageNotFoundException(
-    //                             "Tirage introuvable pour la date : " + date
-    //                     )
-    //             );
-    // }
     public Tirage getTirageOrThrow(LocalDate date) {
 
         if (date == null) {

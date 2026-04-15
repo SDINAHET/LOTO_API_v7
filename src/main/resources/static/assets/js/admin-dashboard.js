@@ -314,6 +314,9 @@
     if (pageTitle) pageTitle.textContent = "Tableau de bord administrateur";
     if (pageSubtitle) pageSubtitle.textContent = subtitles[key] || "";
 
+    if (key === "swagger" && swaggerFrame && !swaggerFrame.src) {
+      swaggerFrame.src = SWAGGER_URL;
+    }
     if (key === "logs") refreshLogs();
     if (key === "owasp") fetchOwaspLast(false);
     if (key === "stats") loadStats();
@@ -332,6 +335,7 @@
   // ----------------------------
   const btnOpenSwagger = document.getElementById("btnOpenSwagger");
   const SWAGGER_URL = `${API_BASE}/swagger-ui/index.html`;
+  const swaggerFrame = document.getElementById("swaggerFrame");
 
   btnOpenSwagger?.addEventListener("click", (e) => {
     e.preventDefault();
@@ -2979,7 +2983,8 @@ function ensureDeletedToggleUI() {
 
     // const coverageUrl = `${window.location.protocol}//${window.location.hostname}:8082/api/admin/dev/coverage`;
     // const coverageUrl = "/api/admin/dev/coverage";
-    const coverageUrl = "http://localhost:8082/api/admin/dev/coverage";
+    // const coverageUrl = "http://localhost:8082/api/admin/dev/coverage";
+    const coverageUrl = `${API_BASE}/api/admin/dev/coverage`;
 
     const badge = document.getElementById("coverageBadge");
     const frame = document.getElementById("coverageFrame");
@@ -3004,7 +3009,8 @@ function ensureDeletedToggleUI() {
 
   async function loadPerformanceBadge() {
     try {
-      const res = await fetch("http://localhost:8082/api/admin/dev/coverage/performance", {
+      // const res = await fetch("http://localhost:8082/api/admin/dev/coverage/performance", {
+      const res = await apiFetch("/api/admin/dev/coverage/performance", {
         credentials: "include"
       });
 
@@ -3050,7 +3056,8 @@ function ensureDeletedToggleUI() {
   // -----------------
   async function loadCoverageBadge() {
     try {
-    const res = await fetch("http://localhost:8082/api/admin/dev/coverage/summary", {
+    // const res = await fetch("http://localhost:8082/api/admin/dev/coverage/summary", {
+    const res = await apiFetch("/api/admin/dev/coverage/summary", {
       credentials: "include"
     });
 

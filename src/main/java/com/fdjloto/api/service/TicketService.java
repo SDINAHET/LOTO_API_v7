@@ -57,26 +57,6 @@ public class TicketService {
         return ticketRepository.save(ticket);
     }
 
-    // public Ticket updateTicket(String ticketId, TicketDTO ticketDTO) {
-    //     Ticket existingTicket = getTicketById(ticketId);
-    //     existingTicket.setNumbers(ticketDTO.getNumbers());
-    //     existingTicket.setChanceNumber(Integer.parseInt(ticketDTO.getChanceNumber()));
-
-    //     if (ticketDTO.getDrawDate() != null && !ticketDTO.getDrawDate().isEmpty()) {
-    //         existingTicket.setDrawDate(LocalDate.parse(ticketDTO.getDrawDate()));
-    //     }
-
-    //     // ✅ Vérification et conversion des timestamps
-    //     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-
-    //     if (ticketDTO.getUpdatedAt() != null && !ticketDTO.getUpdatedAt().isEmpty()) {
-    //         existingTicket.setUpdatedAt(LocalDateTime.parse(ticketDTO.getUpdatedAt(), formatter));
-    //     } else {
-    //         existingTicket.setUpdatedAt(LocalDateTime.now());
-    //     }
-
-    //     return ticketRepository.save(existingTicket);
-    // }
 
     public Ticket updateTicket(String ticketId, TicketDTO ticketDTO) {
         Ticket existingTicket = getTicketById(ticketId);

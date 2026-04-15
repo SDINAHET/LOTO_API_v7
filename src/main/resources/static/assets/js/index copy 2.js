@@ -22,33 +22,7 @@
   link.href = href;
 })();
 
-// ================================
-// GLOBAL API BASE (UNIQUE)
-// ================================
-(function () {
-  const HOST = window.location.hostname;
 
-  const PROD_DOMAINS = [
-    "loto-tracker.fr",
-    "stephanedinahet.fr"
-  ];
-
-  const IS_PROD = PROD_DOMAINS.some(d =>
-    HOST === d ||
-    HOST === `www.${d}` ||
-    HOST.endsWith(`.${d}`)
-  );
-
-  const API_BASE =
-    (HOST === "localhost" || HOST === "127.0.0.1" || HOST.startsWith("192.168"))
-      ? `http://${HOST}:8082`
-      : (IS_PROD ? window.location.origin : "https://loto-tracker.fr");
-
-  // ✅ GLOBAL
-  window.API_BASE = API_BASE;
-
-  console.log("API_BASE =", API_BASE);
-})();
 
 
 // <!-- ✅ Sidebar + Auth-only + Burger -->
@@ -58,17 +32,17 @@
     //       ? "http://localhost:8082"
     //       // : "https://stephanedinahet.fr";
     //       : "https://loto-tracker.fr";
-    // (function () {
-    //   const hostname = window.location.hostname;
+    (function () {
+      const hostname = window.location.hostname;
 
-    //   const API_BASE =
-    //     (hostname === "localhost" || hostname === "127.0.0.1")
-    //       ? "http://localhost:8082"
-    //       : hostname.startsWith("192.168.1.251")
-    //         ? `http://${hostname}:8082`
-    //         : "https://loto-tracker.fr";
+      const API_BASE =
+        (hostname === "localhost" || hostname === "127.0.0.1")
+          ? "http://localhost:8082"
+          : hostname.startsWith("192.168.1.251")
+            ? `http://${hostname}:8082`
+            : "https://loto-tracker.fr";
 
-    //   console.log("API_BASE =", API_BASE);
+      console.log("API_BASE =", API_BASE);
     // })();
 
     // (function () {
@@ -235,8 +209,7 @@
       }
 
       async function fetchUserInfo() {
-        // const res = await fetch(`${API_BASE}/api/protected/userinfo`, {
-        const res = await fetch(`${window.API_BASE}/api/protected/userinfo`, {
+        const res = await fetch(`${API_BASE}/api/protected/userinfo`, {
           method: "GET",
           credentials: "include",
           cache: "no-store"
@@ -277,7 +250,7 @@
           applyAuthOnly();
         }, 800);
       });
-    // })();
+    })();
 
 
 
@@ -285,12 +258,12 @@
 /* =========================
       API BASE (local / prod)
     ========================== */
-    // const API_BASE =
-    //   (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1")
-    //     ? "http://localhost:8082"
-    //     // : "https://stephanedinahet.fr";
-    //     : "https://loto-tracker.fr";
-    //     // : window.location.origin;
+    const API_BASE =
+      (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1")
+        ? "http://localhost:8082"
+        // : "https://stephanedinahet.fr";
+        : "https://loto-tracker.fr";
+        // : window.location.origin;
 
 
     /* =========================
@@ -657,8 +630,7 @@ startCountdown();
     ========================== */
     async function loadLast20() {
       try {
-        // const res = await axios.get(`${API_BASE}/api/historique/last20`);
-        const res = await axios.get(`${window.API_BASE}/api/historique/last20`);
+        const res = await axios.get(`${API_BASE}/api/historique/last20`);
         const data = res.data || [];
         const container = document.getElementById("last20");
         container.innerHTML = "";
@@ -705,8 +677,7 @@ startCountdown();
     async function viewDetails(date){
       try{
         const formattedDate = formatDateForAPI(date);
-        // const apiUrl = `${API_BASE}/api/historique/last20/Detail/tirage/${formattedDate}`;
-        const apiUrl = `${window.API_BASE}/api/historique/last20/Detail/tirage/${formattedDate}`;
+        const apiUrl = `${API_BASE}/api/historique/last20/Detail/tirage/${formattedDate}`;
 
         const res = await axios.get(apiUrl);
         const data = res.data;
@@ -861,7 +832,7 @@ startCountdown();
     ========================== */
     async function showPrediction(){
       try{
-        const res = await axios.get(`${window.API_BASE}/api/predictions/latest`);
+        const res = await axios.get(`${API_BASE}/api/predictions/latest`);
         const data = res.data;
 
         if(!data || !Array.isArray(data.probableNumbers) || typeof data.sortieRates !== "object"){
@@ -1044,9 +1015,9 @@ startCountdown();
 
       let apiUrl;
       if(!endDate){
-        apiUrl = `${window.API_BASE}/api/historique/last20/Detail/tirages?startDate=${startDate}`;
+        apiUrl = `${API_BASE}/api/historique/last20/Detail/tirages?startDate=${startDate}`;
       }else{
-        apiUrl = `${window.API_BASE}/api/historique/last20/Detail/tirages?startDate=${startDate}&endDate=${endDate}`;
+        apiUrl = `${API_BASE}/api/historique/last20/Detail/tirages?startDate=${startDate}&endDate=${endDate}`;
       }
 
       const container = document.getElementById("searchResults");
@@ -1365,250 +1336,3 @@ startCountdown();
 
 
 
-
-// // ================================
-// // CANONICAL SEO
-// // ================================
-// (function () {
-//   let path = location.pathname;
-
-//   if (path.endsWith("/index.html")) path = "/";
-//   if (path.length > 1 && path.endsWith("/")) path = path.slice(0, -1);
-
-//   const href = "https://loto-tracker.fr" + path;
-
-//   let link = document.querySelector('link[rel="canonical"]');
-//   if (!link) {
-//     link = document.createElement("link");
-//     link.rel = "canonical";
-//     document.head.appendChild(link);
-//   }
-
-//   link.href = href;
-// })();
-
-
-// // ================================
-// // API BASE (GLOBAL UNIQUE)
-// // ================================
-// (function () {
-//   const HOST = window.location.hostname;
-
-//   const PROD_DOMAINS = ["stephanedinahet.fr", "loto-tracker.fr"];
-
-//   const IS_PROD = PROD_DOMAINS.some(d =>
-//     HOST === d ||
-//     HOST === `www.${d}` ||
-//     HOST.endsWith(`.${d}`)
-//   );
-
-//   const API_BASE =
-//     (HOST === "localhost" || HOST === "127.0.0.1" || HOST.startsWith("192.168"))
-//       ? `http://${HOST}:8082`
-//       : (IS_PROD ? window.location.origin : "https://loto-tracker.fr");
-
-//   window.API_BASE = API_BASE;
-//   console.log("API_BASE =", window.API_BASE);
-// })();
-
-
-// // ================================
-// // SIDEBAR + AUTH + BURGER
-// // ================================
-// (function () {
-
-//   function renderSidebar() {
-//     const path = (window.location.pathname || "").toLowerCase();
-//     const active = (name) => path.endsWith(name) ? " active" : "";
-
-//     return `
-//       <aside class="sidebar" id="sidebar">
-//         <div class="nav-title">Dashboard</div>
-
-//         <a class="nav-item${active("index.html") || (path.endsWith("/") ? " active" : "")}" href="index.html">
-//           <i class="fa-solid fa-chart-line"></i><span>Résultats</span>
-//         </a>
-
-//         <a class="nav-item auth-only${active("tickets.html")}" href="tickets.html" style="display:none;">
-//           <i class="fa-solid fa-ticket"></i><span>Tickets</span>
-//         </a>
-
-//         <a class="nav-item auth-only${active("statistiques.html")}" href="statistiques.html" style="display:none;">
-//           <i class="fa-solid fa-signal"></i><span>Statistiques</span>
-//         </a>
-
-//         <a class="nav-item auth-only${active("profil.html")}" href="profil.html" style="display:none;">
-//           <i class="fa-solid fa-user-gear"></i><span>Compte</span>
-//         </a>
-
-//         <div class="nav-sep"></div>
-
-//         <button class="btn-map" data-bs-toggle="modal" data-bs-target="#mapModal">
-//           <i class="fa-solid fa-map-location-dot"></i> Carte
-//         </button>
-//       </aside>
-//     `;
-//   }
-
-//   function bindBurger() {
-//     document.addEventListener("click", (e) => {
-//       if (!e.target.closest("#burgerBtn")) return;
-
-//       const sidebar = document.getElementById("sidebar");
-//       const overlay = document.getElementById("overlay");
-
-//       const open = sidebar.classList.toggle("open");
-//       overlay.classList.toggle("show", open);
-//       document.body.classList.toggle("no-scroll", open);
-//     });
-//   }
-
-//   async function fetchUserInfo() {
-//     const res = await fetch(`${window.API_BASE}/api/protected/userinfo`, {
-//       credentials: "include"
-//     });
-//     if (!res.ok) throw new Error();
-//     return res.json();
-//   }
-
-//   async function applyAuthOnly() {
-//     let logged = false;
-//     try { await fetchUserInfo(); logged = true; } catch {}
-
-//     document.querySelectorAll(".auth-only").forEach(el => {
-//       el.style.display = logged ? "" : "none";
-//     });
-//   }
-
-//   document.addEventListener("layout:ready", () => {
-//     const mount = document.getElementById("appSidebar");
-//     if (mount) mount.innerHTML = renderSidebar();
-
-//     bindBurger();
-//     applyAuthOnly();
-//   });
-
-// })();
-
-
-// // ================================
-// // COUNTDOWN LOTO
-// // ================================
-// function startCountdown() {
-//   const tirageDays = [1, 3, 6];
-//   const joursFr = ["Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"];
-
-//   const countdownEl = document.getElementById("countdown");
-//   const infoEl = document.getElementById("nextDrawInfo");
-
-//   function getParisNow() {
-//     return new Date(new Date().toLocaleString("en-US", { timeZone: "Europe/Paris" }));
-//   }
-
-//   function getNextDrawDate() {
-//     const now = getParisNow();
-
-//     for (let i = 0; i < 7; i++) {
-//       const d = new Date(now);
-//       d.setDate(now.getDate() + i);
-//       d.setHours(20, 0, 0, 0);
-
-//       if (tirageDays.includes(d.getDay()) && d > now) return d;
-//     }
-//   }
-
-//   setInterval(() => {
-//     const now = getParisNow();
-//     const next = getNextDrawDate();
-
-//     const diff = next - now;
-
-//     const days = Math.floor(diff / 86400000);
-//     const hours = Math.floor(diff / 3600000 % 24);
-//     const minutes = Math.floor(diff / 60000 % 60);
-//     const seconds = Math.floor(diff / 1000 % 60);
-
-//     if (infoEl) infoEl.textContent = `Prochain tirage : ${joursFr[next.getDay()]} à 20h`;
-//     if (countdownEl) countdownEl.textContent = `${days}j ${hours}h ${minutes}m ${seconds}s`;
-
-//   }, 1000);
-// }
-
-// startCountdown();
-
-
-// // ================================
-// // HELPERS
-// // ================================
-// function getDayName(dateString){
-//   if (!dateString) return "";
-//   const [d,m,y] = dateString.split("/").map(Number);
-//   const date = new Date(y, m-1, d);
-//   const jours = ["Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"];
-//   return jours[date.getDay()];
-// }
-
-// function formatDateForAPI(dateString){
-//   const [dd, mm, yyyy] = dateString.split("/");
-//   return `${yyyy}-${mm}-${dd}`;
-// }
-
-
-// // ================================
-// // LOAD LAST 20
-// // ================================
-// async function loadLast20() {
-//   try {
-//     const res = await axios.get(`${window.API_BASE}/api/historique/last20`);
-//     const data = res.data || [];
-
-//     const container = document.getElementById("last20");
-//     if (!container) return;
-
-//     container.innerHTML = "";
-
-//     data.forEach(draw => {
-//       const card = document.createElement("article");
-//       card.className = "result-card";
-
-//       card.innerHTML = `
-//         <h3>${getDayName(draw.dateDeTirage)} ${draw.dateDeTirage}</h3>
-//         <div class="balls">
-//           ${[1,2,3,4,5].map(i => `<span class="ball">${draw["boule"+i]}</span>`).join("")}
-//           <span class="ball chance">${draw.numeroChance}</span>
-//         </div>
-//       `;
-
-//       container.appendChild(card);
-//     });
-
-//   } catch (e) {
-//     console.error(e);
-//   }
-// }
-
-// loadLast20();
-
-
-// // ================================
-// // COOKIE POPUP
-// // ================================
-// (function () {
-//   const popup = document.getElementById("cookie-popup");
-//   if (!popup) return;
-
-//   const consent = localStorage.getItem("cookieConsent");
-
-//   if (!consent) popup.hidden = false;
-
-//   document.getElementById("accept-cookies")?.addEventListener("click", () => {
-//     localStorage.setItem("cookieConsent", "accepted");
-//     popup.hidden = true;
-//   });
-
-//   document.getElementById("reject-cookies")?.addEventListener("click", () => {
-//     localStorage.setItem("cookieConsent", "rejected");
-//     popup.hidden = true;
-//   });
-
-// })();

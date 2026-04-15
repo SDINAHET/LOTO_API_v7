@@ -55,55 +55,6 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         return userRepository.save(user);
     }
 
-    // @Override
-    // public User updateUser(UUID id, User user) {
-    //     Optional<User> existingUserOpt = userRepository.findById(id.toString());
-
-    //     if (existingUserOpt.isPresent()) {
-    //         User existingUser = existingUserOpt.get();
-
-    //         // ⚠️ Ne pas modifier l'UUID
-    //         user.setId(existingUser.getId());
-
-    //         // ⚠️ Conserver les tickets existants si non fournis
-    //         if (user.getTickets() == null || user.getTickets().isEmpty()) {
-    //             user.setTickets(existingUser.getTickets());
-    //         }
-
-    //         return userRepository.save(user);
-    //     }
-
-    //     return null; // ou générer une exception pour un utilisateur introuvable
-    // }
-    // @Override
-    // public User updateUser(UUID id, User user) {
-    //     Optional<User> existingUserOpt = userRepository.findById(id.toString());
-
-    //     if (existingUserOpt.isEmpty()) {
-    //         // À toi de voir : RuntimeException, custom exception, etc.
-    //         throw new RuntimeException("User not found with id: " + id);
-    //     }
-
-    //     User existingUser = existingUserOpt.get();
-
-    //     // ✅ On met à jour UNIQUEMENT les infos de profil
-    //     existingUser.setFirstName(user.getFirstName());
-    //     existingUser.setLastName(user.getLastName());
-    //     existingUser.setEmail(user.getEmail());
-
-    //     // Le mot de passe est déjà encodé dans le controller
-    //     if (user.getPassword() != null && !user.getPassword().isBlank()) {
-    //         existingUser.setPassword(user.getPassword());
-    //     }
-
-    //     // ❌ NE PAS TOUCHER À :
-    //     // - existingUser.setAdmin(...)
-    //     // - existingUser.setTickets(...)
-    //     // - existingUser.setId(...)
-    //     // L’admin reste donc tel qu’il est en base.
-
-    //     return userRepository.save(existingUser);  // @PreUpdate va gérer updatedAt
-    // }
     @Override
     public User updateUser(UUID id, User user) {
         User existingUser = userRepository.findById(id.toString())
@@ -178,7 +129,4 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
         userRepository.save(user);
     }
-
-
-
 }

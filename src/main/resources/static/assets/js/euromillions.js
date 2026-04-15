@@ -32,18 +32,19 @@
     (function () {
       const host = window.location.hostname;
 
-      const isLocal = (host === "localhost" || host === "127.0.0.1");
+      const isLocal = (host === "localhost" || host === "127.0.0.1" || window.location.hostname.startsWith("192.168"));
       const isLotoTracker = host === "loto-tracker.fr" || host === "www.loto-tracker.fr";
 
       const API_BASE = isLocal
         ? "http://localhost:8082"
+        
         : (isLotoTracker ? "https://loto-tracker.fr" : "https://stephanedinahet.fr");
 
       window.API_BASE = API_BASE;
       window.getApiBase = () => window.API_BASE;
 
       console.log("API_BASE =", window.API_BASE);
-      
+
 
       function renderSidebar() {
         const path = (window.location.pathname || "").toLowerCase();

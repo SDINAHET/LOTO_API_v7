@@ -1,113 +1,3 @@
-// // filepath: /c:/Users/steph/Documents/portfolio/portfolio/Loto_API/src/main/java/com/fdjloto/api/LotoApiApplication.java
-// package com.fdjloto.api;
-
-// import org.springframework.boot.SpringApplication;
-// import org.springframework.boot.autoconfigure.SpringBootApplication;
-// import org.springframework.context.annotation.ComponentScan;
-// // import org.springframework.context.annotation.Bean;
-// import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-// import org.springframework.boot.autoconfigure.SpringBootApplication;
-// // import io.swagger.v3.oas.models.OpenAPI;
-// // import io.swagger.v3.oas.models.info.Info;
-
-// // @SpringBootApplication
-// @EnableWebMvc
-// @ComponentScan(basePackages = "com.fdjloto.api")
-// @SpringBootApplication(scanBasePackages = {"com.fdjloto"})
-// public class LotoApiApplication {
-//     public static void main(String[] args) {
-//         SpringApplication.run(LotoApiApplication.class, args);
-//     }
-
-//     // @Bean
-//     // public OpenAPI customOpenAPI() {
-//     //     return new OpenAPI()
-//     //             .info(new Info().title("Loto API").version("1.0").description("API pour la gestion des utilisateurs avec SQLite3"));
-//     // }
-// }
-
-
-        // <p><b>Fonctionnalités principales :</b></p>
-        // <ul>
-        //     <li>🔑 <b>Authentification sécurisée :</b> Utilisation de JWT pour protéger les endpoints sensibles.</li>
-        //     <li>👤 <b>Gestion des utilisateurs :</b>
-        //         <ul>
-        //             <li>Inscription, Connexion, Déconnexion sécurisée avec JWT.</li>
-        //             <li>Gestion des rôles (Admin et Utilisateur) pour contrôler les accès aux fonctionnalités.</li>
-        //         </ul>
-        //     </li>
-        //     <li>🎫 <b>Soumission et gestion des tickets :</b>
-        //         <ul>
-        //             <li>Création, mise à jour, suppression et consultation des tickets Loto.</li>
-        //             <li>Stockage sécurisé des tickets en base de données.</li>
-        //         </ul>
-        //     </li>
-        //     <li>💰 <b>Calcul automatique des gains :</b>
-        //         <ul>
-        //             <li>Comparaison des numéros soumis avec les résultats officiels FDJ.</li>
-        //             <li>Calcul des gains pour chaque ticket soumis.</li>
-        //         </ul>
-        //     </li>
-        //     <li>📅 <b>Historique des tickets :</b>
-        //         <ul>
-        //             <li>Consultation de l'historique des tickets joués.</li>
-        //             <li>Accès aux détails des gains pour chaque ticket.</li>
-        //         </ul>
-        //     </li>
-        //     <li>📊 <b>Visualisation des résultats :</b>
-        //         <ul>
-        //             <li>Affichage des résultats du Loto sous forme de graphiques dynamiques.</li>
-        //             <li>Analyse des statistiques de tirage pour repérer des tendances.</li>
-        //         </ul>
-        //     </li>
-        //     <li>📅 <b>Mise à jour automatique des résultats :</b>
-        //         <ul>
-        //             <li>Script journalier pour la récupération automatique des résultats FDJ.</li>
-        //             <li>Synchronisation avec les bases de données pour un affichage en temps réel.</li>
-        //         </ul>
-        //     </li>
-        //     <li>🔒 <b>Sécurité avancée :</b>
-        //         <ul>
-        //             <li>Protection des endpoints API avec Spring Security et JWT.</li>
-        //             <li>Contrôle d'accès basé sur les rôles (Admin et Utilisateur).</li>
-        //         </ul>
-        //     </li>
-        //     <li>🚀 <b>Déploiement et Hébergement :</b>
-        //         <ul>
-        //             <li>Déploiement sur Alwaysdata avec bases de données MySQL et MongoDB.</li>
-        //             <li>Hébergement sécurisé avec accès public aux résultats du Loto.</li>
-        //         </ul>
-        //     </li>
-        // </ul>
-        // <p>🚧 <b>En développement :</b></p>
-        // <ul>
-        //     <li>🔔 Notifications push pour les résultats et les gains.</li>
-        //     <li>🤖 Recommandations personnalisées basées sur l'historique des tickets.</li>
-        // </ul>
-                // <h3>🚧 En développement :</h3>
-        // <ul style="padding-left: 20px; margin: 0;">
-        //     <li>🔔 Notifications push pour les résultats et les gains.</li>
-        //     <li>🤖 Recommandations personnalisées basées sur l'historique des tickets.</li>
-        // </ul>
-
-
-        // <p><i>Développé par Stéphane Dinahet pour le Portfolio 2025.</i></p>
-        // <br>
-        // <p><a href="http://localhost:8082") target="http://localhost:8082"> Serveur loca http://localhost:8082<p>
-        // <p><a href="http://127.0.0.1:5500") target="http://127.0.0.1:5500"> Serveur local (Live Server http://127.0.0.1:5500)<p>
-        // <br>
-        // <p><b>Retrouvez-moi sur :</b></p>
-        //     <p>
-        //         <a href="https://github.com/SDINAHET" target="https://github.com/SDINAHET" style="text-decoration: none; color: inherit;">
-        //             GitHub
-        //         </a>
-        //     </p>
-        //     <p>
-        //         <a href="https://www.linkedin.com/in/st%C3%A9phane-dinahet-3b363189/" target="https://www.linkedin.com/in/st%C3%A9phane-dinahet-3b363189/" style="text-decoration: none; color: inherit;">
-        //             LinkedIn
-        //         </a>
-        //     </p>
-// filepath: /c:/Users/steph/Documents/portfolio/portfolio/Loto_API/src/main/java/com/fdjloto/api/LotoApiApplication.java
 package com.fdjloto.api;
 
 import org.springframework.boot.SpringApplication;
@@ -306,6 +196,8 @@ public class LotoApiApplication {
                         ))
                 .addServersItem(new Server().url("http://localhost:8082").description("Serveur local"))
                 .addServersItem(new Server().url("http://127.0.0.1:5500").description("Serveur local (Live Server)"))
+                .addServersItem(new Server().url("http://192.168.1.251:8082").description("Réseau local"))
+                .addServersItem(new Server().url("http://192.168.1.251:5500").description("Réseau local"))
                 // .addServersItem(new Server().url("http://localhost:8082/swagger-ui/index.html").description("Serveur local"))
                 // .addServersItem(new Server().url("http://127.0.0.1:5500/src/main/resources/static/index.html").description("Serveur local (Live Server)"))
                 .addServersItem(new Server().url("https://stephanedinahet.fr").description("Serveur Production1"))

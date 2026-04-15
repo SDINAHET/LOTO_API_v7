@@ -87,19 +87,6 @@ public class AdminOwaspController {
         try {
             long now = Instant.now().getEpochSecond();
 
-            // anti-spam / anti-DoS (cooldown)
-            // if (now - lastRunEpochSec < cooldownSeconds && Files.exists(latestPath())) {
-            //     // renvoie dernier rapport
-            //     return getLast(detail);
-            // }
-
-            // if (now - lastRunEpochSec < cooldownSeconds && Files.exists(latestPath())) {
-
-            //     ResponseEntity<?> last = getLast(detail);
-
-            //     return ResponseEntity.status(202).body(last.getBody());
-            // }
-
             if (now - lastRunEpochSec < cooldownSeconds && Files.exists(latestPath())) {
 
                 Map<String,Object> payload = om.readValue(

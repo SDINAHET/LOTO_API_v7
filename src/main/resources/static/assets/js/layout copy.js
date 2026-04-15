@@ -17,9 +17,6 @@
       // : "https://stephanedinahet.fr";
       : "https://loto-tracker.fr"; // fallback sécurité
 
-      // ✅ AJOUT ICI
-      window.API_BASE = API_BASE_PRIMARY;
-
 
   // const HOST = window.location.hostname;
 
@@ -100,8 +97,7 @@
   const REFRESH_PATH = "/api/auth/refresh";
 
   function getActiveBase() {
-    // return window.__API_BASE_ACTIVE__ || API_BASE_PRIMARY;
-    return window.__API_BASE_ACTIVE__ || window.API_BASE;
+    return window.__API_BASE_ACTIVE__ || API_BASE_PRIMARY;
   }
 
   if (window.__LAYOUT_ALREADY_LOADED__) {
