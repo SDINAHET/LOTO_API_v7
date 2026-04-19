@@ -87,8 +87,8 @@ jobs:
           use lotodb_test
           if (!db.getUser("appuser")) {
             db.createUser({
-              user: "appuser",
-              pwd: "apppass",
+              user: "mongotest",
+              pwd: "mongotest",
               roles: [{ role: "readWrite", db: "lotodb_test" }]
             })
           }
