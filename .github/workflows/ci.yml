@@ -69,6 +69,31 @@ jobs:
       - name: 🐳 Start Docker Compose (postgres + mongodb + backend)
         run: docker compose up -d --build postgres mongodb backend
 
+      - name: 👤 Wait Mongo & Create user
+        run: |
+          echo "⏳ Waiting Mongo..."
+
+          for i in {1..30}; do
+            if docker compose exec -T mongodb mongosh --quiet --eval "db.runCommand({ ping: 1 })" > /dev/null 2>&1; then
+              echo "✅ Mongo ready"
+              break
+            fi
+            sleep 2
+          done
+
+          echo "👤 Creating Mongo user..."
+
+          docker compose exec -T mongodb mongosh -u mongotest -p mongotest --authenticationDatabase admin <<EOF
+          use lotodb_test
+          if (!db.getUser("appuser")) {
+            db.createUser({
+              user: "appuser",
+              pwd: "apppass",
+              roles: [{ role: "readWrite", db: "lotodb_test" }]
+            })
+          }
+          EOF
+
       - name: ✅ Wait for Postgres
         run: |
           for i in {1..60}; do
