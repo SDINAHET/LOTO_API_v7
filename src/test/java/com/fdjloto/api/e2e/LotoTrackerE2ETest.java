@@ -144,12 +144,26 @@ import jakarta.servlet.http.Cookie;
 
 import org.testcontainers.junit.jupiter.Testcontainers;
 
+import org.testcontainers.containers.MongoDBContainer;
+import org.testcontainers.junit.jupiter.Container;
+import org.springframework.test.context.DynamicPropertyRegistry;
+import org.springframework.test.context.DynamicPropertySource;
+
 @Testcontainers
 @SpringBootTest
 @AutoConfigureMockMvc
 // @ActiveProfiles("ci")
-// @ActiveProfiles("test")
+@ActiveProfiles("test")
 public class LotoTrackerE2ETest {
+
+    @Container
+    static MongoDBContainer mongo =
+        new MongoDBContainer("mongo:6.0");
+
+    @DynamicPropertySource
+    static void setMongoProperties(DynamicPropertyRegistry registry) {
+        registry.add("spring.data.mongodb.uri", mongo::getReplicaSetUrl);
+    }
 
     @Autowired
     private MockMvc mockMvc;
