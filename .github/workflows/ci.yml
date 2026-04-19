@@ -26,6 +26,10 @@ jobs:
 
       mongodb:
         image: mongo:latest
+        env:
+          MONGO_INITDB_ROOT_USERNAME: mongotest
+          MONGO_INITDB_ROOT_PASSWORD: mongotest
+          MONGO_INITDB_DATABASE: lotodb_test
         ports:
           - 27017:27017
 
