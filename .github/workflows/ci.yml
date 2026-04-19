@@ -50,7 +50,8 @@ jobs:
         run: mvn -B clean install -DskipTests
 
       - name: 🧪 Unit Tests
-        run: mvn -B test -Dtest='*Test' -Dsurefire.failIfNoSpecifiedTests=false
+        # run: mvn -B test -Dtest='*Test' -Dsurefire.failIfNoSpecifiedTests=false
+        run: mvn -B test -Dtest='*Test' -Dsurefire.failIfNoSpecifiedTests=false -Dspring.profiles.active=ci
 
   integration:
     name: 🐳 Docker Compose Integration Tests
