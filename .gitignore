@@ -65,3 +65,5 @@ sonar.sh
 test_sonar.md
 test_front.sh
 *.zip
+
+users_mongo.sh

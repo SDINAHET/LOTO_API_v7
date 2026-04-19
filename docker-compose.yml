@@ -149,7 +149,11 @@ services:
       JAVA_TOOL_OPTIONS: "-Xms256m -Xmx512m -Duser.timezone=Europe/Paris"
 
       # Mongo
-      SPRING_DATA_MONGODB_URI: mongodb://mongodb:27017/lotodb
+      # SPRING_DATA_MONGODB_URI: mongodb://mongodb:27017/lotodb
+
+      # 🔐 Mongo sécurisé
+      SPRING_DATA_MONGODB_URI: mongodb://mongo:mongo@mongodb:27017/lotodb?authSource=admin
+      # SPRING_DATA_MONGODB_URI: mongodb://mongo:mongo@mongodb:27017/lotodb?authSource=lotodb
 
       # Postgres
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/lotodb
@@ -171,6 +175,8 @@ services:
     ports:
       - "27018:27017"
     environment:
+      MONGO_INITDB_ROOT_USERNAME: mongo
+      MONGO_INITDB_ROOT_PASSWORD: mongo
       MONGO_INITDB_DATABASE: lotodb
       TZ: Europe/Paris
     volumes:
@@ -197,15 +203,15 @@ services:
       timeout: 5s
       retries: 20
 
-  uptime-kuma:
-    image: louislam/uptime-kuma
-    container_name: uptime-kuma
-    restart: always
-    ports:
-      - "3001:3001"
-    volumes:
-      - uptime_kuma_data:/app/data
-      - /var/run/docker.sock:/var/run/docker.sock
+  # uptime-kuma:
+  #   image: louislam/uptime-kuma
+  #   container_name: uptime-kuma
+  #   restart: always
+  #   ports:
+  #     - "3001:3001"
+  #   volumes:
+  #     - uptime_kuma_data:/app/data
+  #     - /var/run/docker.sock:/var/run/docker.sock
 
   # =========================
   # AI SERVICE (OPTIONNEL)
@@ -221,7 +227,9 @@ services:
       TZ: Europe/Paris
 
       # Mongo
-      MONGO_URI: mongodb://mongodb:27017
+      # MONGO_URI: mongodb://mongodb:27017
+      MONGO_URI: mongodb://mongo:mongo@mongodb:27017/?authSource=admin
+      # MONGO_URI: mongodb://mongo:mongo@mongodb:27017/?authSource=lotodb
       MONGO_DB: lotodb
       MONGO_COL: historique
 

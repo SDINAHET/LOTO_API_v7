@@ -38,6 +38,8 @@
 
 
 spring:
+  jackson:
+    time-zone: Europe/Paris
   datasource:
     url: jdbc:postgresql://localhost:5432/lotodb_test
     # driver-class-name: org.postgresql.Driver
@@ -49,6 +51,10 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create-drop  # reset DB à chaque test
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
     show-sql: false
 
   data:

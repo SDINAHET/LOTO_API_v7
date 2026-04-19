@@ -16,7 +16,9 @@ services:
       retries: 20
 
   mongo_test:
-    image: mongo:6
+    # image: mongo:6
+    # image: mongo:7
+    image: mongo:8
     # ports:
     # - "27018:27017"
     tmpfs:
@@ -44,7 +46,9 @@ services:
       SPRING_DATASOURCE_USERNAME: test
       SPRING_DATASOURCE_PASSWORD: test
       SPRING_JPA_HIBERNATE_DDL_AUTO: create-drop
-      SPRING_DATA_MONGODB_URI: mongodb://mongo_test:27017/lotodb_test
+      # SPRING_DATA_MONGODB_URI: mongodb://mongo_test:27017/lotodb_test
+      # SPRING_DATA_MONGODB_URI: mongodb://mongotest:mongotest@mongo_test:27017/lotodb_test?authSource=admin
+      SPRING_DATA_MONGODB_URI: mongodb://mongotest:mongotest@mongo_test:27017/lotodb_test?authSource=lotodb_test
       SPRING_TASK_SCHEDULING_ENABLED: "false"
     # command: mvn -q verify -Djacoco.skip=true
     command: >
