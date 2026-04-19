@@ -30,6 +30,7 @@ jobs:
           MONGO_INITDB_ROOT_USERNAME: mongotest
           MONGO_INITDB_ROOT_PASSWORD: mongotest
           MONGO_INITDB_DATABASE: lotodb_test
+          # MONGO_INITDB_DATABASE: admin
         ports:
           - 27017:27017
 
@@ -85,7 +86,7 @@ jobs:
 
           docker compose exec -T mongodb mongosh -u mongotest -p mongotest --authenticationDatabase admin <<EOF
           use lotodb_test
-          if (!db.getUser("appuser")) {
+          if (!db.getUser("mongotest")) {
             db.createUser({
               user: "mongotest",
               pwd: "mongotest",
