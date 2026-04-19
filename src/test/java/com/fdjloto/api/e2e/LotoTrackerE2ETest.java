@@ -147,7 +147,8 @@ import org.testcontainers.junit.jupiter.Testcontainers;
 @Testcontainers
 @SpringBootTest
 @AutoConfigureMockMvc
-@ActiveProfiles("test")
+// @ActiveProfiles("ci")
+// @ActiveProfiles("test")
 public class LotoTrackerE2ETest {
 
     @Autowired
