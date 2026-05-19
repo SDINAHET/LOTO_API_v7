@@ -69,10 +69,6 @@
   <script src="/assets/js/layout.js"></script>
   <link rel="stylesheet" href="/assets/css/index.css">
 
-
-  <link rel="stylesheet" href="assets/css/demo-onboarding.css">
-  <script src="assets/js/demo-onboarding.js" defer></script>
-
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -109,119 +105,30 @@
     <main class="main">
 
       <!-- Hero / countdown -->
-      <section class="panel hero-loto">
-
-        <div class="hero-left">
-
-          <h1>Résultats du Loto Français</h1>
-
-          <p class="hero-subtitle">
-            Consultez les derniers résultats du Loto,
-            recherchez un tirage par date et accédez
-            à l’historique.
-          </p>
-
-          <div class="hero-next-draw" id="nextDrawInfo">
-            <i class="fa-solid fa-calendar-days"></i>
-            Prochain tirage : —
-          </div>
-
-          <div class="hero-countdown">
-
-            <div class="count-box">
-              <span id="daysBox">0j</span>
-              <small>JOURS</small>
-            </div>
-
-            <div class="count-box">
-              <span id="hoursBox">00h</span>
-              <small>HEURES</small>
-            </div>
-
-            <div class="count-box">
-              <span id="minutesBox">00m</span>
-              <small>MINUTES</small>
-            </div>
-
-            <div class="count-box">
-              <span id="secondsBox">00s</span>
-              <small>SECONDES</small>
-            </div>
-
-          </div>
-
-          <button
-            class="btn-primary-app hero-btn"
-            onclick="showPrediction()"
-          >
-            <i class="fa-solid fa-chart-column"></i>
-            Statistiques du prochain tirage
-          </button>
-
-        </div>
-
-        <div class="hero-visual">
-
-          <div class="network-glow"></div>
-
-          <div class="network-grid"></div>
-
-          <div class="floating-particles"></div>
-
-        </div>
-
-      </section>
-
-
-
-
-      <!-- =========================================
-          LOTTERY MACHINE
-      ========================================= -->
-
-      <!-- <section class="panel lottery-panel">
-
+      <section class="panel">
         <div class="panel-head">
-
           <div>
-            <h2>
-              <i class="fa-solid fa-clover"></i>
-              Tirage animé en direct
-            </h2>
-
+            <!-- <h1>Résultats du Loto</h1> -->
+            <h1>Résultats du Loto Français en direct</h1>
             <p class="muted">
-              Simulation visuelle du dernier tirage récupéré depuis l’API.
+              Consultez les résultats officiels du Loto, recherchez un tirage par date et accédez à l’historique.
             </p>
+            <!-- <div class="muted" id="nextDrawInfo">Prochain tirage : —</div> -->
+            <div class="muted" id="nextDrawInfo" data-nosnippet>Prochain tirage : —</div>
+            <!-- <div class="muted">Visites : <b id="visitCount">—</b></div> -->
           </div>
+        </div>
 
-          <button
-            class="btn-primary-app"
-            onclick="launchLotteryMachine()"
-          >
-            Relancer l’animation
+        <div class="countdown-wrap">
+          <!-- <div id="countdown" class="countdown">--j --h --m --s</div> -->
+          <div id="countdown" class="countdown" data-nosnippet>--j --h --m --s</div>
+          <div class="next-draws" id="nextDraws"></div>
+
+          <button class="btn-primary-app" onclick="showPrediction()">
+            Stats du prochain tirage
           </button>
-
         </div>
-
-        <div class="lottery-canvas-wrapper">
-
-          <canvas
-            id="lotteryMachine"
-            width="1200"
-            height="620"
-          ></canvas>
-
-        </div>
-
-        <div
-          id="drawResultText"
-          class="draw-result-box"
-        >
-          Chargement du dernier tirage...
-        </div>
-
-      </section> -->
-
+      </section>
 
       <!-- Last 20 -->
       <section class="panel">
@@ -292,7 +199,7 @@
     <div class="modal-dialog modal-xl">
       <div class="modal-content glass">
         <div class="modal-header">
-          <h5 class="modal-title">Statistiques du prochain tirage</h5>
+          <h5 class="modal-title">📊 Statistiques du prochain tirage</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -332,9 +239,8 @@
   <div class="modal fade" id="mapModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-xl">
       <div class="modal-content glass">
-        <!-- <div class="modal-header">
-          <h5 class="modal-title">🗺️ Points proches (30 km)</h5> -->
-          <h5 class="modal-title"><i class="fa-solid fa-map-location-dot"></i> Points de vente à proximité (30 km)</h5>
+        <div class="modal-header">
+          <h5 class="modal-title">🗺️ Points proches (30 km)</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -425,13 +331,6 @@
 
   <!-- IA (si tu l'utilises) -->
   <script src="/assets/js/ai-loader.js"></script>
-
-  <!-- DEMO CONTAINER -->
-  <div id="demoContainer"></div>
-
-
-  <!-- LOTTERY MACHINE -->
-  <!-- <script src="/assets/js/lottery-machine.js"></script> -->
 
 
 

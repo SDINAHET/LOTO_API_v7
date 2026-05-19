@@ -798,7 +798,8 @@
             <span>Stat du site</span>
           </a>
 
-          <a href="https://status.stephanedinahet.fr/status/loto"
+          <!-- <a href="https://status.stephanedinahet.fr/status/loto"-->
+          <a href="https://uptime.loto-tracker.fr/status/loto"
             target="_blank"
             rel="noopener noreferrer"
             class="footer-status-site"

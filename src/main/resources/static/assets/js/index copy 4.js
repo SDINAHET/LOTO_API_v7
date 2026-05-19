@@ -146,10 +146,6 @@
               <i class="fa-solid fa-chart-line"></i><span>Résultats</span>
             </a>
 
-            <a class="nav-item${active("landing-page.html")}" href="landing-page.html" data-map="show">
-              <i class="fa-solid fa-play"></i><span>Démo du projet</span>
-            </a>
-
             <a class="nav-item auth-only${active("tickets.html")}" href="tickets.html" data-auth="required" data-map="hide" style="display:none;">
               <i class="fa-solid fa-ticket"></i><span>Tickets</span>
             </a>
@@ -164,50 +160,12 @@
 
 
 
-
-
-            <!-- <div class="nav-sep"></div>
-
-            <div class="nav-title">
-              Tirage Live
-            </div>
-
-            <div class="sidebar-lottery">
-
-              <canvas
-                id="lotteryMachine"
-                width="420"
-                height="440"
-              ></canvas>
-
-              <div
-                id="drawResultText"
-                class="draw-result-box sidebar-result"
-              >
-                Chargement...
-              </div>
-
-            </div> -->
-
             <div id="sidebarMapBlock">
-
               <div class="nav-sep"></div>
-
-              <div class="nav-title">
-                Carte
-              </div>
-
-              <button
-                class="btn-map"
-                id="openMapModalBtn"
-                type="button"
-                data-bs-toggle="modal"
-                data-bs-target="#mapModal"
-              >
-                <i class="fa-solid fa-map-location-dot"></i>
-                Ouvrir la carte
+              <div class="nav-title">Carte</div>
+              <button class="btn-map" id="openMapModalBtn" type="button" data-bs-toggle="modal" data-bs-target="#mapModal">
+                <i class="fa-solid fa-map-location-dot"></i> Ouvrir la carte
               </button>
-
             </div>
           </aside>
         `;
@@ -385,12 +343,7 @@ function startCountdown() {
   const tirageDays = [1, 3, 6]; // Lundi, Mercredi, Samedi
   const joursFr = ["Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"];
 
-  // const countdownEl = document.getElementById("countdown");
-  const daysEl = document.getElementById("daysBox");
-  const hoursEl = document.getElementById("hoursBox");
-  const minutesEl = document.getElementById("minutesBox");
-  const secondsEl = document.getElementById("secondsBox");
-
+  const countdownEl = document.getElementById("countdown");
   const infoEl = document.getElementById("nextDrawInfo");
 
   function getParisNow() {
@@ -426,35 +379,20 @@ function startCountdown() {
 
     infoEl.textContent = `Prochain tirage : ${joursFr[next.getDay()]} à 20h`;
 
-    // countdownEl.textContent = `${days}j ${hours}h ${minutes}m ${seconds}s`;
-    daysEl.textContent = `${days}j`;
-    hoursEl.textContent = `${hours}h`;
-    minutesEl.textContent = `${minutes}m`;
-    secondsEl.textContent = `${seconds}s`;
+    countdownEl.textContent = `${days}j ${hours}h ${minutes}m ${seconds}s`;
 
     const totalHours = diffMs / (1000 * 60 * 60);
 
-    const boxes = document.querySelectorAll(".count-box");
-
-    boxes.forEach(box => {
-
-      if (totalHours <= 3) {
-
-        box.style.background = "rgba(239,68,68,.18)";
-        box.style.borderColor = "rgba(239,68,68,.35)";
-
-      } else if (totalHours <= 7) {
-
-        box.style.background = "rgba(245,158,11,.15)";
-        box.style.borderColor = "rgba(245,158,11,.35)";
-
-      } else {
-
-        box.style.background = "rgba(255,255,255,.05)";
-        box.style.borderColor = "rgba(255,255,255,.08)";
-      }
-
-    });
+    if (totalHours <= 3) {
+      countdownEl.style.background = "rgba(239,68,68,.25)";
+      countdownEl.style.borderColor = "rgba(239,68,68,.35)";
+    } else if (totalHours <= 7) {
+      countdownEl.style.background = "rgba(245,158,11,.20)";
+      countdownEl.style.borderColor = "rgba(245,158,11,.35)";
+    } else {
+      countdownEl.style.background = "linear-gradient(135deg, rgba(59,130,246,.25), rgba(96,165,250,.18))";
+      countdownEl.style.borderColor = "rgba(59,130,246,.25)";
+    }
 
   }, 1000);
 }

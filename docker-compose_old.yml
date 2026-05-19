@@ -468,8 +468,8 @@
 #       # SPRING_DATA_MONGODB_URI: mongodb://mongodb:27017/lotodb
 
 #       # 🔐 Mongo sécurisé
-#       # SPRING_DATA_MONGODB_URI: mongodb://mongo:mongo@mongodb:27017/lotodb?authSource=admin
-#       SPRING_DATA_MONGODB_URI: mongodb://mongo:mongo@mongodb:27017/lotodb?authSource=lotodb
+#       SPRING_DATA_MONGODB_URI: mongodb://mongo:mongo@mongodb:27017/lotodb?authSource=admin
+#       # SPRING_DATA_MONGODB_URI: mongodb://mongo:mongo@mongodb:27017/lotodb?authSource=lotodb
 
 #       # Postgres
 #       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/lotodb
@@ -496,8 +496,8 @@
 #     ports:
 #       - "27018:27017"
 #     environment:
-#       # MONGO_INITDB_ROOT_USERNAME: mongo
-#       # MONGO_INITDB_ROOT_PASSWORD: mongo
+#       MONGO_INITDB_ROOT_USERNAME: mongo
+#       MONGO_INITDB_ROOT_PASSWORD: mongo
 #       MONGO_INITDB_DATABASE: lotodb
 #       TZ: Europe/Paris
 #     volumes:
@@ -617,9 +617,6 @@
 #   monitoring_shared:
 #     external: true
 
-
-
-
 version: "3.8"
 
 services:
@@ -635,8 +632,6 @@ services:
         condition: service_healthy
       mongodb:
         condition: service_started
-      # redis:
-      #   condition: service_started
     environment:
       SPRING_PROFILES_ACTIVE: ci
       TZ: Europe/Paris
@@ -678,11 +673,10 @@ services:
     volumes:
       # - /var/lib/mongodb:/data/db
       # - /var/lib/mongodb-docker:/data/db
-
-      # - /data/docker/mongodb:/data/db
-      # - ./docker/mongo/mongo-init.sh:/docker-entrypoint-initdb.d/mongo-init.sh
-      - mongodb_data:/data/db
-      - ./docker/mongo/mongo-init.sh:/mongo-init.sh
+      - /data/docker/mongodb:/data/db
+      # - mongodb_data:/data/db
+      - ./docker/mongo/mongo-init.sh:/docker-entrypoint-initdb.d/mongo-init.sh
+      # - ./docker/mongo/mongo-init.sh:/mongo-init.sh
 
   postgres:
     image: postgres:14
@@ -777,22 +771,9 @@ services:
     # Utilise plutôt mem_limit.
     mem_limit: 20g
 
-  # redis:
-  #   image: redis:7-alpine
-  #   restart: unless-stopped
-
-  #   ports:
-  #     - "6379:6379"
-
-  #   volumes:
-  #     - redis_data:/data
-
-  #   command: redis-server --appendonly yes
-
 volumes:
-  mongodb_data:
+  # mongodb_data:
   # postgres_data:
-  # redis_data:
   ollama_data:
   # uptime_kuma_data:
 

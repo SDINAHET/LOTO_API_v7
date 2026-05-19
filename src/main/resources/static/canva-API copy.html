@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Loto Tracker — RNCP6 Portfolio</title>
+
+<meta name="theme-color" content="#0f172a">
+<meta name="description" content="Loto Tracker - Projet RNCP6 Full Stack Java Spring Boot / PostgreSQL / MongoDB">
+
+<link rel="manifest" href="manifest.json">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:
+radial-gradient(circle at top left, rgba(59,130,246,.25), transparent 40%),
+radial-gradient(circle at bottom right, rgba(168,85,247,.18), transparent 40%),
+linear-gradient(135deg,#020617,#0f172a,#111827);
+
+color:white;
+min-height:100vh;
+display:flex;
+flex-direction:column;
+}
+
+:root{
+--panel:rgba(15,23,42,.70);
+--border:rgba(255,255,255,.10);
+--muted:rgba(255,255,255,.72);
+--blue:#3b82f6;
+--purple:#a855f7;
+--green:#22c55e;
+}
+
+.container{
+max-width:1400px;
+margin:auto;
+padding:24px;
+width:100%;
+}
+
+.nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:20px;
+padding:20px 0;
+position:sticky;
+top:0;
+z-index:999;
+backdrop-filter:blur(18px);
+background:rgba(2,6,23,.82);
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+font-size:1.2rem;
+font-weight:900;
+}
+
+.logo-icon{
+width:44px;
+height:44px;
+border-radius:14px;
+display:grid;
+place-items:center;
+background:linear-gradient(135deg,#2563eb,#7c3aed);
+font-size:1.3rem;
+}
+
+.nav-links{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+}
+
+.nav-links a{
+padding:10px 14px;
+border-radius:12px;
+font-weight:800;
+color:white;
+text-decoration:none;
+transition:.2s;
+}
+
+.nav-links a:hover{
+background:rgba(255,255,255,.08);
+}
+
+.hero{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
+padding:80px 0;
+}
+
+.hero h1{
+font-size:clamp(2.8rem,6vw,5.8rem);
+line-height:.95;
+font-weight:900;
+margin-bottom:20px;
+}
+
+.gradient{
+background:linear-gradient(90deg,#60a5fa,#a855f7,#f472b6);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+.lead{
+font-size:1.1rem;
+line-height:1.8;
+color:var(--muted);
+margin-bottom:28px;
+}
+
+.hero-buttons{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:14px 20px;
+border-radius:16px;
+font-weight:900;
+text-decoration:none;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+gap:8px;
+cursor:pointer;
+border:none;
+transition:.2s;
+min-height:48px;
+}
+
+.btn-primary{
+background:linear-gradient(135deg,#2563eb,#7c3aed,#a855f7);
+color:white;
+box-shadow:0 15px 40px rgba(59,130,246,.35);
+}
+
+.btn-secondary{
+background:rgba(255,255,255,.06);
+border:1px solid rgba(255,255,255,.12);
+color:white;
+}
+
+.btn:hover{
+transform:translateY(-2px);
+}
+
+.glass{
+background:var(--panel);
+border:1px solid var(--border);
+border-radius:26px;
+padding:28px;
+backdrop-filter:blur(18px);
+box-shadow:0 25px 80px rgba(0,0,0,.35);
+}
+
+.section{
+margin-top:70px;
+}
+
+.section-title{
+font-size:2.4rem;
+font-weight:900;
+margin-bottom:12px;
+}
+
+.section-sub{
+color:var(--muted);
+line-height:1.8;
+margin-bottom:26px;
+}
+
+.tech-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:18px;
+}
+
+.tech-card{
+padding:24px;
+border-radius:20px;
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.10);
+}
+
+.tech-card h3{
+margin-bottom:10px;
+font-size:1.1rem;
+}
+
+.tech-card p{
+color:var(--muted);
+line-height:1.7;
+font-size:.95rem;
+}
+
+.timeline{
+display:flex;
+flex-direction:column;
+gap:22px;
+margin-top:30px;
+}
+
+.timeline-item{
+display:flex;
+gap:18px;
+align-items:flex-start;
+}
+
+.timeline-dot{
+width:20px;
+height:20px;
+border-radius:999px;
+background:linear-gradient(135deg,#3b82f6,#a855f7);
+margin-top:8px;
+flex-shrink:0;
+}
+
+.timeline-content{
+background:rgba(255,255,255,.05);
+padding:18px;
+border-radius:18px;
+border:1px solid rgba(255,255,255,.08);
+width:100%;
+}
+
+.timeline-content h4{
+margin-bottom:8px;
+font-size:1.05rem;
+}
+
+.timeline-content p{
+color:var(--muted);
+line-height:1.7;
+}
+
+.architecture{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+margin-top:30px;
+}
+
+.arch-box{
+padding:24px;
+border-radius:20px;
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
+text-align:center;
+}
+
+.arch-box h3{
+margin-bottom:10px;
+}
+
+.arch-box p{
+color:var(--muted);
+line-height:1.7;
+}
+
+.footer{
+margin-top:auto;
+padding:40px 20px;
+text-align:center;
+color:rgba(255,255,255,.65);
+font-size:.95rem;
+}
+
+.badges{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+margin-top:24px;
+}
+
+.badge{
+padding:8px 12px;
+border-radius:999px;
+background:rgba(255,255,255,.08);
+font-size:.85rem;
+font-weight:800;
+}
+
+.install-banner{
+margin-top:22px;
+padding:18px;
+border-radius:18px;
+background:rgba(34,197,94,.12);
+border:1px solid rgba(34,197,94,.25);
+display:none;
+}
+
+.install-banner.show{
+display:block;
+}
+
+@media(max-width:980px){
+
+.hero{
+grid-template-columns:1fr;
+padding-top:40px;
+}
+
+.nav{
+flex-direction:column;
+align-items:flex-start;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<header class="nav">
+
+<div class="logo">
+<div class="logo-icon">🍀</div>
+<span>Loto Tracker</span>
+</div>
+
+<nav class="nav-links">
+<a href="#projet">Projet</a>
+<a href="#technos">Technologies</a>
+<a href="#architecture">Architecture</a>
+<a href="#timeline">Timeline</a>
+</nav>
+
+</header>
+
+<section class="hero" id="projet">
+
+<div>
+
+<h1>
+Application Full Stack
+<span class="gradient">RNCP6</span>
+</h1>
+
+<p class="lead">
+Loto Tracker est une application web moderne permettant de gérer des tickets Loto,
+consulter automatiquement les tirages FDJ, calculer les gains et suivre les statistiques
+des joueurs en temps réel grâce à une architecture Full Stack sécurisée.
+</p>
+
+<div class="hero-buttons">
+
+<a class="btn btn-primary" href="https://loto-tracker.fr">
+Accéder au site
+</a>
+
+<a class="btn btn-secondary" href="#architecture">
+Voir l’architecture
+</a>
+
+</div>
+
+<div class="badges">
+<span class="badge">Spring Boot</span>
+<span class="badge">Java</span>
+<span class="badge">PostgreSQL</span>
+<span class="badge">MongoDB</span>
+<span class="badge">PWA Android</span>
+<span class="badge">Prometheus</span>
+<span class="badge">Grafana</span>
+<span class="badge">Uptime Kuma</span>
+</div>
+
+<div id="installBanner" class="install-banner">
+📱 Application installable détectée — ajoute Loto Tracker à ton écran d’accueil Android.
+</div>
+
+</div>
+
+<div class="glass">
+
+<h2 style="margin-bottom:18px">
+Fonctionnalités principales
+</h2>
+
+<ul style="line-height:2;color:var(--muted);padding-left:18px">
+
+<li>Authentification JWT sécurisée</li>
+<li>Gestion complète des tickets</li>
+<li>Calcul automatique des gains</li>
+<li>Historique FDJ depuis 2019</li>
+<li>API REST Spring Boot</li>
+<li>Frontend responsive HTML/CSS/JavaScript</li>
+<li>PWA installable Android</li>
+<li>Monitoring Grafana + Prometheus</li>
+<li>Supervision Uptime Kuma</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section class="section" id="technos">
+
+<h2 class="section-title">
+Technologies utilisées
+</h2>
+
+<p class="section-sub">
+Le projet repose sur une architecture moderne orientée Full Stack,
+API REST et supervision serveur.
+</p>
+
+<div class="tech-grid">
+
+<div class="tech-card">
+<h3>Backend</h3>
+<p>
+Java 21, Spring Boot 3, Spring Security, JWT,
+API REST sécurisée.
+</p>
+</div>
+
+<div class="tech-card">
+<h3>Frontend</h3>
+<p>
+HTML5, CSS3, JavaScript responsive,
+interface Glassmorphism moderne.
+</p>
+</div>
+
+<div class="tech-card">
+<h3>Base SQL</h3>
+<p>
+PostgreSQL pour les utilisateurs,
+tickets, gains et authentification.
+</p>
+</div>
+
+<div class="tech-card">
+<h3>Base NoSQL</h3>
+<p>
+MongoDB pour l’historique des tirages
+et les statistiques volumineuses.
+</p>
+</div>
+
+<div class="tech-card">
+<h3>Monitoring</h3>
+<p>
+Prometheus, Grafana et Uptime Kuma
+pour la supervision temps réel.
+</p>
+</div>
+
+<div class="tech-card">
+<h3>PWA Android</h3>
+<p>
+Installation directe depuis Chrome mobile
+sans passer par le Play Store.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="architecture">
+
+<h2 class="section-title">
+Architecture réseau
+</h2>
+
+<p class="section-sub">
+Le projet est hébergé derrière Apache Reverse Proxy avec HTTPS Let's Encrypt.
+</p>
+
+<div class="architecture">
+
+<div class="arch-box">
+<h3>🌐 Frontend</h3>
+<p>
+HTML / CSS / JavaScript responsive
+hébergé via Apache HTTPS.
+</p>
+</div>
+
+<div class="arch-box">
+<h3>⚙️ Backend API</h3>
+<p>
+Spring Boot REST API
+sur serveur Linux sécurisé.
+</p>
+</div>
+
+<div class="arch-box">
+<h3>🗄 PostgreSQL</h3>
+<p>
+Stockage relationnel :
+utilisateurs, tickets, gains.
+</p>
+</div>
+
+<div class="arch-box">
+<h3>📊 MongoDB</h3>
+<p>
+Historique FDJ, statistiques,
+volumes importants de données.
+</p>
+</div>
+
+<div class="arch-box">
+<h3>📈 Monitoring</h3>
+<p>
+Grafana, Prometheus,
+Uptime Kuma.
+</p>
+</div>
+
+<div class="arch-box">
+<h3>🔒 Sécurité</h3>
+<p>
+HTTPS, JWT,
+Spring Security,
+CORS sécurisé.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="timeline">
+
+<h2 class="section-title">
+Timeline du projet
+</h2>
+
+<p class="section-sub">
+Évolution progressive du projet pendant la formation RNCP6.
+</p>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-content">
+<h4>Phase 1 — Prototype</h4>
+<p>
+Création des premières interfaces HTML/CSS et réflexion UX.
+</p>
+</div>
+</div>
+
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-content">
+<h4>Phase 2 — API Spring Boot</h4>
+<p>
+Développement des endpoints REST et sécurisation JWT.
+</p>
+</div>
+</div>
+
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-content">
+<h4>Phase 3 — MongoDB & PostgreSQL</h4>
+<p>
+Séparation des données métier et historiques FDJ.
+</p>
+</div>
+</div>
+
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-content">
+<h4>Phase 4 — Monitoring</h4>
+<p>
+Mise en place de Prometheus, Grafana et Uptime Kuma.
+</p>
+</div>
+</div>
+
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-content">
+<h4>Phase 5 — PWA Android</h4>
+<p>
+Transformation du site en application installable mobile.
+</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<footer class="footer">
+© 2026 — Stéphane Dinahet — Projet RNCP6 Full Stack
+</footer>
+
+</div>
+
+<script>
+
+let deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+
+e.preventDefault();
+
+deferredPrompt = e;
+
+document.getElementById('installBanner').classList.add('show');
+
+document.getElementById('installBanner').addEventListener('click', async () => {
+
+if (deferredPrompt) {
+
+deferredPrompt.prompt();
+
+const result = await deferredPrompt.userChoice;
+
+console.log(result.outcome);
+
+deferredPrompt = null;
+
+}
+
+});
+
+});
+
+if ('serviceWorker' in navigator) {
+
+window.addEventListener('load', () => {
+
+navigator.serviceWorker.register('./sw.js')
+.then(() => console.log('Service Worker enregistré'))
+.catch(err => console.error(err));
+
+});
+
+}
+
+</script>
+
+</body>
+</html>

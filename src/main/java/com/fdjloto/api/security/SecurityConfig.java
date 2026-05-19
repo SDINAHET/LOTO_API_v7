@@ -211,6 +211,7 @@ public class SecurityConfig {
                         // 🔓 PUBLIC ENDPOINTS
                         // =====================
                         .requestMatchers("/admin/ping").hasRole("ADMIN")
+                        .requestMatchers("/actuator/prometheus").permitAll()
                         .requestMatchers("/actuator/health").permitAll()
                         .requestMatchers(
                             "/api/health",

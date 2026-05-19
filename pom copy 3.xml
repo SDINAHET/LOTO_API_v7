@@ -42,7 +42,7 @@
   </properties>
 
   <!-- Testcontainers BOM (gestion des versions) -->
-  <dependencyManagement>
+  <!-- <dependencyManagement>
     <dependencies>
       <dependency>
         <groupId>org.testcontainers</groupId>
@@ -52,7 +52,29 @@
         <scope>import</scope>
       </dependency>
     </dependencies>
-  </dependencyManagement>
+  </dependencyManagement> -->
+
+  <!-- <dependencyManagement>
+    <dependencies>
+
+      <!-- Testcontainers BOM -->
+      <dependency>
+        <groupId>org.testcontainers</groupId>
+        <artifactId>testcontainers-bom</artifactId>
+        <version>${testcontainers.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+
+      <!-- 🔥 FORCER docker-java version compatible -->
+      <dependency>
+        <groupId>com.github.docker-java</groupId>
+        <artifactId>docker-java</artifactId>
+        <version>3.3.6</version>
+      </dependency>
+
+    </dependencies>
+  </dependencyManagement> -->
 
   <!-- Dependencies -->
   <dependencies>
@@ -153,17 +175,18 @@
       <scope>test</scope>
     </dependency> -->
     <!-- <dependency>
-      <groupId>org.testcontainers</groupId>
-      <artifactId>docker-java-transport-httpclient5</artifactId>
-      <version>1.20.4</version>
-      <scope>test</scope>
-    </dependency> -->
-    <dependency>
       <groupId>com.github.docker-java</groupId>
       <artifactId>docker-java-transport-httpclient5</artifactId>
       <version>3.3.6</version>
       <scope>test</scope>
     </dependency>
+
+    <dependency>
+      <groupId>com.github.docker-java</groupId>
+      <artifactId>docker-java</artifactId>
+      <version>3.3.6</version>
+      <scope>test</scope>
+    </dependency> -->
 
 
     <!-- OpenAPI / Swagger -->
@@ -238,10 +261,6 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-thymeleaf</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>io.micrometer</groupId>
-      <artifactId>micrometer-registry-prometheus</artifactId>
     </dependency>
 
   </dependencies>

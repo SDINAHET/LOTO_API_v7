@@ -56,6 +56,8 @@ start_ai_service() {
   echo "   ⚠️ AI lancé mais /health ne répond pas"
 }
 
+export DOCKER_HOST=unix:///var/run/docker.sock
+
 # ========================
 # SERVICES SYSTEM
 # ========================
@@ -81,7 +83,8 @@ fi
 # SPRING BOOT
 # ========================
 echo "==> Build Spring Boot"
-mvn clean install
+# mvn clean install
+mvn clean install -DskipTests
 
 echo "==> Démarrage Spring Boot"
 nohup mvn spring-boot:run \

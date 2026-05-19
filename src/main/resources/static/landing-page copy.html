@@ -1,0 +1,980 @@
+<!-- <!-- <!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loto Tracker — Projet RNCP6</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
+
+body{
+background:#020617;
+color:#e2e8f0;
+line-height:1.6;
+scroll-behavior:smooth;
+}
+
+/* NAV */
+nav{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 10%;
+background:rgba(2,6,23,0.8);
+backdrop-filter:blur(10px);
+z-index:1000;
+}
+
+nav a{color:white;text-decoration:none;margin-left:20px}
+
+/* MOBILE */
+.menu-toggle{display:none;font-size:1.5rem;cursor:pointer}
+
+@media(max-width:768px){
+.menu{display:none;flex-direction:column;position:absolute;top:70px;right:10%;background:#020617;padding:20px;border-radius:10px}
+.menu.active{display:flex}
+.menu-toggle{display:block}
+}
+
+/* HERO */
+.hero{padding-top:140px;text-align:center;max-width:900px;margin:auto}
+
+.hero h1{
+font-size:2.8rem;
+background:linear-gradient(90deg,#6366f1,#a855f7);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+/* BUTTON */
+.btn{
+padding:12px 25px;
+border-radius:30px;
+text-decoration:none;
+display:inline-block;
+margin:10px;
+transition:0.3s;
+}
+
+.btn-primary{
+background:linear-gradient(45deg,#6366f1,#a855f7);
+color:white;
+}
+
+.btn-primary:hover{transform:translateY(-3px)}
+
+/* SECTION */
+section{
+padding:100px 10%;
+opacity:0;
+transform:translateY(40px);
+transition:0.8s;
+}
+
+section.show{opacity:1;transform:translateY(0)}
+
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.card{
+background:#1e293b;
+padding:25px;
+border-radius:12px;
+}
+
+.step{
+background:#1e293b;
+padding:20px;
+border-left:4px solid #6366f1;
+margin-bottom:20px;
+}
+
+/* DASHBOARD */
+.dashboard{
+background:#1e293b;
+padding:30px;
+border-radius:15px;
+margin-top:20px;
+}
+
+/* TABLE */
+table{width:100%;border-collapse:collapse}
+
+th,td{
+border:1px solid #334155;
+padding:10px;
+text-align:center;
+vertical-align:middle;
+}
+
+/* ===== BOULES LOTO ===== */
+.boule{
+display:inline-flex;
+justify-content:center;
+align-items:center;
+width:36px;
+height:36px;
+border-radius:50%;
+font-weight:bold;
+margin:3px;
+color:white;
+box-shadow:0 2px 8px rgba(0,0,0,0.4);
+transition:0.2s;
+}
+
+.boule:hover{
+transform:scale(1.15);
+}
+
+.boule-bleu{
+background:linear-gradient(145deg,#3b82f6,#1e3a8a);
+}
+
+.boule-rouge{
+background:linear-gradient(145deg,#ef4444,#7f1d1d);
+}
+
+/* LOADER */
+#loader{
+display:none;
+margin-top:20px;
+padding:10px;
+background:#1e293b;
+border-radius:10px;
+}
+
+#error{color:#f87171;margin-top:10px}
+
+footer{text-align:center;padding:40px;opacity:0.6}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+<div><strong>Loto Tracker</strong></div>
+
+<div class="menu" id="menu">
+<a href="#presentation">Projet</a>
+<a href="#features">Fonctionnalités</a>
+<a href="#demo">Démo</a>
+<a href="https://loto-tracker.fr/">Application</a>
+</div>
+
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+</nav>
+
+<section class="hero">
+<h1>Application full stack de gestion de tickets Loto</h1>
+
+<p>Projet RNCP6 démontrant une architecture complète API REST + JWT + SQL + NoSQL</p>
+
+<a href="https://loto-tracker.fr/" class="btn btn-primary">
+Accéder à l'application
+</a>
+</section>
+
+<section id="presentation">
+<h2>Présentation</h2>
+<p>Loto Tracker permet de gérer et analyser les tickets loto automatiquement.</p>
+</section>
+
+<section id="features">
+<h2>Fonctionnalités</h2>
+
+<div class="grid">
+<div class="card">Authentification JWT</div>
+<div class="card">CRUD tickets</div>
+<div class="card">Analyse automatique</div>
+<div class="card">Historique complet</div>
+</div>
+
+</section>
+
+<section>
+<h2>Parcours utilisateur</h2>
+
+<div class="step">Inscription</div>
+<div class="step">Connexion</div>
+<div class="step">Ajout ticket</div>
+<div class="step">Analyse</div>
+<div class="step">Résultat</div>
+
+</section>
+
+<section id="demo">
+<h2>Démonstration API</h2>
+
+<button onclick="loadResults()" class="btn btn-primary">
+Charger les résultats
+</button>
+
+<div id="loader">Connexion à l'API...</div>
+<div id="error"></div>
+
+<div class="dashboard">
+<table id="table" style="display:none;">
+<thead>
+<tr>
+<th>Date</th>
+<th>Numéros</th>
+<th>Chance</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+</div>
+
+</section>
+
+<footer>
+Projet RNCP6 — Stéphane Dinahet
+</footer>
+
+<script>
+
+/* MENU MOBILE */
+function toggleMenu(){
+document.getElementById("menu").classList.toggle("active");
+}
+
+/* ANIMATION */
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(e=>{
+if(e.isIntersecting){
+e.target.classList.add("show");
+}
+});
+});
+document.querySelectorAll("section").forEach(s=>observer.observe(s));
+
+async function loadResults(){
+
+const loader=document.getElementById("loader");
+const table=document.getElementById("table");
+const tbody=table.querySelector("tbody");
+const error=document.getElementById("error");
+
+loader.style.display="block";
+loader.textContent="Connexion à l'API...";
+table.style.display="none";
+error.textContent="";
+tbody.innerHTML="";
+
+try{
+
+const res=await fetch("https://loto-tracker.fr/api/historique/last20");
+const data=await res.json();
+
+/* TRI */
+data.sort((a,b)=>{
+const parse = d => {
+const [day,month,year]=d.dateDeTirage.split("/");
+return new Date(year,month-1,day);
+};
+return parse(b)-parse(a);
+});
+
+data.slice(0,10).forEach(draw=>{
+
+const date = draw.dateDeTirage;
+
+/* 🔥 BOULES */
+const numerosHTML = [
+draw.boule1,
+draw.boule2,
+draw.boule3,
+draw.boule4,
+draw.boule5
+].map(n => `<span class="boule boule-bleu">${n}</span>`).join("");
+
+const chanceHTML = `<span class="boule boule-rouge">${draw.numeroChance}</span>`;
+
+const tr=document.createElement("tr");
+
+tr.innerHTML=`
+<td>${date}</td>
+<td>${numerosHTML}</td>
+<td>${chanceHTML}</td>
+`;
+
+tbody.appendChild(tr);
+});
+
+table.style.display="table";
+loader.textContent="Données chargées ✅";
+
+}catch(e){
+console.error(e);
+error.textContent="Erreur API";
+loader.style.display="none";
+}
+
+setTimeout(()=>{loader.style.display="none";},1500);
+}
+
+window.addEventListener("DOMContentLoaded", loadResults);
+
+</script>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loto Tracker — Projet RNCP6</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
+
+body{
+background:#020617;
+color:#e2e8f0;
+line-height:1.6;
+}
+
+/* HERO */
+.hero{padding:120px 10%;text-align:center}
+
+.hero h1{
+font-size:2.5rem;
+background:linear-gradient(90deg,#6366f1,#a855f7);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+/* BUTTON */
+.btn{
+padding:10px 20px;
+border-radius:20px;
+background:#6366f1;
+color:white;
+border:none;
+cursor:pointer;
+margin-top:15px;
+}
+
+/* TABLE */
+.dashboard{
+background:#1e293b;
+padding:30px;
+border-radius:15px;
+margin-top:20px;
+}
+
+table{width:100%;border-collapse:collapse}
+
+th,td{
+border:1px solid #334155;
+padding:10px;
+text-align:center;
+}
+
+/* BOULES */
+.boule{
+display:inline-flex;
+justify-content:center;
+align-items:center;
+width:36px;
+height:36px;
+border-radius:50%;
+margin:3px;
+color:white;
+}
+
+.boule-bleu{background:#3b82f6}
+.boule-rouge{background:#ef4444}
+
+/* GRID */
+#grid49{
+display:grid;
+grid-template-columns:repeat(7,1fr);
+gap:8px;
+margin-top:15px;
+}
+
+#chanceGrid{
+display:flex;
+gap:8px;
+margin-top:15px;
+}
+
+.cell{
+padding:10px;
+border-radius:50%;
+background:#1e293b;
+cursor:pointer;
+text-align:center;
+}
+
+.cell.selected{
+background:#3b82f6;
+}
+
+.cell.chance.selected{
+background:#ef4444;
+}
+
+/* RESULT */
+#resultTicket{
+margin-top:20px;
+background:#1e293b;
+padding:15px;
+border-radius:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<section class="hero">
+<h1>Loto Tracker</h1>
+<p>Simulation et analyse de tickets loto</p>
+</section>
+
+<section style="padding:50px 10%;">
+
+<h2>Derniers résultats</h2>
+
+<div class="dashboard">
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Numéros</th>
+<th>Chance</th>
+</tr>
+</thead>
+<tbody id="tbody"></tbody>
+</table>
+</div>
+
+<!-- GRILLE -->
+
+<h3 style="margin-top:40px;">Grille Loto</h3>
+
+<label>Choisir une date :</label> <select id="dateSelect"></select>
+
+<h4>Numéros</h4>
+<div id="grid49"></div>
+
+<h4>Numéro Chance</h4>
+<div id="chanceGrid"></div>
+
+<button onclick="validerGrille()" class="btn">Valider mon ticket</button>
+
+<div id="resultTicket"></div>
+
+</section>
+
+<script>
+
+let lastDraws=[];
+let selectedNums=[];
+let selectedChance=null;
+
+/* LOAD API */
+async function loadResults(){
+
+const res=await fetch("https://loto-tracker.fr/api/historique/last20");
+const data=await res.json();
+
+lastDraws=data;
+
+/* TRI */
+data.sort((a,b)=>{
+const parse=d=>{
+const [d1,m,y]=d.dateDeTirage.split("/");
+return new Date(y,m-1,d1);
+};
+return parse(b)-parse(a);
+});
+
+/* TABLE */
+const tbody=document.getElementById("tbody");
+
+data.slice(0,10).forEach(draw=>{
+
+const numsHTML=[
+draw.boule1,
+draw.boule2,
+draw.boule3,
+draw.boule4,
+draw.boule5
+].map(n=>`<span class="boule boule-bleu">${n}</span>`).join("");
+
+const chanceHTML=`<span class="boule boule-rouge">${draw.numeroChance}</span>`;
+
+tbody.innerHTML+=`
+<tr>
+<td>${draw.dateDeTirage}</td>
+<td>${numsHTML}</td>
+<td>${chanceHTML}</td>
+</tr>
+`;
+
+});
+
+/* SELECT DATE */
+const select=document.getElementById("dateSelect");
+data.forEach(draw=>{
+const opt=document.createElement("option");
+opt.value=draw.dateDeTirage;
+opt.textContent=draw.dateDeTirage;
+select.appendChild(opt);
+});
+
+}
+
+/* GRID 49 */
+function createGrid(){
+
+const grid=document.getElementById("grid49");
+
+for(let i=1;i<=49;i++){
+const div=document.createElement("div");
+div.className="cell";
+div.textContent=i;
+
+div.onclick=()=>{
+if(selectedNums.includes(i)){
+selectedNums=selectedNums.filter(n=>n!==i);
+div.classList.remove("selected");
+}else{
+if(selectedNums.length<5){
+selectedNums.push(i);
+div.classList.add("selected");
+}
+}
+};
+
+grid.appendChild(div);
+}
+
+/* CHANCE */
+const chanceGrid=document.getElementById("chanceGrid");
+
+for(let i=1;i<=10;i++){
+const div=document.createElement("div");
+div.className="cell chance";
+div.textContent=i;
+
+div.onclick=()=>{
+selectedChance=i;
+document.querySelectorAll(".chance").forEach(c=>c.classList.remove("selected"));
+div.classList.add("selected");
+};
+
+chanceGrid.appendChild(div);
+}
+
+}
+
+/* VALIDATION */
+function validerGrille(){
+
+if(selectedNums.length!==5 || !selectedChance){
+resultTicket.innerHTML="Sélectionne 5 numéros + 1 chance";
+return;
+}
+
+const date=document.getElementById("dateSelect").value;
+
+const draw=lastDraws.find(d=>d.dateDeTirage===date);
+
+const tirage=[
+draw.boule1,
+draw.boule2,
+draw.boule3,
+draw.boule4,
+draw.boule5
+];
+
+let match=selectedNums.filter(n=>tirage.includes(n)).length;
+let chanceMatch=selectedChance===draw.numeroChance;
+
+/* GAIN */
+let gain="0€";
+
+if(match===5 && chanceMatch) gain="Jackpot 💰";
+else if(match===5) gain="~100k€";
+else if(match===4 && chanceMatch) gain="~1k€";
+else if(match===4) gain="~100€";
+else if(match===3) gain="~20€";
+
+resultTicket.innerHTML=`
+<p>Date : ${date}</p>
+<p>${match} bons numéros ${chanceMatch?"+ chance":""}</p>
+<p><strong>${gain}</strong></p>
+`;
+
+}
+
+/* INIT */
+window.onload=()=>{
+loadResults();
+createGrid();
+};
+
+</script>
+
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loto Tracker — Projet RNCP6</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
+
+body{
+background:#020617;
+color:#e2e8f0;
+}
+
+/* HERO */
+.hero{padding:120px 10%;text-align:center}
+.hero h1{
+font-size:2.5rem;
+background:linear-gradient(90deg,#6366f1,#a855f7);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+/* BUTTON */
+.btn{
+padding:10px 20px;
+border-radius:20px;
+background:#6366f1;
+color:white;
+border:none;
+cursor:pointer;
+transition:0.2s;
+}
+.btn:hover{transform:translateY(-2px)}
+
+/* TABLE */
+.dashboard{
+background:#1e293b;
+padding:30px;
+border-radius:15px;
+margin-top:20px;
+}
+
+table{width:100%;border-collapse:collapse}
+th,td{
+border:1px solid #334155;
+padding:10px;
+text-align:center;
+}
+
+/* BOULES */
+.boule{
+display:inline-flex;
+justify-content:center;
+align-items:center;
+width:36px;
+height:36px;
+border-radius:50%;
+margin:3px;
+color:white;
+font-weight:bold;
+transition:0.2s;
+}
+
+.boule:hover{transform:scale(1.15)}
+
+.boule-bleu{background:#3b82f6}
+.boule-rouge{background:#ef4444}
+
+/* 🔥 GAGNANTS */
+.boule-win{
+background:#22c55e;
+transform:scale(1.2);
+}
+
+.boule-win-chance{
+background:#facc15;
+transform:scale(1.2);
+}
+
+/* GRID */
+#grid49{
+display:grid;
+grid-template-columns:repeat(7,1fr);
+gap:8px;
+margin-top:15px;
+}
+
+#chanceGrid{
+display:flex;
+gap:8px;
+margin-top:15px;
+}
+
+.cell{
+padding:10px;
+border-radius:50%;
+background:#1e293b;
+cursor:pointer;
+text-align:center;
+transition:0.2s;
+}
+
+.cell:hover{
+transform:scale(1.1);
+background:#334155;
+}
+
+.cell.selected{background:#3b82f6}
+.cell.chance.selected{background:#ef4444}
+
+/* RESULT */
+#resultTicket{
+margin-top:20px;
+background:#1e293b;
+padding:15px;
+border-radius:10px;
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+<h1>Loto Tracker</h1>
+<p>Simulation et analyse de tickets loto</p>
+</section>
+
+<section style="padding:50px 10%;">
+
+<h2>Derniers résultats</h2>
+
+<div class="dashboard">
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Numéros</th>
+<th>Chance</th>
+</tr>
+</thead>
+<tbody id="tbody"></tbody>
+</table>
+</div>
+
+<h3 style="margin-top:40px;">Grille Loto</h3>
+
+<label>Choisir une date :</label>
+<select id="dateSelect"></select>
+
+<h4>Numéros</h4>
+<div id="grid49"></div>
+
+<h4>Numéro Chance</h4>
+<div id="chanceGrid"></div>
+
+<button onclick="validerGrille()" class="btn">Valider mon ticket</button>
+
+<div id="resultTicket"></div>
+
+</section>
+
+<script>
+
+let lastDraws=[];
+let selectedNums=[];
+let selectedChance=null;
+
+/* LOAD API */
+async function loadResults(){
+
+const res=await fetch("https://loto-tracker.fr/api/historique/last20");
+const data=await res.json();
+
+lastDraws=data;
+
+/* TRI */
+data.sort((a,b)=>{
+const parse=d=>{
+const [d1,m,y]=d.dateDeTirage.split("/");
+return new Date(y,m-1,d1);
+};
+return parse(b)-parse(a);
+});
+
+/* TABLE */
+const tbody=document.getElementById("tbody");
+
+data.slice(0,10).forEach(draw=>{
+
+const numsHTML=[
+draw.boule1,
+draw.boule2,
+draw.boule3,
+draw.boule4,
+draw.boule5
+].map(n=>`<span class="boule boule-bleu">${n}</span>`).join("");
+
+const chanceHTML=`<span class="boule boule-rouge">${draw.numeroChance}</span>`;
+
+tbody.innerHTML+=`
+<tr>
+<td>${draw.dateDeTirage}</td>
+<td>${numsHTML}</td>
+<td>${chanceHTML}</td>
+</tr>
+`;
+});
+
+/* SELECT */
+const select=document.getElementById("dateSelect");
+data.forEach(draw=>{
+const opt=document.createElement("option");
+opt.value=draw.dateDeTirage;
+opt.textContent=draw.dateDeTirage;
+select.appendChild(opt);
+});
+}
+
+/* GRID */
+function createGrid(){
+
+const grid=document.getElementById("grid49");
+
+for(let i=1;i<=49;i++){
+const div=document.createElement("div");
+div.className="cell";
+div.textContent=i;
+
+div.onclick=()=>{
+if(selectedNums.includes(i)){
+selectedNums=selectedNums.filter(n=>n!==i);
+div.classList.remove("selected");
+}else if(selectedNums.length<5){
+selectedNums.push(i);
+div.classList.add("selected");
+}
+};
+
+grid.appendChild(div);
+}
+
+/* CHANCE */
+const chanceGrid=document.getElementById("chanceGrid");
+
+for(let i=1;i<=10;i++){
+const div=document.createElement("div");
+div.className="cell chance";
+div.textContent=i;
+
+div.onclick=()=>{
+selectedChance=i;
+document.querySelectorAll(".chance").forEach(c=>c.classList.remove("selected"));
+div.classList.add("selected");
+};
+
+chanceGrid.appendChild(div);
+}
+}
+
+/* VALIDATION */
+function validerGrille(){
+
+if(selectedNums.length!==5 || !selectedChance){
+resultTicket.innerHTML="⚠️ Sélectionne 5 numéros + 1 chance";
+return;
+}
+
+const date=document.getElementById("dateSelect").value;
+const draw=lastDraws.find(d=>d.dateDeTirage===date);
+
+const tirage=[
+draw.boule1,
+draw.boule2,
+draw.boule3,
+draw.boule4,
+draw.boule5
+];
+
+let match=selectedNums.filter(n=>tirage.includes(n)).length;
+let chanceMatch=selectedChance===draw.numeroChance;
+
+/* GAIN */
+let gain="0€";
+
+if(match===5 && chanceMatch) gain="Jackpot 💰💰💰";
+else if(match===5) gain="~100 000€";
+else if(match===4 && chanceMatch) gain="~1 000€";
+else if(match===4) gain="~100€";
+else if(match===3) gain="~20€";
+
+/* VISUEL */
+const userHTML = selectedNums.map(n=>{
+const win = tirage.includes(n);
+return `<span class="boule ${win ? 'boule-win' : 'boule-bleu'}">${n}</span>`;
+}).join("");
+
+const chanceHTML = `
+<span class="boule ${chanceMatch ? 'boule-win-chance' : 'boule-rouge'}">
+${selectedChance}
+</span>
+`;
+
+resultTicket.innerHTML=`
+<h4>Résultat du tirage du ${date}</h4>
+
+<div style="margin:10px 0;">
+${userHTML} ${chanceHTML}
+</div>
+
+<p>${match} bons numéros ${chanceMatch ? "+ chance" : ""}</p>
+
+<p style="font-size:1.2rem;">
+💰 Gain estimé : <strong>${gain}</strong>
+</p>
+`;
+}
+
+/* INIT */
+window.onload=()=>{
+loadResults();
+createGrid();
+};
+
+</script>
+
+</body>
+</html>

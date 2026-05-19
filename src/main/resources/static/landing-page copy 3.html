@@ -1,0 +1,1423 @@
+<!-- <!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loto Tracker — RNCP6</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
+
+body{
+background:linear-gradient(135deg,#020617,#020617,#0f172a);
+color:#e2e8f0;
+}
+
+/* HERO */
+.hero{
+text-align:center;
+padding:80px 20px;
+}
+
+.hero h1{
+font-size:2.8rem;
+background:linear-gradient(90deg,#6366f1,#a855f7);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+/* GLASS CARD */
+.glass{
+background:rgba(30,41,59,0.6);
+backdrop-filter:blur(15px);
+border-radius:20px;
+padding:30px;
+margin-top:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* TABLE */
+table{width:100%;border-collapse:collapse}
+
+th,td{
+border:1px solid #334155;
+padding:10px;
+text-align:center;
+}
+
+/* BOULES */
+.boule{
+display:inline-flex;
+justify-content:center;
+align-items:center;
+width:36px;height:36px;
+border-radius:50%;
+margin:3px;
+color:white;
+font-weight:bold;
+transition:0.2s;
+}
+
+.boule:hover{transform:scale(1.2)}
+
+.boule-bleu{background:linear-gradient(#3b82f6,#1e3a8a)}
+.boule-rouge{background:linear-gradient(#ef4444,#7f1d1d)}
+.win{background:linear-gradient(#22c55e,#14532d)!important}
+.winChance{background:linear-gradient(#eab308,#854d0e)!important}
+
+/* GRID */
+#grid49{
+display:grid;
+grid-template-columns:repeat(7,1fr);
+gap:8px;
+margin-top:20px;
+}
+
+.cell{
+padding:12px;
+border-radius:50%;
+background:#1e293b;
+cursor:pointer;
+text-align:center;
+transition:0.2s;
+}
+
+.cell:hover{background:#334155}
+.cell.selected{background:#3b82f6}
+
+/* CHANCE */
+#chanceGrid{
+display:flex;
+gap:10px;
+margin-top:15px;
+}
+
+.cell.chance.selected{background:#ef4444}
+
+/* BUTTON */
+.btn{
+margin-top:20px;
+padding:12px 20px;
+border-radius:25px;
+background:linear-gradient(45deg,#6366f1,#a855f7);
+border:none;
+color:white;
+cursor:pointer;
+}
+
+/* RESULT */
+#result{
+margin-top:20px;
+padding:20px;
+border-radius:15px;
+background:#1e293b;
+}
+
+/* ANIMATION FDJ */
+.spin{
+animation:spin 0.6s ease;
+}
+
+@keyframes spin{
+0%{transform:scale(0)}
+50%{transform:scale(1.3)}
+100%{transform:scale(1)}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+<h1>Loto Tracker</h1>
+<p>Simulation intelligente de tickets</p>
+</div>
+
+<div style="padding:40px">
+
+<h2>Derniers tirages</h2>
+
+<div class="glass">
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Numéros</th>
+<th>Chance</th>
+</tr>
+</thead>
+<tbody id="tbody"></tbody>
+</table>
+</div>
+
+<h2 style="margin-top:40px">Créer un ticket</h2>
+
+<label>Date :</label>
+<select id="dateSelect"></select>
+
+<div id="grid49"></div>
+
+<h3>Numéro Chance</h3>
+<div id="chanceGrid"></div>
+
+<button class="btn" onclick="valider()">Valider</button>
+
+<div id="result"></div>
+
+<h2 style="margin-top:40px">Stats</h2>
+<div id="stats" class="glass"></div>
+
+</div>
+
+<script>
+
+let draws=[];
+let selected=[];
+let chance=null;
+
+/* LOAD */
+async function load(){
+
+const res=await fetch("https://loto-tracker.fr/api/historique/last20");
+const data=await res.json();
+
+draws=data;
+
+/* TRI */
+data.sort((a,b)=>{
+const p=d=>{
+const [d1,m,y]=d.dateDeTirage.split("/");
+return new Date(y,m-1,d1);
+};
+return p(b)-p(a);
+});
+
+/* TABLE */
+const tbody=document.getElementById("tbody");
+
+data.slice(0,6).forEach(d=>{
+
+const nums=[d.boule1,d.boule2,d.boule3,d.boule4,d.boule5]
+.map(n=>`<span class="boule boule-bleu">${n}</span>`).join("");
+
+tbody.innerHTML+=`
+<tr>
+<td>${d.dateDeTirage}</td>
+<td>${nums}</td>
+<td><span class="boule boule-rouge">${d.numeroChance}</span></td>
+</tr>
+`;
+
+});
+
+/* SELECT */
+const sel=document.getElementById("dateSelect");
+data.forEach(d=>{
+const o=document.createElement("option");
+o.value=d.dateDeTirage;
+o.textContent=d.dateDeTirage;
+sel.appendChild(o);
+});
+
+/* STATS */
+calcStats(data);
+
+}
+
+/* GRID */
+function grid(){
+
+const g=document.getElementById("grid49");
+
+for(let i=1;i<=49;i++){
+const c=document.createElement("div");
+c.className="cell";
+c.textContent=i;
+
+c.onclick=()=>{
+if(selected.includes(i)){
+selected=selected.filter(n=>n!==i);
+c.classList.remove("selected");
+}else if(selected.length<5){
+selected.push(i);
+c.classList.add("selected");
+}
+};
+
+g.appendChild(c);
+}
+
+/* CHANCE */
+const cg=document.getElementById("chanceGrid");
+
+for(let i=1;i<=10;i++){
+const c=document.createElement("div");
+c.className="cell chance";
+c.textContent=i;
+
+c.onclick=()=>{
+chance=i;
+document.querySelectorAll(".chance").forEach(x=>x.classList.remove("selected"));
+c.classList.add("selected");
+};
+
+cg.appendChild(c);
+}
+
+}
+
+/* VALIDATION */
+function valider(){
+
+const resDiv=document.getElementById("result");
+
+if(selected.length!==5 || !chance){
+resDiv.innerHTML="❌ Sélection incomplète";
+return;
+}
+
+const date=document.getElementById("dateSelect").value;
+const draw=draws.find(d=>d.dateDeTirage===date);
+
+const tirage=[draw.boule1,draw.boule2,draw.boule3,draw.boule4,draw.boule5];
+
+let match=selected.filter(n=>tirage.includes(n));
+let chanceOK=chance===draw.numeroChance;
+
+/* animation */
+resDiv.classList.add("spin");
+setTimeout(()=>resDiv.classList.remove("spin"),600);
+
+/* gain */
+let gain="0€";
+if(match.length===5 && chanceOK) gain="JACKPOT 💰";
+else if(match.length===5) gain="~100k€";
+else if(match.length===4 && chanceOK) gain="~1k€";
+else if(match.length===4) gain="~100€";
+else if(match.length===3) gain="~20€";
+
+/* affichage */
+resDiv.innerHTML=`
+<p>Date : ${date}</p>
+<p>Numéros joués : ${selected.join(", ")}</p>
+<p>${match.length} bons numéros ${chanceOK?"+ chance":""}</p>
+<p><strong>${gain}</strong></p>
+`;
+
+}
+
+/* STATS */
+function calcStats(data){
+
+let freq={};
+
+data.forEach(d=>{
+[d.boule1,d.boule2,d.boule3,d.boule4,d.boule5].forEach(n=>{
+freq[n]=(freq[n]||0)+1;
+});
+});
+
+let sorted=Object.entries(freq).sort((a,b)=>b[1]-a[1]).slice(0,10);
+
+document.getElementById("stats").innerHTML=
+sorted.map(([n,f])=>`<p>${n} → ${f} fois</p>`).join("");
+
+}
+
+/* INIT */
+window.onload=()=>{
+load();
+grid();
+};
+
+</script>
+
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loto Tracker — Projet RNCP6</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
+
+:root{
+  --bg:#060a12;
+  --panel:rgba(15,23,42,.62);
+  --panel-soft:rgba(2,6,23,.35);
+  --border:rgba(255,255,255,.11);
+  --text:rgba(255,255,255,.92);
+  --muted:rgba(255,255,255,.66);
+  --blue:#3b82f6;
+  --red:#ef4444;
+  --green:#22c55e;
+  --orange:#f59e0b;
+  --purple:#a855f7;
+}
+
+body{
+  min-height:100vh;
+  background:
+    radial-gradient(1200px 600px at 20% 20%, rgba(37,99,235,.28), transparent 60%),
+    radial-gradient(1000px 700px at 80% 30%, rgba(168,85,247,.22), transparent 60%),
+    linear-gradient(135deg,#020617,#060a12,#0f172a);
+  color:var(--text);
+}
+
+a{text-decoration:none;color:inherit}
+
+.container{
+  max-width:1200px;
+  margin:0 auto;
+  padding:28px 18px 90px;
+}
+
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+  padding:10px 0 34px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:11px;
+  font-weight:950;
+  font-size:1.15rem;
+}
+
+.brand-logo{
+  width:38px;
+  height:38px;
+  border-radius:14px;
+  display:grid;
+  place-items:center;
+  background:linear-gradient(135deg,#2563eb,#7c3aed,#a855f7);
+  box-shadow:0 18px 45px rgba(59,130,246,.25);
+}
+
+.nav-actions,.hero-actions,.demo-actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:12px 18px;
+  border-radius:14px;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.06);
+  color:white;
+  font-weight:900;
+  cursor:pointer;
+  transition:.18s ease;
+}
+
+.btn:hover{
+  transform:translateY(-1px);
+  background:rgba(255,255,255,.09);
+}
+
+.btn-primary{
+  border:none;
+  background:linear-gradient(135deg,#2563eb,#7c3aed,#a855f7);
+  box-shadow:0 16px 45px rgba(37,99,235,.30);
+}
+
+.btn-success{
+  border:none;
+  background:linear-gradient(135deg,#16a34a,#22c55e);
+}
+
+.hero{
+  min-height:560px;
+  display:grid;
+  grid-template-columns:1.06fr .94fr;
+  gap:28px;
+  align-items:center;
+}
+
+.hero h1{
+  font-size:clamp(2.7rem,6vw,5.5rem);
+  line-height:.96;
+  font-weight:950;
+  letter-spacing:-2.3px;
+  margin-bottom:20px;
+}
+
+.gradient-text{
+  background:linear-gradient(90deg,#60a5fa,#a855f7,#f472b6);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.lead{
+  color:var(--muted);
+  font-size:1.1rem;
+  line-height:1.75;
+  max-width:680px;
+}
+
+.badges{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin:22px 0 28px;
+}
+
+.badge{
+  display:inline-flex;
+  padding:8px 12px;
+  border-radius:999px;
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.10);
+  color:rgba(255,255,255,.80);
+  font-weight:850;
+  font-size:.86rem;
+}
+
+.glass{
+  background:var(--panel);
+  border:1px solid var(--border);
+  backdrop-filter:blur(15px);
+  border-radius:22px;
+  padding:24px;
+  box-shadow:0 24px 75px rgba(0,0,0,.42);
+}
+
+.hero-card{
+  position:relative;
+  overflow:hidden;
+}
+
+.hero-card:before{
+  content:"";
+  position:absolute;
+  inset:-120px;
+  background:radial-gradient(circle at 50% 20%,rgba(96,165,250,.20),transparent 45%);
+  pointer-events:none;
+}
+
+.hero-card > *{position:relative}
+
+.card-title{
+  font-size:1.45rem;
+  font-weight:950;
+  margin-bottom:10px;
+}
+
+.muted{color:var(--muted);line-height:1.65}
+
+.kpi-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+  margin-top:18px;
+}
+
+.kpi{
+  padding:15px;
+  border-radius:16px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.08);
+}
+
+.kpi span{
+  display:block;
+  color:rgba(255,255,255,.58);
+  font-size:.82rem;
+  font-weight:850;
+  margin-bottom:5px;
+}
+
+.kpi strong{
+  font-size:1.15rem;
+  font-weight:950;
+}
+
+.section-title{
+  font-size:2rem;
+  font-weight:950;
+  margin:52px 0 10px;
+}
+
+.section-subtitle{
+  color:var(--muted);
+  line-height:1.7;
+  margin-bottom:18px;
+}
+
+.story{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+  margin:32px 0 8px;
+}
+
+.story-card{
+  min-height:190px;
+}
+
+.story-num{
+  width:36px;
+  height:36px;
+  border-radius:13px;
+  display:grid;
+  place-items:center;
+  background:rgba(59,130,246,.20);
+  border:1px solid rgba(96,165,250,.25);
+  color:#bfdbfe;
+  font-weight:950;
+  margin-bottom:12px;
+}
+
+.story-card h3{
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+
+.story-card p{
+  color:var(--muted);
+  line-height:1.58;
+  font-size:.95rem;
+}
+
+.demo-grid{
+  display:grid;
+  grid-template-columns:.92fr 1.08fr;
+  gap:18px;
+  align-items:start;
+}
+
+label{
+  display:block;
+  color:rgba(255,255,255,.76);
+  font-weight:850;
+  margin:14px 0 8px;
+}
+
+select{
+  width:100%;
+  padding:13px 14px;
+  border-radius:14px;
+  background:rgba(255,255,255,.07);
+  color:white;
+  border:1px solid rgba(255,255,255,.14);
+  outline:none;
+}
+
+select option{background:#0f172a;color:white}
+
+.pick-grid{
+  display:grid;
+  grid-template-columns:repeat(7,1fr);
+  gap:8px;
+  margin-top:12px;
+}
+
+.chance-grid{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-top:12px;
+}
+
+.cell{
+  width:42px;
+  height:42px;
+  border-radius:999px;
+  display:grid;
+  place-items:center;
+  background:rgba(59,130,246,.16);
+  border:1px solid rgba(255,255,255,.10);
+  cursor:pointer;
+  font-weight:950;
+  transition:.15s;
+  user-select:none;
+}
+
+.cell:hover{
+  background:rgba(59,130,246,.55);
+  transform:translateY(-1px);
+}
+
+.cell.selected{
+  background:rgba(59,130,246,.88);
+  border-color:rgba(96,165,250,.90);
+}
+
+.cell.disabled{
+  opacity:.35;
+  cursor:not-allowed;
+  transform:none;
+}
+
+.cell.chance{
+  background:rgba(239,68,68,.16);
+}
+
+.cell.chance:hover,
+.cell.chance.selected{
+  background:rgba(239,68,68,.88);
+}
+
+.table-wrap{
+  overflow:hidden;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(2,6,23,.30);
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+th,td{
+  padding:14px 12px;
+  text-align:left;
+  border-bottom:1px solid rgba(255,255,255,.10);
+  vertical-align:middle;
+}
+
+th{
+  background:rgba(255,255,255,.08);
+  font-weight:950;
+  color:rgba(255,255,255,.96);
+}
+
+td{
+  color:rgba(255,255,255,.86);
+  font-weight:750;
+}
+
+.text-end{text-align:right}
+.text-center{text-align:center}
+
+.balls{
+  display:flex;
+  gap:6px;
+  flex-wrap:wrap;
+  align-items:center;
+}
+
+.ball{
+  width:36px;
+  height:36px;
+  border-radius:999px;
+  display:inline-grid;
+  place-items:center;
+  color:white;
+  font-weight:950;
+  background:linear-gradient(145deg,#315b9f,#17386f);
+  border:1px solid rgba(96,165,250,.32);
+}
+
+.ball.chance{
+  background:linear-gradient(145deg,#7f1d1d,#ef4444);
+  border-color:rgba(239,68,68,.50);
+}
+
+.ball.win{
+  background:linear-gradient(145deg,#2563eb,#60a5fa);
+  box-shadow:0 0 0 3px rgba(96,165,250,.18);
+}
+
+.ball.win-chance{
+  background:linear-gradient(145deg,#dc2626,#f87171);
+  box-shadow:0 0 0 3px rgba(248,113,113,.20);
+}
+
+.status{
+  display:inline-flex;
+  padding:6px 11px;
+  border-radius:9px;
+  font-weight:950;
+  font-size:.82rem;
+}
+
+.status.win{background:rgba(34,197,94,.92);color:white}
+.status.lose{background:rgba(245,158,11,.96);color:#111827}
+.status.wait{background:rgba(148,163,184,.35);color:white}
+
+.result-box{
+  margin-top:18px;
+  padding:18px;
+  border-radius:18px;
+  background:var(--panel-soft);
+  border:1px solid rgba(255,255,255,.10);
+}
+
+.result-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+  margin-top:14px;
+}
+
+.result-line{
+  padding:14px;
+  border-radius:15px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.08);
+}
+
+.result-line span{
+  display:block;
+  color:rgba(255,255,255,.58);
+  font-weight:850;
+  font-size:.82rem;
+  margin-bottom:6px;
+}
+
+.result-line strong{
+  font-size:1.16rem;
+  font-weight:950;
+}
+
+.explain{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+  margin-top:18px;
+}
+
+.code-like{
+  font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
+  color:#bfdbfe;
+  background:rgba(15,23,42,.78);
+  border:1px solid rgba(96,165,250,.18);
+  border-radius:16px;
+  padding:16px;
+  line-height:1.7;
+  font-size:.9rem;
+  overflow:auto;
+}
+
+.cta{
+  margin-top:52px;
+  text-align:center;
+  padding:42px 24px;
+}
+
+.cta h2{
+  font-size:2.15rem;
+  font-weight:950;
+  margin-bottom:12px;
+}
+
+.cta p{
+  color:var(--muted);
+  line-height:1.72;
+  margin:0 auto 24px;
+  max-width:760px;
+}
+
+.spin{animation:spin .55s ease}
+@keyframes spin{
+  0%{transform:scale(.94);opacity:.7}
+  50%{transform:scale(1.02)}
+  100%{transform:scale(1);opacity:1}
+}
+
+@media(max-width:940px){
+  .hero,.demo-grid,.story,.explain{grid-template-columns:1fr}
+  .hero{min-height:auto;padding-top:16px}
+  .story{grid-template-columns:repeat(2,1fr)}
+  .pick-grid{grid-template-columns:repeat(7,42px);justify-content:center}
+}
+
+@media(max-width:640px){
+  .nav{align-items:flex-start;flex-direction:column}
+  .hero h1{letter-spacing:-1.5px}
+  .story{grid-template-columns:1fr}
+  .cell{width:38px;height:38px}
+  .pick-grid{grid-template-columns:repeat(7,38px);gap:6px}
+  .table-wrap{overflow-x:auto}
+  table{min-width:760px}
+  .kpi-grid,.result-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+  <header class="nav">
+    <div class="brand">
+      <div class="brand-logo">🍀</div>
+      <span>Loto Tracker</span>
+    </div>
+
+    <div class="nav-actions">
+      <a class="btn" href="#demo">Voir la démo</a>
+      <a class="btn btn-primary" href="https://loto-tracker.fr">Accéder au vrai site</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h1>Suivre ses tickets Loto devient <span class="gradient-text">simple, visuel et précis.</span></h1>
+
+      <p class="lead">
+        Loto Tracker est mon projet RNCP6 : une application web qui permet de créer un compte,
+        enregistrer ses tickets, comparer automatiquement ses numéros avec les tirages officiels,
+        puis calculer les gains du tirage principal et du second tirage.
+      </p>
+
+      <div class="badges">
+        <span class="badge">JavaScript</span>
+        <span class="badge">Spring Boot</span>
+        <span class="badge">MongoDB</span>
+        <span class="badge">Tirage principal</span>
+        <span class="badge">Second tirage</span>
+        <span class="badge">Portfolio RNCP6</span>
+      </div>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://loto-tracker.fr">Créer un compte sur le vrai site</a>
+        <a class="btn" href="#demo">Tester la démo sans compte</a>
+      </div>
+    </div>
+
+    <div class="glass hero-card">
+      <h2 class="card-title">Le besoin utilisateur</h2>
+      <p class="muted">
+        Après un tirage, beaucoup de joueurs vérifient leurs tickets manuellement.
+        Le risque : oublier le second tirage, mal interpréter un rang ou ne pas connaître le gain exact.
+      </p>
+
+      <div class="kpi-grid">
+        <div class="kpi"><span>Étape 1</span><strong>Créer un compte</strong></div>
+        <div class="kpi"><span>Étape 2</span><strong>Ajouter un ticket</strong></div>
+        <div class="kpi"><span>Étape 3</span><strong>Comparer au tirage</strong></div>
+        <div class="kpi"><span>Étape 4</span><strong>Calculer les gains</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Storytelling du projet</h2>
+    <p class="section-subtitle">
+      La landing page raconte le parcours réel d’un utilisateur : il découvre le service, teste une démo,
+      puis est invité à créer un compte sur le vrai site pour sauvegarder ses tickets.
+    </p>
+
+    <div class="story">
+      <div class="glass story-card">
+        <div class="story-num">1</div>
+        <h3>Découverte</h3>
+        <p>L’utilisateur comprend le problème : vérifier ses tickets à la main peut être long et source d’erreurs.</p>
+      </div>
+
+      <div class="glass story-card">
+        <div class="story-num">2</div>
+        <h3>Démonstration</h3>
+        <p>Il sélectionne 5 numéros, un numéro Chance et une date de tirage pour simuler un ticket.</p>
+      </div>
+
+      <div class="glass story-card">
+        <div class="story-num">3</div>
+        <h3>Calcul précis</h3>
+        <p>Le JavaScript compare le ticket au tirage principal et au second tirage, puis lit les rapports de gains.</p>
+      </div>
+
+      <div class="glass story-card">
+        <div class="story-num">4</div>
+        <h3>Conversion</h3>
+        <p>L’utilisateur est invité à créer un compte sur le vrai site pour enregistrer ses tickets durablement.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="demo">
+    <h2 class="section-title">Démo interactive</h2>
+    <p class="section-subtitle">
+      Cette démo utilise les derniers tirages récupérés depuis l’API du projet. Le calcul est fait côté navigateur en JavaScript,
+      à partir des champs de rapports stockés en base MongoDB :
+      <b>rapportDuRang1 à rapportDuRang9</b> pour le tirage principal et
+      <b>rapportDuRang1SecondTirage à rapportDuRang4SecondTirage</b> pour le second tirage.
+    </p>
+
+    <div class="demo-grid">
+      <div class="glass">
+        <h3 class="card-title">Créer un ticket de démonstration</h3>
+
+        <label for="dateSelect">Date du tirage</label>
+        <select id="dateSelect"></select>
+
+        <label>Choisissez 5 numéros</label>
+        <div id="grid49" class="pick-grid"></div>
+
+        <label>Choisissez 1 numéro Chance</label>
+        <div id="chanceGrid" class="chance-grid"></div>
+
+        <div class="demo-actions">
+          <button class="btn btn-primary" onclick="valider()">Calculer mes gains</button>
+          <button class="btn" onclick="ticketAleatoire()">Ticket aléatoire</button>
+          <button class="btn" onclick="resetTicket()">Réinitialiser</button>
+        </div>
+
+        <div id="result" class="result-box">
+          Sélectionne un tirage, 5 numéros et 1 numéro Chance pour lancer le calcul.
+        </div>
+      </div>
+
+      <div class="glass">
+        <h3 class="card-title">Historique de démonstration</h3>
+        <p class="section-subtitle">
+          Après validation, le ticket apparaît dans un tableau proche de l’espace utilisateur réel.
+        </p>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Numéros</th>
+                <th>Chance</th>
+                <th>Statut</th>
+                <th class="text-end">Gains</th>
+              </tr>
+            </thead>
+            <tbody id="ticketsTable">
+              <tr>
+                <td colspan="5" class="text-center">Aucun ticket simulé pour le moment.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="card-title" style="margin-top:22px">Derniers tirages</h3>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Numéros</th>
+                <th>Chance</th>
+              </tr>
+            </thead>
+            <tbody id="tbody">
+              <tr><td colspan="3" class="text-center">Chargement…</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Calcul des gains : logique métier</h2>
+    <p class="section-subtitle">
+      Le projet ne se contente pas d’afficher les numéros. Il reproduit la logique métier d’un vrai ticket :
+      nombre de bons numéros, présence ou non du numéro Chance, rang du tirage principal, puis ajout éventuel du gain du second tirage.
+    </p>
+
+    <div class="explain">
+      <div class="glass">
+        <h3 class="card-title">Tirage principal</h3>
+        <p class="muted">
+          Le ticket est comparé aux champs MongoDB <b>boule1</b> à <b>boule5</b> et <b>numeroChance</b>.
+          Selon le résultat, le script détermine un rang de 1 à 9 puis lit le champ <b>rapportDuRangX</b>.
+        </p>
+      </div>
+
+      <div class="glass">
+        <h3 class="card-title">Second tirage</h3>
+        <p class="muted">
+          Les mêmes 5 numéros sont comparés aux champs <b>boule1SecondTirage</b> à <b>boule5SecondTirage</b>.
+          Si 2, 3, 4 ou 5 numéros correspondent, le script ajoute le champ <b>rapportDuRangXSecondTirage</b>.
+        </p>
+      </div>
+    </div>
+
+    <div class="code-like" style="margin-top:18px">
+Ticket utilisateur → 5 numéros + 1 chance<br>
+Tirage principal → boule1..boule5 + numeroChance + rapportDuRang1..9<br>
+Second tirage → boule1SecondTirage..boule5SecondTirage + rapportDuRang1SecondTirage..4<br>
+Gain total → gain principal + gain second tirage
+    </div>
+  </section>
+
+  <section class="glass cta">
+    <h2>Tester la version complète</h2>
+    <p>
+      La démo ci-dessus montre le calcul côté JavaScript. Sur le vrai site, l’utilisateur peut créer un compte,
+      enregistrer ses tickets, les retrouver dans son tableau de bord, les modifier, les supprimer et suivre automatiquement ses gains.
+    </p>
+    <div class="hero-actions" style="justify-content:center">
+      <a class="btn btn-primary" href="https://loto-tracker.fr">Aller sur Loto Tracker</a>
+      <a class="btn" href="#demo">Revenir à la démo</a>
+    </div>
+  </section>
+
+</div>
+
+<script>
+let draws = [];
+let selected = [];
+let chance = null;
+let demoTickets = [];
+
+function parseMoneyLike(v){
+  if (v === null || v === undefined || v === "") return 0;
+  if (typeof v === "number") return v;
+  const s = String(v).replace(/\s/g,"").replace(",",".");
+  const n = parseFloat(s);
+  return Number.isNaN(n) ? 0 : n;
+}
+
+function formatMoney(v){
+  const n = Number(v || 0);
+  return `${n.toLocaleString("fr-FR", {minimumFractionDigits:2, maximumFractionDigits:2})} €`;
+}
+
+function getDateValue(d){
+  return d.dateDeTirage || d.date || d.drawDate || "";
+}
+
+function parseDrawDate(value){
+  const s = String(value || "").trim();
+
+  if (/^\d{2}\/\d{2}\/\d{4}$/.test(s)){
+    const [day,month,year] = s.split("/");
+    return new Date(Number(year), Number(month) - 1, Number(day));
+  }
+
+  if (/^\d{4}-\d{2}-\d{2}/.test(s)){
+    const [year,month,day] = s.slice(0,10).split("-");
+    return new Date(Number(year), Number(month) - 1, Number(day));
+  }
+
+  return new Date(s);
+}
+
+function getMainNumbers(draw){
+  return [draw.boule1, draw.boule2, draw.boule3, draw.boule4, draw.boule5]
+    .map(n => parseInt(n,10))
+    .filter(n => !Number.isNaN(n));
+}
+
+function getSecondNumbers(draw){
+  return [
+    draw.boule1SecondTirage,
+    draw.boule2SecondTirage,
+    draw.boule3SecondTirage,
+    draw.boule4SecondTirage,
+    draw.boule5SecondTirage
+  ].map(n => parseInt(n,10)).filter(n => !Number.isNaN(n));
+}
+
+function computeMainDrawGain(ticketNumbers, ticketChance, draw){
+  const winningNumbers = getMainNumbers(draw);
+  const winningChance = parseInt(draw.numeroChance, 10);
+
+  const matches = ticketNumbers.filter(n => winningNumbers.includes(n)).length;
+  const chanceMatch = ticketChance === winningChance;
+
+  let rang = null;
+  if (matches === 5 && chanceMatch) rang = 1;
+  else if (matches === 5) rang = 2;
+  else if (matches === 4 && chanceMatch) rang = 3;
+  else if (matches === 4) rang = 4;
+  else if (matches === 3 && chanceMatch) rang = 5;
+  else if (matches === 3) rang = 6;
+  else if (matches === 2 && chanceMatch) rang = 7;
+  else if (matches === 2) rang = 8;
+  else if (matches === 0 && chanceMatch) rang = 9;
+
+  const gain = rang ? parseMoneyLike(draw[`rapportDuRang${rang}`]) : 0;
+
+  return {
+    matches,
+    chanceMatch,
+    rang,
+    gain
+  };
+}
+
+function computeSecondDrawGain(ticketNumbers, draw){
+  const secondNumbers = getSecondNumbers(draw);
+  if (secondNumbers.length !== 5) {
+    return { matches:0, rang:null, gain:0 };
+  }
+
+  const matches = ticketNumbers.filter(n => secondNumbers.includes(n)).length;
+
+  let rang = null;
+  if (matches === 5) rang = 1;
+  else if (matches === 4) rang = 2;
+  else if (matches === 3) rang = 3;
+  else if (matches === 2) rang = 4;
+
+  const gain = rang ? parseMoneyLike(draw[`rapportDuRang${rang}SecondTirage`]) : 0;
+
+  return {
+    matches,
+    rang,
+    gain
+  };
+}
+
+function ballsHtml(numbers, winningNumbers = []){
+  return `<div class="balls">` + numbers.map(n => {
+    const cls = winningNumbers.includes(n) ? "ball win" : "ball";
+    return `<span class="${cls}">${n}</span>`;
+  }).join("") + `</div>`;
+}
+
+function chanceHtml(num, winningChance = null){
+  const cls = Number(num) === Number(winningChance) ? "ball chance win-chance" : "ball chance";
+  return `<span class="${cls}">${num}</span>`;
+}
+
+async function load(){
+  const tbody = document.getElementById("tbody");
+  const sel = document.getElementById("dateSelect");
+
+  try{
+    const res = await fetch("https://loto-tracker.fr/api/historique/last20");
+    const data = await res.json();
+
+    draws = Array.isArray(data) ? data : [];
+
+    draws.sort((a,b) => parseDrawDate(getDateValue(b)) - parseDrawDate(getDateValue(a)));
+
+    tbody.innerHTML = "";
+
+    draws.slice(0,6).forEach(d => {
+      tbody.innerHTML += `
+        <tr>
+          <td>${getDateValue(d)}</td>
+          <td>${ballsHtml(getMainNumbers(d))}</td>
+          <td>${chanceHtml(d.numeroChance)}</td>
+        </tr>
+      `;
+    });
+
+    sel.innerHTML = "";
+    draws.forEach(d => {
+      const o = document.createElement("option");
+      o.value = getDateValue(d);
+      o.textContent = getDateValue(d);
+      sel.appendChild(o);
+    });
+
+  }catch(e){
+    console.error(e);
+    tbody.innerHTML = `
+      <tr>
+        <td colspan="3" class="text-center">
+          Impossible de charger l’API. La landing reste visible, mais la démo nécessite l’accès à loto-tracker.fr.
+        </td>
+      </tr>`;
+  }
+}
+
+function grid(){
+  const g = document.getElementById("grid49");
+  g.innerHTML = "";
+
+  for(let i = 1; i <= 49; i++){
+    const c = document.createElement("div");
+    c.className = "cell";
+    c.textContent = i;
+
+    c.onclick = () => {
+      if (selected.includes(i)){
+        selected = selected.filter(n => n !== i);
+        c.classList.remove("selected");
+      } else if (selected.length < 5){
+        selected.push(i);
+        c.classList.add("selected");
+      }
+
+      updateDisabledNumbers();
+    };
+
+    g.appendChild(c);
+  }
+
+  const cg = document.getElementById("chanceGrid");
+  cg.innerHTML = "";
+
+  for(let i = 1; i <= 10; i++){
+    const c = document.createElement("div");
+    c.className = "cell chance";
+    c.textContent = i;
+
+    c.onclick = () => {
+      chance = i;
+      document.querySelectorAll(".cell.chance").forEach(x => x.classList.remove("selected"));
+      c.classList.add("selected");
+    };
+
+    cg.appendChild(c);
+  }
+}
+
+function updateDisabledNumbers(){
+  const maxReached = selected.length >= 5;
+
+  document.querySelectorAll("#grid49 .cell").forEach(el => {
+    const n = Number(el.textContent);
+    if (maxReached && !selected.includes(n)) el.classList.add("disabled");
+    else el.classList.remove("disabled");
+  });
+}
+
+function resetTicket(){
+  selected = [];
+  chance = null;
+  document.querySelectorAll(".cell").forEach(c => c.classList.remove("selected","disabled"));
+  document.getElementById("result").innerHTML = "Sélectionne un tirage, 5 numéros et 1 numéro Chance pour lancer le calcul.";
+}
+
+function ticketAleatoire(){
+  resetTicket();
+
+  while(selected.length < 5){
+    const n = Math.floor(Math.random() * 49) + 1;
+    if (!selected.includes(n)) selected.push(n);
+  }
+
+  chance = Math.floor(Math.random() * 10) + 1;
+
+  document.querySelectorAll("#grid49 .cell").forEach(el => {
+    if (selected.includes(Number(el.textContent))) el.classList.add("selected");
+  });
+
+  document.querySelectorAll("#chanceGrid .cell").forEach(el => {
+    if (Number(el.textContent) === chance) el.classList.add("selected");
+  });
+
+  updateDisabledNumbers();
+}
+
+function valider(){
+  const resDiv = document.getElementById("result");
+
+  if (selected.length !== 5 || !chance){
+    resDiv.innerHTML = "❌ Sélection incomplète : choisis 5 numéros et 1 numéro Chance.";
+    return;
+  }
+
+  const date = document.getElementById("dateSelect").value;
+  const draw = draws.find(d => getDateValue(d) === date);
+
+  if (!draw){
+    resDiv.innerHTML = "❌ Tirage introuvable pour cette date.";
+    return;
+  }
+
+  const ticketNumbers = [...selected].sort((a,b) => a - b);
+  const main = computeMainDrawGain(ticketNumbers, chance, draw);
+  const second = computeSecondDrawGain(ticketNumbers, draw);
+  const total = main.gain + second.gain;
+
+  const winningNumbers = getMainNumbers(draw);
+  const winningChance = parseInt(draw.numeroChance,10);
+
+  const statusLabel = total > 0 ? "Gagné" : "Perdu";
+  const statusClass = total > 0 ? "status win" : "status lose";
+
+  resDiv.classList.add("spin");
+  setTimeout(() => resDiv.classList.remove("spin"), 600);
+
+  resDiv.innerHTML = `
+    <h3 class="card-title">Résultat du ticket</h3>
+
+    <div class="result-grid">
+      <div class="result-line">
+        <span>Tirage</span>
+        <strong>${date}</strong>
+      </div>
+      <div class="result-line">
+        <span>Statut</span>
+        <strong>${statusLabel}</strong>
+      </div>
+      <div class="result-line">
+        <span>Tirage principal</span>
+        <strong>${main.matches} numéro(s) ${main.chanceMatch ? "+ Chance" : ""}</strong>
+      </div>
+      <div class="result-line">
+        <span>Gain principal</span>
+        <strong>${formatMoney(main.gain)} ${main.rang ? `(rang ${main.rang})` : ""}</strong>
+      </div>
+      <div class="result-line">
+        <span>Second tirage</span>
+        <strong>${second.matches} numéro(s)</strong>
+      </div>
+      <div class="result-line">
+        <span>Gain second tirage</span>
+        <strong>${formatMoney(second.gain)} ${second.rang ? `(rang ${second.rang})` : ""}</strong>
+      </div>
+    </div>
+
+    <div class="result-box">
+      <span class="muted">Gain total estimé depuis les rapports du tirage :</span>
+      <h2 style="margin-top:6px">${formatMoney(total)}</h2>
+    </div>
+  `;
+
+  demoTickets.unshift({
+    date,
+    numbers: ticketNumbers,
+    chance,
+    winningNumbers,
+    winningChance,
+    total,
+    statusLabel,
+    statusClass
+  });
+
+  renderDemoTickets();
+}
+
+function renderDemoTickets(){
+  const tbody = document.getElementById("ticketsTable");
+
+  if (!demoTickets.length){
+    tbody.innerHTML = `<tr><td colspan="5" class="text-center">Aucun ticket simulé pour le moment.</td></tr>`;
+    return;
+  }
+
+  tbody.innerHTML = demoTickets.slice(0,5).map(t => `
+    <tr>
+      <td><b>${t.date}</b></td>
+      <td>${ballsHtml(t.numbers, t.winningNumbers)}</td>
+      <td>${chanceHtml(t.chance, t.winningChance)}</td>
+      <td><span class="${t.statusClass}">${t.statusLabel}</span></td>
+      <td class="text-end"><b>${formatMoney(t.total)}</b></td>
+    </tr>
+  `).join("");
+}
+
+
+window.onload = () => {
+  load();
+  grid();
+};
+</script>
+</body>
+</html>
+

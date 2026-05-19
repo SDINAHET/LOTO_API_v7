@@ -881,4 +881,7 @@ git clone -b clean8 https://github.com/SDINAHET/LOTO_API_v6.git
 git clone -b fix5_migration https://github.com/SDINAHET/LOTO_API_v6.git
 git clone -b fix6_migration https://github.com/SDINAHET/LOTO_API_v6.git
 
- 
+git clone -b add_password_mongodb https://github.com/SDINAHET/LOTO_API_v7.git
+
+
+http://localhost:8081/ mongo express

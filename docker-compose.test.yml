@@ -49,6 +49,8 @@ services:
       # SPRING_DATA_MONGODB_URI: mongodb://mongo_test:27017/lotodb_test
       # SPRING_DATA_MONGODB_URI: mongodb://mongotest:mongotest@mongo_test:27017/lotodb_test?authSource=admin
       SPRING_DATA_MONGODB_URI: mongodb://mongotest:mongotest@mongo_test:27017/lotodb_test?authSource=lotodb_test
+      # MONGO_INITDB_ROOT_USERNAME: mongotest
+      # MONGO_INITDB_ROOT_PASSWORD: mongotest
       SPRING_TASK_SCHEDULING_ENABLED: "false"
     # command: mvn -q verify -Djacoco.skip=true
     command: >
