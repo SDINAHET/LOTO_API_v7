@@ -5,8 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Loto Tracker — Landing RNCP6 Finale</title>
 
-<link rel="icon" type="image/png" href="/assets/img/loto_tracker.png">
-
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
@@ -14,7 +12,6 @@
 
 html{
   scroll-behavior:smooth;
-  scroll-padding-top:70px;
 }
 
 @media (prefers-reduced-motion: reduce){
@@ -56,16 +53,13 @@ html{
   --green:#22c55e;
   --orange:#f59e0b;
   --purple:#a855f7;
-  --cyan:#38bdf8;
-  --cyan-light:#e0f2fe;
 }
 
 body{
   min-height:100vh;
   background:
     radial-gradient(1200px 600px at 20% 20%, rgba(37,99,235,.28), transparent 60%),
-    /*radial-gradient(1000px 700px at 80% 30%, rgba(168,85,247,.22), transparent 60%),*/
-    radial-gradient(1000px 700px at 80% 30%, rgba(56,189,248,.16), transparent 60%),
+    radial-gradient(1000px 700px at 80% 30%, rgba(168,85,247,.22), transparent 60%),
     linear-gradient(135deg,#020617,#060a12,#0f172a);
   color:var(--text);
 }
@@ -75,23 +69,21 @@ a{text-decoration:none;color:inherit}
 .container{
   max-width:1360px;
   margin:0 auto;
-  padding:0 18px 90px;
+  padding:28px 18px 90px;
 }
 
 .nav{
-  position:fixed;
+  position:sticky;
   top:0;
-  left:0;
-  right:0;
-  z-index:9999;
+  z-index:800;
   display:flex;
   justify-content:space-between;
   align-items:center;
   gap:16px;
-  padding:6px 18px;
-  background:rgba(6,10,18,.96);
+  padding:14px 0;
+  margin-bottom:28px;
+  background:linear-gradient(180deg,rgba(6,10,18,.96),rgba(6,10,18,.72));
   backdrop-filter:blur(14px);
-  border-bottom:1px solid rgba(255,255,255,.08);
 }
 
 .brand{
@@ -102,25 +94,14 @@ a{text-decoration:none;color:inherit}
   font-size:1.15rem;
 }
 
-/*.brand-logo{
+.brand-logo{
   width:38px;
   height:38px;
   border-radius:14px;
   display:grid;
   place-items:center;
-  /*background:linear-gradient(135deg,#2563eb,#7c3aed,#a855f7);
-  background:linear-gradient(135deg,#2563eb,#1d4ed8,#38bdf8);
+  background:linear-gradient(135deg,#2563eb,#7c3aed,#a855f7);
   box-shadow:0 18px 45px rgba(59,130,246,.25);
-}*/
-
-.brand-logo{
-  width:64px;
-  height:64px;
-  object-fit:contain;
-}
-
-main{
-  padding-top:130px;
 }
 
 .nav-actions,.hero-actions,.demo-actions{
@@ -170,15 +151,9 @@ main{
   background:rgba(255,255,255,.09);
 }
 
-/*.btn-primary{
-  border:none;
-  background:linear-gradient(135deg,#2563eb,#7c3aed,#a855f7);
-  box-shadow:0 16px 45px rgba(37,99,235,.30);
-}*/
-
 .btn-primary{
   border:none;
-  background:linear-gradient(135deg,#2563eb,#1d4ed8,#38bdf8);
+  background:linear-gradient(135deg,#2563eb,#7c3aed,#a855f7);
   box-shadow:0 16px 45px rgba(37,99,235,.30);
 }
 
@@ -198,16 +173,9 @@ main{
   margin-bottom:20px;
 }
 
-/*.gradient-text{
+.gradient-text{
   background:linear-gradient(90deg,#60a5fa,#a855f7,#f472b6);
   -webkit-background-clip:text;
-  color:transparent;
-}*/
-
-.gradient-text{
-  background:linear-gradient(90deg,#60a5fa,#38bdf8,#e0f2fe);
-  -webkit-background-clip:text;
-  background-clip:text;
   color:transparent;
 }
 
@@ -222,7 +190,7 @@ main{
   display:flex;
   flex-wrap:wrap;
   gap:10px;
-  margin:22px 0 44px;
+  margin:22px 0 28px;
 }
 
 .badge{
@@ -424,18 +392,10 @@ td{color:rgba(255,255,255,.88);font-weight:800}
   border:1px solid rgba(96,165,250,.32);
 }
 
-/*.ball.chance{
+.ball.chance{
   background:linear-gradient(145deg,#7f1d1d,#ef4444);
   border-color:rgba(239,68,68,.70);
-}*/
-
-.ball.chance{
-  background:linear-gradient(145deg,#5b1620,#2a0b10);
-  border:1px solid rgba(248,113,113,.45);
-  color:rgba(255,255,255,.86);
-  box-shadow:none;
 }
-
 .draw-inline{
   display:flex;
   align-items:center;
@@ -454,17 +414,9 @@ td{color:rgba(255,255,255,.88);font-weight:800}
   box-shadow:0 0 0 3px rgba(96,165,250,.18);
 }
 
-/*.ball.win-chance{
+.ball.win-chance{
   background:linear-gradient(145deg,#dc2626,#f87171);
   box-shadow:0 0 0 3px rgba(248,113,113,.20);
-}*/
-.ball.win-chance{
-  background:linear-gradient(145deg,#ef4444,#f87171);
-  border:1px solid rgba(254,202,202,.85);
-  color:#fff;
-  box-shadow:
-    0 0 0 3px rgba(248,113,113,.22),
-    inset 0 2px 5px rgba(255,255,255,.25);
 }
 
 .status{
@@ -890,10 +842,6 @@ body {
     gap: 8px;
   }
 
-  .demo-actions{
-    margin-top:22px;
-  }
-
   .btn {
     font-size: 0.78rem;
     padding: 10px 12px;
@@ -909,62 +857,6 @@ body {
   }
 }
 
-/* Espace entre les numéros Chance et les boutons */
-.chance-grid{
-  margin-bottom:24px;
-}
-
-/* Espacement des boutons de la démo */
-.demo-actions{
-  margin-top:18px;
-  gap:14px;
-}
-
-
-
-/* =========================
-   FOOTER FIX BAS DE PAGE
-========================= */
-
-body{
-  min-height:100vh;
-}
-
-.container{
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  padding-bottom:0;
-}
-
-main{
-  flex:1;
-  display:flex;
-  flex-direction:column;
-}
-
-.footer{
-  margin-top:auto;
-  padding:32px 16px 40px;
-  border-top:1px solid rgba(255,255,255,.12);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:14px;
-  flex-wrap:wrap;
-  color:rgba(255,255,255,.70);
-  font-weight:800;
-}
-
-.footer a{
-  color:#38bdf8;
-  font-weight:900;
-}
-
-.footer a:hover{
-  color:#e0f2fe;
-}
-
 </style>
 </head>
 
@@ -974,12 +866,7 @@ main{
 
   <header class="nav" role="banner">
     <div class="brand" aria-label="Loto Tracker">
-      <!-- <div class="brand-logo" aria-hidden="true">🍀</div> -->
-      <img
-        src="/assets/img/loto_tracker.webp"
-        alt="Logo Loto Tracker"
-        class="brand-logo"
-      />
+      <div class="brand-logo" aria-hidden="true">🍀</div>
       <span>Loto Tracker</span>
     </div>
 
@@ -992,7 +879,7 @@ main{
 
     <div class="nav-actions">
       <a class="btn" href="#demo">Voir la démo</a>
-      <a class="btn btn-primary" href="https://loto-tracker.fr">Accéder au site Loto-Tracker</a>
+      <a class="btn btn-primary" href="https://loto-tracker.fr">Accéder au vrai site</a>
     </div>
   </header>
 
@@ -1006,18 +893,18 @@ main{
       </p>
 
       <div class="badges">
-        <span class="badge">Java 21</span>
-        <span class="badge">Spring Boot</span>
         <span class="badge">JavaScript</span>
-        <span class="badge">PostgresSQL</span>
+        <span class="badge">Spring Boot</span>
         <span class="badge">MongoDB</span>
+        <span class="badge">Tirage principal</span>
+        <span class="badge">Second tirage</span>
         <span class="badge">Portfolio RNCP6</span>
       </div>
 
-      <!-- <div class="hero-actions">
-        <a class="btn btn-primary" href="https://loto-tracker.fr">Créer un compte sur le site Loto-Tracker</a>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://loto-tracker.fr">Créer un compte sur le vrai site</a>
         <a class="btn" href="#demo">Tester la démo sans compte</a>
-      </div> -->
+      </div>
     </div>
 
     <div class="glass">
@@ -1036,63 +923,33 @@ main{
     </div>
   </section>
 
-<section id="story">
-  <h2 class="section-title">Parcours utilisateur</h2>
-  <p class="section-subtitle">
-    Loto Tracker répond à un besoin concret : permettre à un utilisateur de vérifier rapidement ses tickets,
-    de limiter les erreurs de lecture et de conserver un historique clair de ses résultats.
-  </p>
+  <section id="story">
+    <h2 class="section-title">Storytelling du projet</h2>
+    <p class="section-subtitle">
+      La landing page raconte le parcours réel d’un utilisateur : il découvre le service, teste une démo,
+      puis est invité à créer un compte sur le vrai site pour sauvegarder ses tickets.
+    </p>
 
-  <div class="story">
-    <div class="glass story-card">
-      <div class="story-num">1</div>
-      <h3>Vérifier un ticket</h3>
-      <p>
-        Après un tirage, l’utilisateur renseigne ses numéros et son numéro Chance
-        afin de contrôler son ticket sans comparaison manuelle fastidieuse.
-      </p>
+    <div class="story">
+      <div class="glass story-card"><div class="story-num">1</div><h3>Découverte</h3><p>L’utilisateur comprend le problème : vérifier ses tickets à la main peut être long et source d’erreurs.</p></div>
+      <div class="glass story-card"><div class="story-num">2</div><h3>Démonstration</h3><p>Il sélectionne 5 numéros, un numéro Chance et une date de tirage pour simuler un ticket.</p></div>
+      <div class="glass story-card"><div class="story-num">3</div><h3>Calcul précis</h3><p>Le JavaScript compare le ticket au tirage principal et au second tirage, puis lit les rapports de gains.</p></div>
+      <div class="glass story-card"><div class="story-num">4</div><h3>Conversion</h3><p>L’utilisateur est invité à créer un compte sur le vrai site pour enregistrer ses tickets durablement.</p></div>
     </div>
-
-    <div class="glass story-card">
-      <div class="story-num">2</div>
-      <h3>Comparer automatiquement</h3>
-      <p>
-        L’application compare le ticket avec les données du tirage principal et du second tirage,
-        puis identifie les correspondances obtenues.
-      </p>
-    </div>
-
-    <div class="glass story-card">
-      <div class="story-num">3</div>
-      <h3>Calculer le résultat</h3>
-      <p>
-        Le statut du ticket, le rang associé et le gain estimé sont affichés de manière claire,
-        sans calcul supplémentaire pour l’utilisateur.
-      </p>
-    </div>
-
-    <div class="glass story-card">
-      <div class="story-num">4</div>
-      <h3>Suivre son historique</h3>
-      <p>
-        En créant un compte, l’utilisateur peut enregistrer ses tickets,
-        consulter ses anciens tirages et suivre ses gains dans le temps.
-      </p>
-    </div>
-  </div>
-</section>
+  </section>
 
   <section id="demo">
     <h2 class="section-title">Démo interactive</h2>
     <p class="section-subtitle">
-      Cette démonstration illustre le fonctionnement métier de Loto Tracker : récupération des derniers tirages
-      via l’API, saisie d’un ticket utilisateur, comparaison automatique avec le tirage principal et le second tirage,
-      puis calcul du statut, du rang et du gain estimé.
+      Cette démo utilise les derniers tirages récupérés depuis l’API du projet. Le calcul est fait côté navigateur en JavaScript,
+      à partir des champs de rapports stockés en base MongoDB :
+      <b>rapportDuRang1 à rapportDuRang9</b> pour le tirage principal et
+      <b>rapportDuRang1SecondTirage à rapportDuRang4SecondTirage</b> pour le second tirage.
     </p>
 
     <div class="demo-grid">
       <div class="glass">
-        <h3 class="card-title" id="formTitle">Simulation d’un ticket utilisateur</h3>
+        <h3 class="card-title" id="formTitle">Créer un ticket de démonstration</h3>
 
         <label for="dateSelect">Date du tirage</label>
         <select id="dateSelect" aria-label="Choisir une date parmi les derniers tirages"></select>
@@ -1100,7 +957,7 @@ main{
         <label>Choisissez 5 numéros</label>
         <div id="grid49" class="pick-grid"></div>
 
-        <label>Sélection du numéro Chance</label>
+        <label>Choisissez 1 numéro Chance</label>
         <div id="chanceGrid" class="chance-grid"></div>
 
         <div class="demo-actions">
@@ -1117,13 +974,12 @@ main{
       <div class="glass">
         <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap">
           <div>
-            <h3 class="card-title">Suivi des tickets simulés</h3>
+            <h3 class="card-title">Mes tickets de démonstration</h3>
             <p class="section-subtitle">
-              Les tickets validés sont affichés dans un tableau de suivi reprenant les informations métier principales :
-              date du tirage, numéros joués, statut, gains calculés et actions disponibles.
+              Après validation, le ticket apparaît dans un tableau proche de l’espace utilisateur réel.
             </p>
           </div>
-          <!-- <button class="btn btn-primary" onclick="resetFormForCreate()">+ Ajouter un ticket</button> -->
+          <button class="btn btn-primary" onclick="resetFormForCreate()">+ Ajouter un ticket</button>
         </div>
 
         <div class="table-wrap">
@@ -1147,7 +1003,7 @@ main{
         </div>
 
         <div style="display:flex;justify-content:center;margin:16px 0 4px">
-          <!-- <button class="btn btn-primary" onclick="resetFormForCreate()">+ Ajouter un ticket de démonstration</button> -->
+          <button class="btn btn-primary" onclick="resetFormForCreate()">+ Ajouter un ticket de démonstration</button>
         </div>
 
         <h3 class="card-title" style="margin-top:22px">Derniers tirages</h3>
@@ -1171,48 +1027,47 @@ main{
     </div>
   </section>
   <section id="calcul">
-    <h2 class="section-title">Règles métier et calcul des gains</h2>
+    <h2 class="section-title">Calcul des gains : logique métier</h2>
     <p class="section-subtitle">
-      Cette partie met en évidence la logique fonctionnelle du projet : le ticket utilisateur est comparé aux données
-      du tirage principal et du second tirage afin de déterminer le statut, le rang obtenu et le gain estimé.
+      Le projet ne se contente pas d’afficher les numéros. Il reproduit la logique métier d’un vrai ticket :
+      nombre de bons numéros, présence ou non du numéro Chance, rang du tirage principal, puis ajout éventuel du gain du second tirage.
     </p>
 
     <div class="explain">
       <div class="glass">
         <h3 class="card-title">Tirage principal</h3>
         <p class="muted">
-          Les 5 numéros du ticket et le numéro Chance sont comparés aux données du tirage principal.
-          Le résultat permet d'identifier un rang de gain, selon les règles du jeux.
+          Le ticket est comparé aux champs MongoDB <b>boule1</b> à <b>boule5</b> et <b>numeroChance</b>.
+          Selon le résultat, le script détermine un rang de 1 à 9 puis lit le champ <b>rapportDuRangX</b>.
         </p>
       </div>
 
       <div class="glass">
         <h3 class="card-title">Second tirage</h3>
         <p class="muted">
-          Les 5 numéros principaux sont également comparés au second tirage.
-          Si des correspondances sont trouvées, le gain associé est ajouté au résultat global du ticket.
+          Les mêmes 5 numéros sont comparés aux champs <b>boule1SecondTirage</b> à <b>boule5SecondTirage</b>.
+          Si 2, 3, 4 ou 5 numéros correspondent, le script ajoute le champ <b>rapportDuRangXSecondTirage</b>.
         </p>
       </div>
     </div>
 
     <div class="code-like" style="margin-top:18px">
-  Ticket utilisateur → 5 numéros + 1 numéro Chance + date du tirage<br>
-  Données de référence (historique des tirages) → tirage principal + second tirage<br>
-  Traitement métier → comparaison, identification du rang, calcul du gain automatiquement<br>
-  Résultat final → statut du ticket + gain total estimé
+Ticket utilisateur → 5 numéros + 1 chance<br>
+Tirage principal → boule1..boule5 + numeroChance + rapportDuRang1..9<br>
+Second tirage → boule1SecondTirage..boule5SecondTirage + rapportDuRang1SecondTirage..4<br>
+Gain total → gain principal + gain second tirage
     </div>
   </section>
 
   <section class="glass cta" id="site">
-    <h2>Accéder à la version complète</h2>
+    <h2>Tester la version complète</h2>
     <p>
-      La démonstration présente le fonctionnement principal du projet. La version complète ajoute un espace utilisateur
-      permettant de créer un compte, enregistrer ses tickets, consulter son historique, modifier ou supprimer ses données
-      et suivre ses résultats dans le temps.
+      La démo ci-dessus montre le calcul côté JavaScript. Sur le vrai site, l’utilisateur peut créer un compte,
+      enregistrer ses tickets, les retrouver dans son tableau de bord, les modifier, les supprimer et suivre automatiquement ses gains.
     </p>
     <div class="hero-actions" style="justify-content:center">
-      <a class="btn btn-primary" href="https://loto-tracker.fr">Accéder au site Loto-Tracker</a>
-      <a class="btn" href="#demo">Revoir la démonstration</a>
+      <a class="btn btn-primary" href="https://loto-tracker.fr">Aller sur Loto Tracker</a>
+      <a class="btn" href="#demo">Revenir à la démo</a>
     </div>
   </section>
 

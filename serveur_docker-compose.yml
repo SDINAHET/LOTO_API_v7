@@ -615,4 +615,3 @@ volumes:
 networks:
   monitoring_shared:
     external: true
-stefdev@ubuntu:~/projects/Loto_API_prod$

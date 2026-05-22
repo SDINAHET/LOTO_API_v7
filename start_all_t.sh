@@ -83,8 +83,8 @@ fi
 # SPRING BOOT
 # ========================
 echo "==> Build Spring Boot"
-mvn clean install
-# mvn clean install -DskipTests
+# mvn clean install
+mvn clean install -DskipTests
 
 echo "==> Démarrage Spring Boot"
 nohup mvn spring-boot:run \
